@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-30",
+  "scope": "LOCAL_DESIGN_PASS_NOT_FINAL_RELEASE_OR_SERVICE_VERIFICATION",
+  "staticAnalysis": {
+    "date": "2026-10-30",
+    "command": "flutter --suppress-analytics analyze --no-pub",
+    "exitCode": 0,
+    "findings": 0,
+    "seconds": 20.9,
+    "scope": "LOCAL_FULL_PROJECT_STATIC_ANALYSIS_NOT_LIVE_OR_PHYSICAL",
+    "initialFindings": 8,
+    "initialFindingType": "curly_braces_in_flow_control_structures",
+    "resolution": "braces_added_no_behavior_change"
+  },
+  "tests": {
+    "passed": 95,
+    "failed": 0
+  },
+  "native": {
+    "exitCode": 0,
+    "captures": 7,
+    "nativeAudioTransport": true
+  },
+  "sourceFingerprint": "232eeaceac11b6d4149ce984ecfebc9c17ef6edc9c02c63ecc2c3aee22abd17f",
+  "previewSourceMatches": true,
+  "previewSha256": "b3dea97445dbc1f54cf27bde72f01d30799c9220ab3f77c84cf05de07ab7dd75",
+  "checkedLocalLinks": 61,
+  "packagedAssets": 7,
+  "reviewFiles": 20,
+  "previousReleaseHistorical": true,
+  "unchangedPending": [
+    "real_auth_server_store",
+    "public_deletion_web",
+    "product_ids_urls",
+    "Apple_iOS_physical_devices",
+    "five_dev_security_advisories",
+    "signed_submission_files"
+  ],
+  "ownedEmulatorStopped": true,
+  "nodeToolSyntaxChecks": {
+    "files": 5,
+    "failed": 0
+  }
+}

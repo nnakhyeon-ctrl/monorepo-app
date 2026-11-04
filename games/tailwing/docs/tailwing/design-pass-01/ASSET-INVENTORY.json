@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-30",
+  "method": "Built-in imagegen originals; 1024px downscale with alpha; no tracing or upscaling",
+  "files": [
+    {
+      "path": "assets/tailwing/rabbit_portrait_v2.png",
+      "source": "docs/tailwing/design-pass-01/sources/rabbit-portrait-exec-f00d7c8d-f813-4a0b-a5b1-45ba5c2be4aa.png",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 1024,
+      "height": 1024,
+      "colorType": 6,
+      "bytes": 709405,
+      "sha256": "f0efb38d2a64f9647b6678fe4692b9238f52f61af01aad93d7f6c9beac782200"
+    },
+    {
+      "path": "assets/tailwing/turtle_portrait_v2.png",
+      "source": "docs/tailwing/design-pass-01/sources/turtle-portrait-exec-55ca532f-8fd8-4df2-bf5a-5658876178dd.png",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 1024,
+      "height": 1024,
+      "colorType": 6,
+      "bytes": 1158786,
+      "sha256": "c8671b2415fa8e2ba7d7089af5fb4cee670f60cc7bf753e5c5755add0c5567e1"
+    },
+    {
+      "path": "assets/tailwing/rabbit_ship_v2.png",
+      "source": "docs/tailwing/design-pass-01/sources/rabbit-ship-exec-f044b2e5-17c3-47ee-9c11-76e27da4a615.png",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 1024,
+      "height": 1024,
+      "colorType": 6,
+      "bytes": 1093470,
+      "sha256": "0c95d7110b648e6221cb77192abd801adf844dd1b5b3fb0bfa3fb7a4f953cc63"
+    },
+    {
+      "path": "assets/tailwing/turtle_ship_v2.png",
+      "source": "docs/tailwing/design-pass-01/sources/turtle-ship-exec-7f0a7396-c51e-458f-b725-3c3af9ec8675.png",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 1024,
+      "height": 1024,
+      "colorType": 6,
+      "bytes": 1366486,
+      "sha256": "a3d0eb6d3b0bb4654e398c1120730cc20a872552f1acb5ae2de6d2983dd8c898"
+    },
+    {
+      "path": "assets/tailwing/rabbit_hero_v2.png",
+      "source": "docs/tailwing/design-pass-01/sources/rabbit-hero-exec-a2b9d346-8f70-4849-a7be-f1448df4d03a.png",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 1024,
+      "height": 1024,
+      "colorType": 6,
+      "bytes": 1084066,
+      "sha256": "26b110f525b3195a25279322263e4be109fd4096f14016c843332049a8282254"
+    },
+    {
+      "path": "assets/tailwing/turtle_hero_v2.png",
+      "source": "docs/tailwing/design-pass-01/sources/turtle-hero-exec-a43f1dfe-5ebe-43e6-ac38-293c1d29e41b.png",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 1024,
+      "height": 1024,
+      "colorType": 6,
+      "bytes": 1690681,
+      "sha256": "f463bd47e577e30d5fd7269386a95f7f255de263aa7eea294e69b45b833251af"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "functions": [{ "source": ".", "codebase": "airzero-auth", "runtime": "nodejs22",
+    "ignore": ["node_modules", ".git", ".firebase", ".runtime", "test", "tool", "build/test", "*.log", ".env*", "*.local"] }],
+  "firestore": { "rules": "firestore.rules" },
+  "emulators": {
+    "auth": { "host": "127.0.0.1", "port": 9299 },
+    "firestore": { "host": "127.0.0.1", "port": 8280 },
+    "functions": { "host": "127.0.0.1", "port": 5101 },
+    "hub": { "host": "127.0.0.1", "port": 4501 },
+    "logging": { "host": "127.0.0.1", "port": 4601 },
+    "eventarc": { "host": "127.0.0.1", "port": 9300 },
+    "tasks": { "host": "127.0.0.1", "port": 9499 },
+    "ui": { "enabled": false },
+    "singleProjectMode": true
+  }
+}

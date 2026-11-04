@@ -1,0 +1,495 @@
+{
+  "date": "2026-10-30",
+  "scope": "LOCAL_SYNTHETIC_NOT_LIVE_OR_PHYSICAL",
+  "exitCode": 0,
+  "files": [
+    "test/tailwing_design_test.dart",
+    "test/animal_home_test.dart",
+    "test/animal_roster_test.dart",
+    "test/animal_lifecycle_test.dart",
+    "test/loadout_preparation_test.dart",
+    "test/battle_flow_test.dart",
+    "test/basic_screens_test.dart",
+    "test/menu_settings_test.dart"
+  ],
+  "passed": 95,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "signature cards display actual bounds while unverified purchase remains locked",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "battle chapter cues use actual timeline and boss health without changing combat",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "home and roster fit Size(396.0, 800.0) text 1.0 without covering art",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "free roster is exactly rabbit fox turtle; no signature grant",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "pilot basic fire, signature end, damage and fresh stage reset",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "rion basic fire, signature end, damage and fresh stage reset",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_bear basic fire, signature end, damage and fresh stage reset",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "eden basic fire, signature end, damage and fresh stage reset",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_otter basic fire, signature end, damage and fresh stage reset",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_owl basic fire, signature end, damage and fresh stage reset",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_squirrel basic fire, signature end, damage and fresh stage reset",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_hedgehog basic fire, signature end, damage and fresh stage reset",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_penguin basic fire, signature end, damage and fresh stage reset",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_chameleon basic fire, signature end, damage and fresh stage reset",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_eagle basic fire, signature end, damage and fresh stage reset",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_volt basic fire, signature end, damage and fresh stage reset",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "rabbit stitches recent motion and spends a finite damage budget",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "fox replaces basic spread with reduced damage angled projectiles",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "bear collects six ordinary bullets, rejects boss bullets and releases",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "turtle only blocks five forward normal rounds, never side or boss",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "otter relays only among distinct nearby targets within shared budget",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "owl prioritizes boss and telegraphs before limited precise shots",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "seed has bounded lifetime/count and actual proximity explosion",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "hedgehog proximity damage gives no automatic invulnerability",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "penguin slows normal, resists armor and excludes boss/old bullets",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "decoy redirects new armored aim, preserves already telegraphed aim",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "eagle has a warning then exactly four feather shots",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "electric shrew delays each ordinary enemy only once, excludes boss",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "expiry/account switch clear signature fields and paid character selection",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "pilot: defeat clears technique; retry has no inherited effects",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "rion: defeat clears technique; retry has no inherited effects",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_bear: defeat clears technique; retry has no inherited effects",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "eden: defeat clears technique; retry has no inherited effects",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_otter: defeat clears technique; retry has no inherited effects",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_owl: defeat clears technique; retry has no inherited effects",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_squirrel: defeat clears technique; retry has no inherited effects",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_hedgehog: defeat clears technique; retry has no inherited effects",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_penguin: defeat clears technique; retry has no inherited effects",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_chameleon: defeat clears technique; retry has no inherited effects",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_eagle: defeat clears technique; retry has no inherited effects",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "tw_volt: defeat clears technique; retry has no inherited effects",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "victory clears a live seed and slow state without changing score",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "timeout cancels collected rounds instead of releasing a late counter",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "switching while paused clears old pilot effects on resume",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "expired deck has no durability and expired decoy cannot redirect new aim",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "pause freezes skill lifetime; resuming expires a seed once",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "old and invalid optional selections preserve stage records and accept only category IDs",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "saved paid preferences survive disk reload but require fresh verified access before combat",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "first battle teaches movement/fire/shield and remembers completion",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "rapid selections, duplicate requests and failed writes share one save queue",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "unreadable storage blocks preference changes without creating writes",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "new sprites decode distinctly, failed loading rolls back and retry coalesces",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "rabbit home and actual normal battle share decoded mounted craft",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "home and roster fit Size(396.0, 800.0) text 2.0 without covering art",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "large-text preparation keeps real skill details reachable and premium blocked",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "free play starts once without a login or purchase gate",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "home and roster fit Size(320.0, 568.0) text 1.0 without covering art",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "legacy schema keeps records and persists device options and selected stage across reload",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "failed initial read never writes over records and retry recovers them",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "audio follows options, pause, foreground and vibration without affecting records",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "subscription refresh failure preserves only already verified unexpired access",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "external destinations reject unconfirmed or unsafe addresses",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "settings widgets persist sound, vibration, volume and sensitivity after app recreation",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "home and roster fit Size(320.0, 568.0) text 2.0 without covering art",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "real collision result unlocks next stage and failure retries immediately",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "home and roster fit Size(280.0, 600.0) text 1.0 without covering art",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "failed launch clears loading and never exposes exception details",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "preparation launches the selected verified loadout with duplicate taps blocked",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "login validates, supports autofill and visibility, never authenticates",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "home and roster fit Size(280.0, 600.0) text 2.0 without covering art",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "small phone and doubled text keep real battle controls reachable",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "actual deck transitions count down, deplete, expire and reset",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "six new versioned assets are native high resolution RGBA with preserved originals",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "start loading blocks duplicate launches and opens exactly one battle",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "shield button absorbs damage, blocks repeat use and background pauses battle",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "signup consents start unchecked and legal pages preserve the form",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "verified restoration unlocks paid character and applies it in next battle",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "paused retry and back require confirmation and keep completed records",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "recovery reveals neither account existence nor the submitted address",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "volume drag saves on release and failed save can be retried without resetting records",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "all approved screens open and invalid input is not reflected",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "actual player sprite decodes with transparent margins",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "store prices retry with supplied localized totals and no runtime purchase bypass",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "support keeps missing contacts truthful and report copies only user-approved draft",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "external opening prevents duplicates and allows retry after failure",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "unverified cooperative entry is hidden and direct route is unavailable",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "small screen, large text and keyboard keep forms reachable",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "unconfigured store never grants or restores access",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "background privacy cover clears on resume",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "premium catalog details never equip or grant content",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "enhanced skills require a subscription and cannot activate from details",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "monthly and annual plans show total billing periods without subscribing",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "new catalog and battle concept tolerate large text on a narrow phone",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "iOS offers Apple alongside Google and Kakao without simulated login (variant: TargetPlatform.iOS)",
+      "result": "success",
+      "hidden": false
+    },
+    {
+      "name": "primary actions have accessible labels and touch targets",
+      "result": "success",
+      "hidden": false
+    }
+  ],
+  "errors": []
+}

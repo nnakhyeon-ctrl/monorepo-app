@@ -1,0 +1,40 @@
+{
+  "preview": {
+    "date": "2026-10-30",
+    "path": "build/tailwing-preview/tailwing-preview-debug.apk",
+    "bytes": 243184894,
+    "sha256": "b3dea97445dbc1f54cf27bde72f01d30799c9220ab3f77c84cf05de07ab7dd75",
+    "appId": "com.example.raikeopeu2026.dev.integration",
+    "version": "0.1.0+1",
+    "status": "DEBUG_ONLY_ISOLATED_INTERACTIVE_PREVIEW_NOT_SUBMISSION_FILE",
+    "sourceFingerprint": "232eeaceac11b6d4149ce984ecfebc9c17ef6edc9c02c63ecc2c3aee22abd17f",
+    "sourceFiles": 107,
+    "sourceScope": "lib/assets/pubspec/Android app manifest+Gradle/iOS Info only, not a committed provenance assertion",
+    "purchaseConfigurationInjected": false,
+    "serverOrStoreDeployment": false,
+    "nativeSmoke": {
+      "date": "2026-10-30",
+      "report": "docs/tailwing/design-pass-01/INTERACTIVE-SMOKE.json",
+      "sha256": "b3dea97445dbc1f54cf27bde72f01d30799c9220ab3f77c84cf05de07ab7dd75",
+      "status": "LIMITED_STARTUP_CHECK_PASS",
+      "scope": "ISOLATED_DEBUG_MAIN_STARTUP_NOT_SUBMISSION_OR_PHYSICAL"
+    }
+  },
+  "release-inspection": {
+    "date": "2026-10-30",
+    "path": "build/tailwing-preview/tailwing-inspection-unsigned.apk",
+    "bytes": 88678439,
+    "sha256": "d227fe565182ee60834aba153349b6e5a53401c2a4df86aaf3c5d97a1b50c129",
+    "appId": "com.example.raikeopeu2026.dev",
+    "version": "0.1.0+1",
+    "status": "UNSIGNED_INSPECTION_ONLY_NOT_INSTALLABLE_OR_SUBMITTABLE",
+    "sourceFingerprint": "e5bc9a0b6e979d2d82ed5a1acb5a01ce7085ccba0131b22eb9a8d1fb55a2b53c",
+    "sourceFiles": 98,
+    "sourceScope": "lib/assets/pubspec/Android app manifest+Gradle/iOS Info only, not a committed provenance assertion",
+    "purchaseConfigurationInjected": false,
+    "serverOrStoreDeployment": false,
+    "historicalOnly": true,
+    "supersededForCurrentDesignBy": "docs/tailwing/design-pass-01/INTERACTIVE-SMOKE.json",
+    "currentDesignRebuildRequired": true
+  }
+}

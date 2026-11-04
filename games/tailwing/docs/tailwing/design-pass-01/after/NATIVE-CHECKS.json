@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-30",
+  "mode": "after",
+  "exitCode": 0,
+  "scope": "SYNTHETIC_NATIVE_ANDROID_EMULATOR_NOT_LIVE_OR_PHYSICAL",
+  "captures": [
+    {
+      "name": "home-rabbit",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "name": "home-turtle",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "name": "hangar-top",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "name": "hangar-cards",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "name": "shield-active",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "name": "shield-ended",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "name": "rabbit-combat",
+      "width": 1080,
+      "height": 1920
+    }
+  ],
+  "checks": {
+    "scope": "NATIVE_ANDROID_EMULATOR_SYNTHETIC_NOT_PHYSICAL_OR_LIVE",
+    "before": false,
+    "screens": 7,
+    "freeSelection": true,
+    "lockedSignature": true,
+    "shieldCount": 5,
+    "shieldExpiry": true,
+    "recordsUnchanged": true,
+    "decodedBytes": 4462592,
+    "imageCacheBytes": 16699904,
+    "frames": 178,
+    "buildOver16ms": 64,
+    "rasterOver16ms": 20,
+    "performanceScope": "SHORT_DEBUG_EMULATOR_SAMPLE_NOT_DEVICE_PERFORMANCE_PASS",
+    "nativeAudioTransport": true,
+    "physicalSpeakerListening": "NOT_VERIFIED"
+  }
+}

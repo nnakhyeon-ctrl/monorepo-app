@@ -1,0 +1,7 @@
+{
+  "dart.flutterSdkPath": "flutter",
+  "dart.sdkPath": "flutter/bin/cache/dart-sdk",
+  "terminal.integrated.env.windows": {
+    "Path": "${workspaceFolder}\\flutter\\bin;${workspaceFolder}\\flutter\\bin\\cache\\dart-sdk\\bin;${env:PATH}"
+  }
+}

@@ -1,0 +1,4 @@
+.runtime/
+*-debug.log
+*-debug.*.log
+.firebase/

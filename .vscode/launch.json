@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "테일윙 · TAILWING · Android 전투",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/games/tailwing",
+      "program": "${workspaceFolder}/games/tailwing/lib/main.dart",
+      "flutterMode": "debug"
+    },
+    {
+      "name": "테일윙 · TAILWING · 이메일 로컬 시험",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/games/tailwing",
+      "program": "${workspaceFolder}/games/tailwing/lib/main.dart",
+      "flutterMode": "debug",
+      "toolArgs": ["--dart-define=AIRZERO_AUTH_EMULATOR=true"]
+    }
+  ]
+}

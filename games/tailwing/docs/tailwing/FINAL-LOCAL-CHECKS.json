@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-29",
+  "scope": "LOCAL_RENEWAL_ONLY_NOT_LIVE_OR_SUBMISSION_READY",
+  "analysis": {
+    "command": "flutter analyze --no-pub",
+    "result": "No issues found",
+    "seconds": 188.7
+  },
+  "tests": {
+    "fullFlutterHistory": "154 pass / 4 fail, affected 31 pass; later 158 pass / new card 1 fail, card fix 1 pass; not a single all-green full run",
+    "latestRoster": 26,
+    "rosterAndHomeAfterTuning": 28,
+    "serverUnit": 21,
+    "androidRosterSweep": 1,
+    "androidCard": 1,
+    "nativeCaptures": 14,
+    "usesSyntheticData": true,
+    "physicalDevices": false
+  },
+  "artifacts": {
+    "runtimePng": 27,
+    "actualCaptures": 14,
+    "hashChecks": 70,
+    "localMarkdownLinks": 127,
+    "releaseFingerprintMatchesCurrentScope": true,
+    "previewFingerprintSameAsCurrentScope": false,
+    "previewDifference": "Only final two control-flow braces for lint; build-time scope and native smoke retained in BUILDS.json",
+    "releaseStatic": "STATIC_CHECKS_PASS_SUBMISSION_BLOCKED"
+  },
+  "billing": {
+    "idFieldsMissing": 7,
+    "publicUrlsMissing": 4,
+    "purchaseLocked": true,
+    "liveVerification": "NOT_RUN"
+  },
+  "remaining": [
+    "real auth/server/store and notifications",
+    "public account deletion website",
+    "Apple paid membership not present, no paid enrollment",
+    "Mac/Xcode/iOS/physical device and 16KB runtime",
+    "preview initial process loss cause unknown, one retry launch timeout, later warm launch ok; not stability pass",
+    "long-session balance/profile/thermal/input validation",
+    "five existing development moderate dependency warnings",
+    "new store icon/copy/RGB captures and signed submission files"
+  ],
+  "actionsNotPerformed": [
+    "paid enrollment or plan change",
+    "actual charge",
+    "server/page deployment or store registration/publication",
+    "real-user deletion",
+    "commit/push"
+  ],
+  "historicalOnly": true,
+  "supersededBy": "FOLLOWUP-LOCAL-CHECKS.json",
+  "note": "Original 2026-10-29 results retained; not a current source assertion after lifecycle fixes."
+}

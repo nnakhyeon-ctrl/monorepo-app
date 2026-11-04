@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-30",
+  "status": "LOCAL_FOLLOWUP_EVIDENCE_RECONCILED_NOT_FINAL_OR_SUBMISSION_READY",
+  "sourceFingerprint": "e5bc9a0b6e979d2d82ed5a1acb5a01ce7085ccba0131b22eb9a8d1fb55a2b53c",
+  "sourceScope": "lib/assets/pubspec/Android app manifest+Gradle/iOS Info only, not a committed provenance assertion",
+  "currentBuildsMatchSource": true,
+  "artifactAndPngHashesChecked": 49,
+  "markdownLocalLinksChecked": 172,
+  "runtimeAssets": 27,
+  "actualCaptures": 20,
+  "retainedTests": {
+    "affectedFlutter": 64,
+    "fullAnalysis": "No issues found (35.5s); targeted followup/tool analysis also passed",
+    "nativeFlow": "initial run one passed/one lab harness failure; full stage 273.483s and retry passed",
+    "nativeLab": "corrected lazy-scroll harness, isolated lab rerun one passed, all 12 checked",
+    "server": "unchanged; previous 21 unit/43 demo history retained, not rerun"
+  },
+  "startup": {
+    "status": "LIMITED_STARTUP_CHECK_PASS",
+    "coldStarts": [
+      8239,
+      5083,
+      3627
+    ],
+    "warmWaitMs": 10,
+    "previousHistoricalCause": "UNDETERMINED",
+    "physicalPerformance": "NOT_RUN"
+  },
+  "security": {
+    "moderate": 5,
+    "production": 0,
+    "safeCompatibleDryRunChanges": 0,
+    "unresolved": true
+  },
+  "billing": {
+    "purchaseLocked": true,
+    "missingIds": 7,
+    "missingPublicUrls": 4,
+    "liveVerification": "NOT_RUN"
+  },
+  "release": {
+    "status": "STATIC_CHECKS_PASS_SUBMISSION_BLOCKED",
+    "signature": "UNSIGNED_NOT_INSTALLABLE_OR_SUBMITTABLE",
+    "runtimeOfUnsignedApk": "NOT_RUN"
+  },
+  "pending": [
+    "real auth/server/store/notifications",
+    "public deletion website",
+    "Apple/iOS and physical devices",
+    "profile/release long-session performance and balance",
+    "five development security warnings",
+    "new store icon/native splash/RGB captures/copy/policies and signed AAB/IPA"
+  ],
+  "noPaidActionsOrDeployOrRealUserDeletionOrCommit": true,
+  "historicalOnly": true,
+  "supersededBy": "docs/tailwing/design-pass-01/LOCAL-CHECKS.json"
+}

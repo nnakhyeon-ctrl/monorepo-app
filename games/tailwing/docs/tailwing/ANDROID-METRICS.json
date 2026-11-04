@@ -1,0 +1,25 @@
+{
+  "scope": "DEBUG_EMULATOR_SYNTHETIC_NOT_REAL_SERVER_STORE_OR_DEVICE",
+  "pilots": 12,
+  "decodedBytes": 7084032,
+  "loadMilliseconds": {
+    "rabbit": 75,
+    "fox": 96,
+    "bear": 128,
+    "turtle": 40,
+    "otter": 85,
+    "owl": 65,
+    "squirrel": 69,
+    "hedgehog": 78,
+    "penguin": 29,
+    "frog": 80,
+    "eagle": 65,
+    "volt": 90
+  },
+  "elapsedMilliseconds": 128280,
+  "frames": 740,
+  "buildP95ms": 109.173,
+  "rasterP95ms": 55.268,
+  "expiry": "deterministic_model_steps_after_native_UI_activation",
+  "recordsSettled": 0
+}

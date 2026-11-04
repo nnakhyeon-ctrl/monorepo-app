@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-30",
+  "method": "built-in imagegen; project-owned references; originals retained",
+  "jobs": [
+    {
+      "species": "rabbit",
+      "kind": "ship",
+      "refs": [
+        "docs/tailwing/design-pass-01/rabbit-portrait-draft.png",
+        "assets/tailwing/rabbit_ship.png"
+      ],
+      "prompt": "Create a replacement actual GAMEPLAY SPRITE for original TAILWING rabbit. Image1 pilot identity reference; image2 old gameplay craft orientation reference, redesign its surfaces. STRICT nearly orthographic TOP VIEW, craft nose exactly UP toward top edge, twin engine nozzles and short cyan thrust exactly DOWN toward bottom edge; pilot seated near rear center FACING UP, hands forward on round digital controls, viewed from above/back, NOT a front-facing portrait. Cream/mint plump rabbit with one upright ear and one bent ear and mint ear communication module, cream/mint padded flight suit as image1. Compact rounded substantial cute futuristic spacecraft, cream/mint rounded wings, small ear-shaped comm fins, restrained glowing lavender/teal panels, inset energy core and compact twin thrust pods. Crisp polished clean high resolution cartoon, rich volume, no realistic fur or noise. One isolated aircraft AND seated pilot unified, square sprite centered with 8% transparent margins, symmetry and readable 64px silhouette, no scenery/shadow plane/text/logo/watermark. True transparent background. Do not copy external games. Nose-up orientation is essential.",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-f044b2e5-17c3-47ee-9c11-76e27da4a615.png",
+      "appliedToRuntime": true,
+      "runtimePath": "assets/tailwing/rabbit_ship_v2.png"
+    },
+    {
+      "species": "turtle",
+      "kind": "ship",
+      "refs": [
+        "docs/tailwing/design-pass-01/turtle-portrait-draft.png",
+        "assets/tailwing/turtle_ship.png"
+      ],
+      "prompt": "Create replacement actual GAMEPLAY SPRITE for original TAILWING turtle. Image1 pilot identity; image2 old TOP VIEW orientation/footprint reference. STRICT nearly orthographic TOP VIEW, craft nose points exactly UP, engine nozzles and short cyan thrust exactly DOWN. Small stout friendly sage/cream turtle seated FACING UP with hands forward at digital controls, head visible from back/top, rounded segmented teal shell on rear of pilot; navy/teal padded suit, tiny side propulsion pods consistent with image1. Ship is wide low rounded navy/teal shell-shaped hover fighter, domed softly rounded hexagonal teal energy plates, curved leading shield rim, small side thrusters and twin rear nozzles. Strong chunky original silhouette distinct from rabbit's wings. Pilot and craft face same direction, natural seating, no standing body or backwards pilot. Clean crisp polished bright SF cartoon, rich readable shading, restrained glow, no scale noise. One isolated mounted craft centered square 8% clear margin. Truly transparent background, no text/logos/watermark/scenery. Designed readable at64px.",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-7f0a7396-c51e-458f-b725-3c3af9ec8675.png",
+      "appliedToRuntime": true,
+      "runtimePath": "assets/tailwing/turtle_ship_v2.png"
+    },
+    {
+      "species": "rabbit",
+      "kind": "hero",
+      "refs": [
+        "docs/tailwing/design-pass-01/rabbit-portrait-draft.png",
+        "assets/tailwing/rabbit_hero.png"
+      ],
+      "prompt": "Original TAILWING HOME HERO illustration. Image1 is exact new rabbit pilot identity, image2 is old mounted ship composition reference only. Show playful plump cream rabbit with round rosy cheeks, big lively eyes, one upright and one folded ear, mint ear comm module, cream/mint padded flight suit, seated naturally INSIDE matching small rounded cream/mint futuristic fighter. Pilot faces same direction as nose, hands on digital controls and visible upper torso. Three-quarter FRONT-SIDE overhead camera with ship nose toward lower-left, twin engines at upper-right. Whole vehicle fully visible with short teal thrust, soft thick wings, small ear-shaped comm fins, cyan energy core and lavender light panels. Bright premium toy-cartoon with rich volume/crisp clean silhouette, not fuzzy realistic fur. Charming confident playful smile; no goggles/scarf. One unified character/craft, wide-ish square composition with12% transparent margins, no objects outside ship. Actual transparent background. No scenery/text/logo/watermark/borrowed costume. Do not put pilot floating in front or facing away from nose.",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-a2b9d346-8f70-4849-a7be-f1448df4d03a.png",
+      "appliedToRuntime": true,
+      "runtimePath": "assets/tailwing/rabbit_hero_v2.png"
+    },
+    {
+      "species": "turtle",
+      "kind": "hero",
+      "refs": [
+        "docs/tailwing/design-pass-01/turtle-portrait-draft.png",
+        "assets/tailwing/turtle_ship.png"
+      ],
+      "prompt": "Original TAILWING HOME HERO illustration. Image1 turtle pilot exact identity reference; image2 original ship silhouette reference. Cute dependable stout sage/cream turtle in navy/teal padded flight suit, big kind eyes/round cheeks/confident joyful grin, rounded segmented teal shell and tiny propulsion pods. Seated naturally INSIDE a compact broad rounded shell-shaped navy/teal futuristic fighter, hands on luminous digital controls, upper torso visible. Three-quarter FRONT-SIDE overhead camera, nose toward lower-left, twin rear nozzles toward upper-right, turtle looking forward along nose. Rounded hexagonal teal energy plates on craft's soft domed outer wings, glowing inset teal panels and a curved leading energy-shield rim, modest short blue thrust. Whole substantial craft and pilot as one team, clear distinct shell silhouette unlike winged rabbit. Polished bright toy-cartoon, crisp edges, rich smooth shading, no reptile realism. Center square with12% transparent margins. True transparent background, no scenery/text/logos/watermark/borrowed design. No backwards or floating pilot.",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-a43f1dfe-5ebe-43e6-ac38-293c1d29e41b.png",
+      "appliedToRuntime": true,
+      "runtimePath": "assets/tailwing/turtle_hero_v2.png"
+    }
+  ],
+  "initialStatus": "GENERATED_FOR_DESIGN_PASS",
+  "status": "APPLIED_TO_RUNTIME_LOCAL_VERIFIED_NOT_LIVE_OR_PHYSICAL",
+  "resumedDate": "2026-10-30",
+  "remainingImages": []
+}

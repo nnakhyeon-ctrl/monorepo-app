@@ -1,0 +1,67 @@
+[
+  {
+    "mode": "preview",
+    "date": "2026-10-29",
+    "path": "build/tailwing-preview/tailwing-preview-debug.apk",
+    "bytes": 243168868,
+    "sha256": "d84ef52ca8e05d7c122a8f807f227a3e5ae8e9de4e95a8512a21d26a2ce663c5",
+    "appId": "com.example.raikeopeu2026.dev.integration",
+    "version": "0.1.0+1",
+    "status": "DEBUG_ONLY_ISOLATED_INTERACTIVE_PREVIEW_NOT_SUBMISSION_FILE",
+    "sourceFingerprint": "3500237b67ffe30c9ab1eadd9113accc7ad49472fa48e9323fadbbb17669a52f",
+    "sourceFiles": 98,
+    "sourceScope": "lib/assets/pubspec/Android app manifest+Gradle/iOS Info only, not a committed provenance assertion",
+    "purchaseConfigurationInjected": false,
+    "serverOrStoreDeployment": false,
+    "nativeSmoke": {
+      "date": "2026-10-29",
+      "device": "owned API37 Android emulator, not physical",
+      "install": "adb install -r Success; isolated integration ID only",
+      "initialLaunch": "Status ok COLD, 12160ms; PID initially returned, absent at later check; cause not established",
+      "retryLaunch": "one launch timeout, process present across two later checks, warm launch ok",
+      "processAliveBeforeVmStop": true,
+      "scope": "launch smoke only, not stability or performance pass; all 12 species/cards tested in separate integration runs",
+      "normalAppModified": false
+    },
+    "superseded": true
+  },
+  {
+    "mode": "release-inspection",
+    "date": "2026-10-29",
+    "path": "build/tailwing-preview/tailwing-inspection-unsigned.apk",
+    "bytes": 88678439,
+    "sha256": "42431bb323bca13392090c2c5bf2db31dcc598511a8006f3c439ade759b9fb7f",
+    "appId": "com.example.raikeopeu2026.dev",
+    "version": "0.1.0+1",
+    "status": "UNSIGNED_INSPECTION_ONLY_NOT_INSTALLABLE_OR_SUBMITTABLE",
+    "sourceFingerprint": "6a4f39e4e57f7907bb42302f83f72961ac2aaea2f0a82662c015ed65fa278b38",
+    "sourceFiles": 98,
+    "sourceScope": "lib/assets/pubspec/Android app manifest+Gradle/iOS Info only, not a committed provenance assertion",
+    "purchaseConfigurationInjected": false,
+    "serverOrStoreDeployment": false,
+    "superseded": true
+  },
+  {
+    "mode": "preview",
+    "date": "2026-10-30",
+    "path": "build/tailwing-preview/tailwing-preview-debug.apk",
+    "bytes": 243168274,
+    "sha256": "ae0a1ac6a26c9c0ddd3a3a7325fbf33aa199a5a3f4b8c15d5d75eb5dce3e423e",
+    "appId": "com.example.raikeopeu2026.dev.integration",
+    "version": "0.1.0+1",
+    "status": "DEBUG_ONLY_ISOLATED_INTERACTIVE_PREVIEW_NOT_SUBMISSION_FILE",
+    "sourceFingerprint": "e5bc9a0b6e979d2d82ed5a1acb5a01ce7085ccba0131b22eb9a8d1fb55a2b53c",
+    "sourceFiles": 98,
+    "sourceScope": "lib/assets/pubspec/Android app manifest+Gradle/iOS Info only, not a committed provenance assertion",
+    "purchaseConfigurationInjected": false,
+    "serverOrStoreDeployment": false,
+    "nativeSmoke": {
+      "date": "2026-10-30",
+      "report": "docs/tailwing/STARTUP-CHECK.json",
+      "sha256": "ae0a1ac6a26c9c0ddd3a3a7325fbf33aa199a5a3f4b8c15d5d75eb5dce3e423e",
+      "status": "LIMITED_STARTUP_CHECK_PASS",
+      "scope": "OWNED_DEBUG_EMULATOR_STARTUP_ONLY_NOT_REAL_DEVICE_OR_PERFORMANCE_PASS"
+    },
+    "superseded": true
+  }
+]

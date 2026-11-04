@@ -1,0 +1,235 @@
+{
+  "date": "2026-10-29",
+  "method": "built-in imagegen",
+  "reference": "No attached commercial image used as a generation input",
+  "jobs": [
+    {
+      "species": "rabbit",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-fa02e638-e704-4f3f-b89d-19ef4f690699.png",
+      "prompt": "Use-case: stylized-concept. ORIGINAL TAILWING mobile game asset. Contemporary compact art-toy 2.5D cartoon: large clean shape design, small simple bean eyes and tiny expressive mouth, smooth matte vinyl/felt surfaces, bold readable silhouette, short limbs and compact body, playful confident personality. NO realistic fur strands, NO lifelike eyes, NO goggles, scarf, helmet, pirate/skull, text, watermark, logo, flags, borders, scenery, glow background or floor shadow. Entire subject centered with generous 14 percent TRANSPARENT margins on a genuinely transparent background. No existing game or character image is an input. ONE full-body rabbit pilot, ivory plush body, one long ear upright and the other folded sideways, mint patchwork short vest with oversized square stitching, simple cream tunic, one round mint thread spool in paw, triangular bronze sewing pin on pocket. A curious head tilt and leaning stance, unique friendly simplified face. Neutral clean studio lighting. Character only, NOT a sprite sheet or a scene."
+    },
+    {
+      "species": "rabbit",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-16c6d832-964c-437a-8ff0-33bdff40a0af.png",
+      "prompt": "Use-case: stylized-concept. ONE original TAILWING mobile shooter top-down sprite. CUTE FUTURISTIC TOY hover-aircraft, compact wide rounded capsule body and short soft crescent side fins, large friendly round cockpit, chunky smooth white ceramic with mint blocks, little violet digital windows, clean cyan luminous seams and two small rear hover thrusters. All corners soft and rounded. NO long pointed fighter nose, NO razor wings, NO realistic military jet, NO metallic claws, NO old propellers, NO steampunk. An ivory plush rabbit pilot with one upright and one folded ear sits naturally INSIDE the cockpit; nose of craft and pilot both face the TOP edge. Camera STRICTLY overhead sees rabbit BACK OF HEAD and ears, not a face looking backwards; paws reach toward the dashboard at top, seated bottom half hidden. Exhaust points DOWN. Matte art-toy 2.5D cartoon, simple readable playful silhouette and crisp small scale detail. Whole craft fits centered in square with at least 15% EMPTY margins on every side. Truly transparent background, no text, logo, UI, scenery, drop shadow, glow backdrop, watermark or other objects. Independently designed, no famous game characters or recognizable game craft."
+    },
+    {
+      "species": "fox",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-3b7ed441-fe4a-40d8-bfd4-8abc5e209194.png",
+      "prompt": "Use-case: stylized-concept. ORIGINAL TAILWING mobile game asset. Contemporary compact art-toy 2.5D cartoon: large clean shape design, small simple bean eyes and tiny expressive mouth, smooth matte vinyl/felt surfaces, bold readable silhouette, short limbs and compact body, playful confident personality. NO realistic fur strands, NO lifelike eyes, NO goggles, scarf, helmet, pirate/skull, text, watermark, logo, flags, borders, scenery, glow background or floor shadow. Entire subject centered with generous 14 percent TRANSPARENT margins on a genuinely transparent background. No existing game or character image is an input. ONE full-body animal pilot only. A compact russet FOX with narrow angular cheeks and cream muzzle, very large triangular ears, long sweeping tail, short violet asymmetric jacket and a triangular optical prism ruler, clever small bean eyes, seated relaxed on haunches. No goggles or scarf."
+    },
+    {
+      "species": "fox",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-2d326705-8368-4939-93d3-c4024e788738.png",
+      "prompt": "Use-case: stylized-concept. ONE ORIGINAL TAILWING CUTE FUTURISTIC art-toy hover vehicle with seated animal pilot. Strict TOP-DOWN orthographic game sprite, blunt nose faces TOP (12 o'clock), exhaust/rear points DOWN (6 o'clock). Rider faces the SAME TOP direction, we see BACK OF HEAD, no face looking backwards; paws toward dashboard in front. A violet and pearl FOX prism flying sports-car, short wedge body with rounded nose, three compact triangular folding side panels, glowing lavender digital edges and twin mint repulsor pods at rear. Russet fox sits inside cockpit, triangular ears and BACK of head facing UP, tail tucked inside. Soft rounded clean ceramic forms, high definition simple playful silhouette, no long sharp fighter nose, no old propellers, no leather/steampunk. A single complete craft fits centered in square with 15% transparent margin, genuinely transparent background. No text/logos/goggles/scarf/UI/scenery/drop shadow, no reference-game components."
+    },
+    {
+      "species": "turtle",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-898e48ac-268e-4c0f-a945-4329e47ee25e.png",
+      "prompt": "Use-case: stylized-concept. ORIGINAL TAILWING mobile game asset. Contemporary compact art-toy 2.5D cartoon: large clean shape design, small simple bean eyes and tiny expressive mouth, smooth matte vinyl/felt surfaces, bold readable silhouette, short limbs and compact body, playful confident personality. NO realistic fur strands, NO lifelike eyes, NO goggles, scarf, helmet, pirate/skull, text, watermark, logo, flags, borders, scenery, glow background or floor shadow. Entire subject centered with generous 14 percent TRANSPARENT margins on a genuinely transparent background. No existing game or character image is an input. ONE full-body animal pilot only. A low broad sage-green TURTLE, tiny rounded snout and wide gentle grin, geometric navy utility vest revealing a faceted pale teal hexagonal shell, holding a folding deck ruler, deliberate leaning pose and small rounded feet."
+    },
+    {
+      "species": "turtle",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-133f9387-879a-4477-a5ba-f9c5c6ff3eee.png",
+      "prompt": "Use-case: stylized-concept. ONE ORIGINAL TAILWING CUTE FUTURISTIC art-toy hover vehicle with seated animal pilot. Strict TOP-DOWN orthographic game sprite, short rounded NOSE faces TOP, rear exhaust DOWN. Pilot faces SAME TOP, camera sees BACK OF HEAD, NO eyes/face looking backwards, paws reach front digital console. A short wide hexagonal navy-and-teal TURTLE hover armored car, rounded front deck divided into five luminous shield plates, chunky side hover pads, little silver rear engine vents. A sage turtle sits INSIDE the central open cockpit, BACK of head and shell visible facing UP, paws on front dashboard. Soft smooth matte ceramic, compact wide friendly silhouette, colorful digital panel inlays and clear cyan energy seams, no sharp military aircraft/old propellers/steampunk. Whole subject within15% transparent margin every side, square layout. Truly transparent background. No text/logo/UI/goggles/scarf/scenery/shadow, no reference-game assets."
+    },
+    {
+      "species": "owl",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-b1c16986-4d98-4da5-b9fe-aaa8ce81133e.png",
+      "prompt": "Use-case: stylized-concept. ORIGINAL TAILWING mobile game asset. Contemporary compact art-toy 2.5D cartoon: large clean shape design, small simple bean eyes and tiny expressive mouth, smooth matte vinyl/felt surfaces, bold readable silhouette, short limbs and compact body, playful confident personality. NO realistic fur strands, NO lifelike eyes, NO goggles, scarf, helmet, pirate/skull, text, watermark, logo, flags, borders, scenery, glow background or floor shadow. Entire subject centered with generous 14 percent TRANSPARENT margins on a genuinely transparent background. No existing game or character image is an input. ONE full-body animal pilot only. A compact rounded OWL with broad eyebrow feather tufts, warm grey and cream feather blocks, small plum bean eyes, navy asymmetrical starmap cape without collar/scarf, tiny astrolabe held between two wing hands, poised attentive upright posture."
+    },
+    {
+      "species": "owl",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-bb89e479-4650-4522-8fe6-e7d03326b6cc.png",
+      "prompt": "Use-case: stylized-concept. ONE ORIGINAL TAILWING CUTE FUTURISTIC art-toy hover vehicle with seated animal pilot. Strict TOP-DOWN orthographic game sprite, short rounded nose faces TOP, rear exhaust DOWN. Pilot faces SAME TOP, camera sees BACK OF HEAD, NO face looking backwards, paws toward front console. A navy and lavender OWL constellation glider, rounded fan-shaped folding wings with three star-like digital nodes each, short oval center fuselage, two quiet ring thrusters at rear. Grey owl seated INSIDE cockpit, BACK of rounded head and feather tufts facing UP toward digital console. Soft matte ceramic, playful compact silhouette, vivid controlled digital panels and cyan energy seams. No sharp military jet, old propellers or steampunk. Full vehicle centered in square,15% transparent margins. Truly transparent background. No text, logo, UI, goggles/scarf, scenery/drop shadow or reference-game parts."
+    },
+    {
+      "species": "squirrel",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-aae6dacd-c50b-4dd4-9c46-391a2822aeec.png",
+      "prompt": "Use-case: stylized-concept. ORIGINAL TAILWING mobile game asset. Contemporary compact art-toy 2.5D cartoon: large clean shape design, small simple bean eyes and tiny expressive mouth, smooth matte vinyl/felt surfaces, bold readable silhouette, short limbs and compact body, playful confident personality. NO realistic fur strands, NO lifelike eyes, NO goggles, scarf, helmet, pirate/skull, text, watermark, logo, flags, borders, scenery, glow background or floor shadow. Entire subject centered with generous 14 percent TRANSPARENT margins on a genuinely transparent background. No existing game or character image is an input. Full-body character only. One friendly compact chestnut squirrel explorer with an enormous curled tail, simple oval brown eyes, cream muzzle, green short overalls and a little seed container held in both hands. Standing on small feet, soft matte felt-toy finish, uncomplicated charming silhouette."
+    },
+    {
+      "species": "squirrel",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-c6eed591-0809-4608-a20e-82472493bc05.png",
+      "prompt": "Use-case: stylized-concept. One original cute futuristic toy vehicle and naturally seated animal for TAILWING. Exact overhead top view, blunt rounded nose toward TOP and exhaust toward BOTTOM. Rider looks forward TOP: camera sees BACK of head, hands ahead on digital dashboard, no face looking back. Acorn-shaped green hover buggy with four rounded hover pads and seed dispensers in rear; chestnut squirrel rider, curled tail tucked behind seat. Smooth matte ceramic with crisp mint digital panel seams, chunky compact friendly silhouette, no sharp military wings, no old engines. Whole vehicle inside square with15% clear transparent margins. Truly transparent background, no words/logos/goggles/scarf/UI/scenery/shadow. Original design, no reference image inputs."
+    },
+    {
+      "species": "hedgehog",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-bbef983c-b729-46cf-88b9-a317629eccdc.png",
+      "prompt": "Use-case: stylized-concept. ORIGINAL TAILWING mobile game asset. Contemporary compact art-toy 2.5D cartoon: large clean shape design, small simple bean eyes and tiny expressive mouth, smooth matte vinyl/felt surfaces, bold readable silhouette, short limbs and compact body, playful confident personality. NO realistic fur strands, NO lifelike eyes, NO goggles, scarf, helmet, pirate/skull, text, watermark, logo, flags, borders, scenery, glow background or floor shadow. Entire subject centered with generous 14 percent TRANSPARENT margins on a genuinely transparent background. No existing game or character image is an input. Full-body character only. One compact round hedgehog mechanic, tiny cream face and small dark oval eyes, soft cocoa teardrop spikes forming a flower fan behind head, short orange work jacket, holding a flower-shaped wrench, shy joyful pose and short feet."
+    },
+    {
+      "species": "hedgehog",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-06c07277-446a-4982-a2ea-2e07a7dc7c61.png",
+      "prompt": "Use-case: stylized-concept. One original cute futuristic toy vehicle and naturally seated animal for TAILWING. Exact overhead top view, blunt rounded nose toward TOP and exhaust toward BOTTOM. Rider looks forward TOP: camera sees BACK of head, hands ahead on digital dashboard, no face looking back. Round orange and pearl flower-wheel hover craft with six short petal fins and tiny violet rear boosters; cream-faced hedgehog rider with soft spikes behind head. Smooth matte ceramic with crisp mint digital panel seams, chunky compact friendly silhouette, no sharp military wings, no old engines. Whole vehicle inside square with15% clear transparent margins. Truly transparent background, no words/logos/goggles/scarf/UI/scenery/shadow. Original design, no reference image inputs."
+    },
+    {
+      "species": "penguin",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-7b38ede8-1640-4414-a063-c01a5445e2b8.png",
+      "prompt": "Use-case: stylized-concept. ORIGINAL TAILWING mobile game asset. Contemporary compact art-toy 2.5D cartoon: large clean shape design, small simple bean eyes and tiny expressive mouth, smooth matte vinyl/felt surfaces, bold readable silhouette, short limbs and compact body, playful confident personality. NO realistic fur strands, NO lifelike eyes, NO goggles, scarf, helmet, pirate/skull, text, watermark, logo, flags, borders, scenery, glow background or floor shadow. Entire subject centered with generous 14 percent TRANSPARENT margins on a genuinely transparent background. No existing game or character image is an input. Full-body character only. A small upright pear-shaped navy PENGUIN, cream belly, short flipper hands, pale ice-blue instrument vest with three round buttons and tiny cooling flask, neatly splayed web feet, joyful head tilt and tiny orange beak."
+    },
+    {
+      "species": "penguin",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-45fcb7cb-3d07-4087-bda4-c49e675bed09.png",
+      "prompt": "Use-case: stylized-concept. One original TAILWING cute futuristic art-toy flying vehicle and naturally seated animal. Strict orthographic TOP DOWN, short rounded nose TOP, rear exhaust BOTTOM. Rider faces TOP with BACK of head to viewer, paws ahead at dashboard. A short pearl-and-ice-blue penguin snow hover plane, broad soft ski-shaped fins, navy oval cockpit, rear cooling tubes and aqua digital frost panels. Penguin seated inside with back of navy head toward TOP, paws on console. Smooth matte ceramic with colorful clean digital panel lines, playful compact silhouette. Complete subject centered inside square with15% transparent margins, genuinely transparent background. No old propellers/military jet/steampunk, no text/logo/UI/goggles/scarf/scenery/drop shadow. No reference image inputs."
+    },
+    {
+      "species": "frog",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-928005b0-d956-4071-9c51-e3efa236cdc7.png",
+      "prompt": "Use-case: stylized-concept. ORIGINAL TAILWING mobile game asset. Contemporary compact art-toy 2.5D cartoon: large clean shape design, small simple bean eyes and tiny expressive mouth, smooth matte vinyl/felt surfaces, bold readable silhouette, short limbs and compact body, playful confident personality. NO realistic fur strands, NO lifelike eyes, NO goggles, scarf, helmet, pirate/skull, text, watermark, logo, flags, borders, scenery, glow background or floor shadow. Entire subject centered with generous 14 percent TRANSPARENT margins on a genuinely transparent background. No existing game or character image is an input. Full body character only. One adorable squat mint-green FROG with two rounded eye bumps and simple dark bean pupils, wide soft smile, cream chin, small webbed hands and feet, plum waterdrop utility vest and a little round mirror panel held in one hand, playful crouching pose. No tail, no lizard traits."
+    },
+    {
+      "species": "frog",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-d389478f-f141-477f-9554-69849d0d3d48.png",
+      "prompt": "Use-case: stylized-concept. One ORIGINAL TAILWING cute FUTURISTIC matte art-toy flying vehicle with seated animal pilot. Strict orthographic overhead TOP VIEW, rounded blunt nose TOP, rear and short exhaust BOTTOM. Rider faces SAME TOP direction, back of head visible, hands forward on digital console. A mint-green and plum FROG water-lily hover car with round lily-pad side float disks, clear digital mirror panels and tiny aqua rear thrusters; frog sits naturally in center cockpit facing TOP, camera sees BACK of smooth green head and forward-facing eye bumps, no backward face. Smooth ceramic toy shapes, colorful futuristic digital inlays, clean compact friendly silhouette; no sharp military fighter or old propellers. Complete centered subject in square with15% transparent margins. Genuinely transparent background. No text/logo/UI/goggles/scarf/scenery/shadow/reference-game parts."
+    },
+    {
+      "species": "eagle",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-c0298a3b-9806-4848-831a-9a771af40c01.png",
+      "prompt": "Use-case: stylized-concept. ORIGINAL TAILWING mobile game asset. Contemporary compact art-toy 2.5D cartoon: large clean shape design, small simple bean eyes and tiny expressive mouth, smooth matte vinyl/felt surfaces, bold readable silhouette, short limbs and compact body, playful confident personality. NO realistic fur strands, NO lifelike eyes, NO goggles, scarf, helmet, pirate/skull, text, watermark, logo, flags, borders, scenery, glow background or floor shadow. Entire subject centered with generous 14 percent TRANSPARENT margins on a genuinely transparent background. No existing game or character image is an input. Full body character only. One compact cute EAGLE with a cream rounded head, tiny soft curved golden beak, warm brown wing-hands, navy short flight vest with luminous teal trim, holding a folded feather-shaped navigation fan, proud but friendly stance with small feet. No realistic predator expression."
+    },
+    {
+      "species": "eagle",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-d0799e47-177c-4de5-a716-b3adb859b904.png",
+      "prompt": "Use-case: stylized-concept. One ORIGINAL TAILWING cute FUTURISTIC matte art-toy flying vehicle with seated animal pilot. Strict orthographic overhead TOP VIEW, rounded blunt nose TOP, rear and short exhaust BOTTOM. Rider faces SAME TOP direction, back of head visible, hands forward on digital console. A cream and navy EAGLE feather fan hover aircraft, compact round center cockpit, two broad short scalloped winglets with vivid teal digital stripes, two small rear thrusters; eagle pilot sits inside facing TOP, camera sees BACK of cream head, beak points away toward top dashboard. Smooth ceramic toy shapes, colorful futuristic digital inlays, clean compact friendly silhouette; no sharp military fighter or old propellers. Complete centered subject in square with15% transparent margins. Genuinely transparent background. No text/logo/UI/goggles/scarf/scenery/shadow/reference-game parts."
+    },
+    {
+      "species": "volt",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-39a4634a-3e0e-4d9f-8ad9-25ed5478ef25.png",
+      "prompt": "Use-case: stylized-concept. ORIGINAL TAILWING mobile game asset. Contemporary compact art-toy 2.5D cartoon: large clean shape design, small simple bean eyes and tiny expressive mouth, smooth matte vinyl/felt surfaces, bold readable silhouette, short limbs and compact body, playful confident personality. NO realistic fur strands, NO lifelike eyes, NO goggles, scarf, helmet, pirate/skull, text, watermark, logo, flags, borders, scenery, glow background or floor shadow. Entire subject centered with generous 14 percent TRANSPARENT margins on a genuinely transparent background. No existing game or character image is an input. ONE original electric SHREW animal character, NOT any famous mascot. Compact lavender pear body, very small ROUND ears, long rounded cream snout, smooth curled pearlescent tail (not zigzag), tiny dark oval eyes, violet short electronic work vest with two circular coil buttons, little mint capacitor held in paws. Playful crouching pose. No yellow body, no red cheeks, no black ear tips, no lightning-shaped tail or costume references."
+    },
+    {
+      "species": "volt",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-eaaba4df-8172-49ea-9807-2f0e42b94de7.png",
+      "prompt": "Use-case: stylized-concept. One original TAILWING cute futuristic electric SHREW hover-car, lavender and cream rounded capsule with two side coil rings, tiny rear cyan thrusters and clean violet digital inlays. A lavender shrew with small round ears and long rounded snout sits naturally inside cockpit facing TOP. Strict orthographic top-down game sprite, nose TOP/rear BOTTOM, back of head visible, paws toward front console, no backward face. Smooth matte art-toy ceramic, compact round friendly silhouette, complete vehicle centered with15% transparent square margins. No yellow/red cheeks/black ear tips/zigzag tail, no famous character references, no text/UI/goggles/scarf/scenery/shadow. Truly transparent background."
+    },
+    {
+      "species": "bear",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-7302a599-8995-4442-a269-3c5aed63982c.png",
+      "prompt": "Edit this OWN original TAILWING bear asset. Keep exactly the same cute rounded brown bear face, proportions, pose, battery pouch and yellow/navy palette, same matte toy rendering and transparent background. Change outfit to an original FUTURISTIC PIRATE EXPLORER: small soft rounded navy captain cap with a simple aqua wave badge, short navy open coat with gold piping over mustard utility bib, one little digital compass clasp. No goggles, scarf, skulls, eyepatch, famous pirate costume or copied character. Friendly gentle captain, whole body kept in frame and transparent margins.",
+      "reference": "C:\\Users\\user\\Desktop\\App\\monorepo\\games\\tailwing\\assets\\tailwing\\bear_portrait.png",
+      "revision": "Original own asset outfit edit requested by user: futuristic pirate"
+    },
+    {
+      "species": "bear",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-26e37d48-7e9a-4779-8ccc-cd902a142722.png",
+      "prompt": "Edit this OWN original TAILWING top-down bear hover shuttle. Preserve vehicle silhouette, yellow/navy digital collection ducts, strict top-down direction nose UP/rear DOWN, bear naturally facing UP, back of head visible, no backwards face. Add a small soft navy pirate explorer captain cap on bear head seen from ABOVE/BACK and navy coat at shoulders; tiny abstract aqua wave emblem on hull. Cute futuristic digital pirate flavor, not wooden ship, no skull/goggles/scarf/text/logo. Preserve genuinely transparent background and full craft/margins.",
+      "reference": "C:\\Users\\user\\Desktop\\App\\monorepo\\games\\tailwing\\assets\\tailwing\\bear_ship.png",
+      "revision": "Original own asset outfit edit requested by user: futuristic pirate"
+    },
+    {
+      "species": "otter",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-31620f5a-1413-4d00-94ca-5873aafe2aed.png",
+      "prompt": "Edit this OWN original cute TAILWING otter. Preserve identical face, long body/tail, happy waving pose and blue bubble canister. Add original futuristic pirate explorer styling: small rounded coral/navy navigator cap tilted slightly, short sky-blue captain jacket with cream trim, little geometric sail badge and luminous aqua cuff. No skull, eyepatch, goggles, scarf or famous character costume. Same soft matte toy rendering, entire body and genuinely transparent background.",
+      "reference": "C:\\Users\\user\\Desktop\\App\\monorepo\\games\\tailwing\\assets\\tailwing\\otter_portrait.png",
+      "revision": "Original own asset future pirate outfit edit"
+    },
+    {
+      "species": "otter",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-d79d99fd-6756-47c2-9da7-2cb639dbebea.png",
+      "prompt": "Edit this OWN original TAILWING otter bubble hover craft. Preserve craft silhouette and digital bubble side thrusters, top-down direction nose UP/rear DOWN and seated otter facing UP (back of head visible). Add the same small coral/navy pirate navigator cap seen from above/back and a sky-blue captain jacket at shoulders. Add a tiny abstract sail symbol on side pod. Cute bright futuristic SF explorer, no wooden boat, no skull/goggles/scarf/text/logo. Keep full craft inside transparent margins and genuine transparency.",
+      "reference": "C:\\Users\\user\\Desktop\\App\\monorepo\\games\\tailwing\\assets\\tailwing\\otter_ship.png",
+      "revision": "Original own asset future pirate outfit edit"
+    },
+    {
+      "species": "rabbit",
+      "kind": "hero",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-0c63a747-6345-43f2-9a3d-ef814a40606f.png",
+      "prompt": "Use-case: stylized-concept. ONE original TAILWING home hero illustration: a small ivory plush rabbit with one upright ear and one folded ear joyfully PILOTING a cute rounded cream-and-mint hover fighter, soft short crescent wings with ear-shaped antennae, violet digital windows, little twin aqua thrusters. A natural FRONT THREE QUARTER view with craft nose pointing diagonally toward lower left and rabbit body seated in same forward direction; cute face visible in open cockpit, paws naturally on controls ahead. Both pilot and craft are one coherent unit, never facing opposite directions. Contemporary colorful matte art-toy 2.5D, rich soft shading, bright mint/sky-blue/cream/lavender accents, clean dynamic cheerful silhouette. Entire aircraft and rabbit within15% margins. Landscape3:2, genuinely transparent background. No goggles/scarf, text/logo/UI/scenery/shadow or any reference-game costume/craft."
+    },
+    {
+      "species": "world",
+      "kind": "background",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-6ec75df9-b25e-4ac0-85d4-6182a1f14898.png",
+      "prompt": "Use-case: stylized-concept. Original TAILWING cute bright futuristic SF mobile game BACKGROUND texture only. Strict straight-down aerial view of a peaceful floating coastal garden district: rounded cream research terraces on small mint green islands, shallow turquoise canals, coral and lilac digital light routes, a few small soft cloud wisps, tiny rounded futuristic landing pads, broad open blue water in center-right for readable combat. Clean high resolution 2.5D cartoon with smooth matte surfaces, rich soft ambient shading and lower contrast than foreground craft. NO perspective horizon, NO characters, vehicles, enemies, bullets, explosions, UI, signs, writing, logos or watermark. Landscape3:2 fully opaque seamless-friendly background, evenly textured top and bottom, not a screenshot, not an existing game's layout."
+    },
+    {
+      "species": "world",
+      "kind": "enemies",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-568a9d25-122c-4484-89d1-169a03604d83.png",
+      "prompt": "Use-case: stylized-concept. ONE production sprite ATLAS for an ORIGINAL cute bright futuristic SF mobile shooter called TAILWING. A perfectly regular 2x2 grid of FOUR distinct enemy drone vehicles, each centered within its own equal square quadrant with15% empty transparent margin, no grid lines. All exact orthographic TOP DOWN, enemy noses point DOWN toward bottom, no perspective. Upper-left: small round coral scout drone with two stub fins and navy glass core. Upper-right: lilac wide three-lobed sweeper drone with little glowing amber wing nodes. Lower-left: chunky mint armored hover drone with hexagonal cream shield panels and coral core. Lower-right: larger but compact navy-and-cream boss command cruiser with four rounded engine pods, coral energy core and sky blue digital inlays, broad round silhouette. Clean rich 2.5D matte cartoon rendering, rounded playful SF hardware, bright mint/sky-blue/cream/coral/lavender coordinated colors, strong readable dark contour, no real military aircraft, no animal or human pilots. Genuinely transparent background, no floor shadow, no text/numbers/logos/UI/scenery or reference-game skulls/characters. Four isolated sprites in one square 2x2 atlas, no additional cells."
+    }
+  ],
+  "superseded": [
+    {
+      "species": "rabbit",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-2fcea3e6-5d96-4a8c-90c4-002aed33f7e2.png",
+      "prompt": "Use-case: stylized-concept. ONE original TAILWING production game sprite. Cute high resolution 2.5D cartoon aerial craft, exact orthographic top view, nose points vertically UP, fully visible centered on a genuinely transparent background, generous 12 percent transparent margins, square layout. Rabbit workshop aircraft: ivory compact central cockpit with mint seam inlays, two slender separated crescent wings arching like folded rabbit ears, small twin propeller pods, stitched cloud modules along wings, round navy window, rounded soft metal and ceramic panels. Distinct aircraft silhouette, no animal head pasted on the nose, no text, no labels, no logos, no flags, no goggles or scarf, no fire, no scenery or floor shadow. Top left lighting, crisp contour, readable at 74 screen pixels. Not a real aircraft model or any existing commercial game aircraft. Single aircraft only, not a sheet."
+    },
+    {
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-4fde1562-a18c-4bdf-bcfb-17c737172322.png",
+      "prompt": "Use-case: stylized-concept. Original TAILWING game production asset, polished high-resolution cute 2.5D cartoon with tactile matte materials, crisp silhouette, restrained navy and mint aviation-workshop design language. No reference game images are inputs. Do not recreate famous character faces, proportions, outfits, aircraft or UI. No goggles, scarf, pirate skulls, flags, logo, text, watermark. Genuinely transparent background, full subject centered with 12 percent margin, no ground shadow. ONE rabbit character full body portrait: ivory fur, one upright long ear and one softly folded ear, elongated pear body, small dark oval eyes well separated, angular little muzzle, mint quilted stitch vest over cream practical jumpsuit, bare head, round spool tool held in left paw and small sewing roll on belt. Confident quiet smile and three-quarter standing pose, recognizably a rabbit. Character ONLY, no aircraft, no scene. Final asset for character selection and home.",
+      "reason": "Style or seating direction revised before application"
+    },
+    {
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-222d426a-54aa-4453-adf3-41c7c3f0aec3.png",
+      "prompt": "Use-case: stylized-concept. ORIGINAL TAILWING mobile game asset. Contemporary compact art-toy 2.5D cartoon: large clean shape design, small simple bean eyes and tiny expressive mouth, smooth matte vinyl/felt surfaces, bold readable silhouette, short limbs and compact body, playful confident personality. NO realistic fur strands, NO lifelike eyes, NO goggles, scarf, helmet, pirate/skull, text, watermark, logo, flags, borders, scenery, glow background or floor shadow. Entire subject centered with generous 14 percent TRANSPARENT margins on a genuinely transparent background. No existing game or character image is an input. ONE rabbit pilot riding a tiny ivory-and-mint cloud-stitch propeller aircraft. Exact orthographic TOP VIEW, nose points vertically UP. Cute cream rabbit head with one upright ear and one folded ear clearly visible INSIDE a round open navy cockpit at the aircraft center, paws on controls; character is seated, no legs outside. Soft crescent wings with stitch-pattern seams, twin small propellers, ceramic body and bronze fasteners. Aircraft and rider read as a single clear compact silhouette at 74 screen pixels, high resolution square asset, 14 percent margins all sides. One complete vehicle plus rider only, no scenery, no sheet, no floor. Keep aviation top view and generous transparent background.",
+      "reason": "Style or seating direction revised before application"
+    },
+    {
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-7564bc06-7897-4e62-ba22-b16ab968e4ab.png",
+      "prompt": "Use-case: stylized-concept. Production TAILWING game sprite, ONE original premium futuristic digital rabbit hover-fighter with seated rabbit pilot. STRICT ORTHOGRAPHIC TOP DOWN, aircraft nose points to TOP edge (12 o'clock), exhaust and tail point BOTTOM (6 o'clock). The rabbit also faces TOP toward the instrument console at the NOSE; we see ONLY the BACK of the ivory rabbit head and two ears behind the front console. NO eyes, face, mouth looking toward the viewer or bottom. Natural seated cockpit: pilot head in rear middle, paws ahead toward nose. Sleek white ceramic hull, mint luminous circuit seams, dark navy glass side panels, layered crescent winglets, bronze-free clean titanium, twin rear electromagnetic thrusters with short cyan exhaust pointing DOWN. Playful high quality matte art-toy 2.5D render, advanced holographic tiny instrument geometry, vivid mint/violet energy accents but strong readable silhouette. NOT old propeller aircraft, NO steampunk leather/wood/rivets. Whole vehicle within 14% margins, square, genuinely transparent background, no scenery, no lettering, logos, frames, watermark or other vehicles. Do not reproduce any existing game or famous character design.",
+      "reason": "Style or seating direction revised before application"
+    },
+    {
+      "species": "chameleon",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-09a7e3c8-4090-457d-b5b6-493b279eeae3.png",
+      "prompt": "Use-case: stylized-concept. One original TAILWING cute futuristic art-toy flying vehicle and naturally seated animal. Strict orthographic TOP DOWN, short rounded nose TOP, rear exhaust BOTTOM. Rider faces TOP with BACK of head to viewer, paws ahead at dashboard. A compact plum-and-mint chameleon reflection hover sports-car, rounded rectangular body, one smoothly curled tail-like stabilizer and asymmetric short side pads, digital mirror panels, rear violet thrusters. Green chameleon seated in cockpit facing TOP, eye domes angled forward not backward, tail curled behind seat. Smooth matte ceramic with colorful clean digital panel lines, playful compact silhouette. Complete subject centered inside square with15% transparent margins, genuinely transparent background. No old propellers/military jet/steampunk, no text/logo/UI/goggles/scarf/scenery/drop shadow. No reference image inputs.",
+      "reason": "User replaced lizard with frog; never applied"
+    },
+    {
+      "species": "bear",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-4a810f12-9bd1-4895-98ab-fc3679ad4545.png",
+      "prompt": "Use-case: stylized-concept. ORIGINAL TAILWING mobile game asset. Contemporary compact art-toy 2.5D cartoon: large clean shape design, small simple bean eyes and tiny expressive mouth, smooth matte vinyl/felt surfaces, bold readable silhouette, short limbs and compact body, playful confident personality. NO realistic fur strands, NO lifelike eyes, NO goggles, scarf, helmet, pirate/skull, text, watermark, logo, flags, borders, scenery, glow background or floor shadow. Entire subject centered with generous 14 percent TRANSPARENT margins on a genuinely transparent background. No existing game or character image is an input. ONE full-body animal pilot only. A squat chunky cocoa brown BEAR with tiny round ears, broad soft muzzle, golden mustard utility bib, round battery pouch held against belly, standing wide sturdy feet, quiet shy grin, no military costume.",
+      "reason": "Revised to original futuristic pirate outfit per user"
+    },
+    {
+      "species": "bear",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-42ede12e-21f2-4aa8-9efe-5c7a57b929cf.png",
+      "prompt": "Use-case: stylized-concept. ONE ORIGINAL TAILWING CUTE FUTURISTIC art-toy hover vehicle with seated animal pilot. Strict TOP-DOWN orthographic game sprite, blunt nose faces TOP (12 o'clock), exhaust/rear points DOWN (6 o'clock). Rider faces the SAME TOP direction, we see BACK OF HEAD, no face looking backwards; paws toward dashboard in front. A chunky mustard and navy BEAR orbital-pocket hover shuttle with broad rounded disk hull, two large circular collection ducts in side wings, fat rear thrusters and digital blue battery panels. Brown bear seated inside central cockpit, round ears and BACK of head facing UP. Soft rounded clean ceramic forms, high definition simple playful silhouette, no long sharp fighter nose, no old propellers, no leather/steampunk. A single complete craft fits centered in square with 15% transparent margin, genuinely transparent background. No text/logos/goggles/scarf/UI/scenery/drop shadow, no reference-game components.",
+      "reason": "Revised to original futuristic pirate outfit per user"
+    },
+    {
+      "species": "otter",
+      "kind": "portrait",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-cf53885c-1632-47ed-bc08-b2ee13951c51.png",
+      "prompt": "Use-case: stylized-concept. ORIGINAL TAILWING mobile game asset. Contemporary compact art-toy 2.5D cartoon: large clean shape design, small simple bean eyes and tiny expressive mouth, smooth matte vinyl/felt surfaces, bold readable silhouette, short limbs and compact body, playful confident personality. NO realistic fur strands, NO lifelike eyes, NO goggles, scarf, helmet, pirate/skull, text, watermark, logo, flags, borders, scenery, glow background or floor shadow. Entire subject centered with generous 14 percent TRANSPARENT margins on a genuinely transparent background. No existing game or character image is an input. ONE full-body animal pilot only. A slim cocoa OTTER with tiny ears, cream muzzle, long tapering tail, blue rounded waterproof work suit, bubble canister slung low on side, one paw waving and long body leaning playfully. Small simple bean eyes.",
+      "reason": "Future pirate navigator outfit requested by user"
+    },
+    {
+      "species": "otter",
+      "kind": "ship",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-81f4d0ff-f725-48c3-af5d-af9ebf919522.png",
+      "prompt": "Use-case: stylized-concept. ONE ORIGINAL TAILWING CUTE FUTURISTIC art-toy hover vehicle with seated animal pilot. Strict TOP-DOWN orthographic game sprite, short rounded NOSE faces TOP, rear exhaust DOWN. Pilot faces SAME TOP, camera sees BACK OF HEAD, NO eyes/face looking backwards, paws reach front digital console. A blue and pearl OTTER bubble hydrofoil flying craft, teardrop hull with two elongated buoy side wings, transparent bubble conduits and two compact rear aqua thrusters. A brown otter sits INSIDE central cockpit, BACK of head facing UP toward front console. Soft smooth matte ceramic, compact wide friendly silhouette, colorful digital panel inlays and clear cyan energy seams, no sharp military aircraft/old propellers/steampunk. Whole subject within15% transparent margin every side, square layout. Truly transparent background. No text/logo/UI/goggles/scarf/scenery/shadow, no reference-game assets.",
+      "reason": "Future pirate navigator outfit requested by user"
+    }
+  ]
+}

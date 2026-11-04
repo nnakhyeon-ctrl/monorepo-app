@@ -1,0 +1,7 @@
+// Public callback identifiers only. Set matching values in your local Xcode build settings.
+// Never put service credentials, client secrets or tokens here.
+AIRZERO_KAKAO_SCHEME = airzero-kakao-unconfigured
+AIRZERO_GOOGLE_REVERSED_CLIENT_ID = airzero-google-unconfigured
+
+// Optional per-developer public callback values; no signing/admin secrets.
+#include? "AuthPublic.local.xcconfig"

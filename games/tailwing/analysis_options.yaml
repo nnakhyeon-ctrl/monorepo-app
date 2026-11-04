@@ -1,0 +1,10 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - server/firebase/node_modules/**
+    - server/firebase/.runtime/**
+    - server/firebase/build/**

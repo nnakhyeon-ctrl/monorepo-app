@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /apps/airzero-strike/environments/prod/public/catalog {
+      allow get: if resource.data.published == true
+        && resource.data.schema == 1
+        && resource.data.keys().hasOnly(['schema', 'published', 'stages', 'freeContent'])
+        && resource.data.stages is list && resource.data.stages.size() <= 15
+        && resource.data.stages.hasOnly([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
+        && resource.data.freeContent is list
+        && resource.data.freeContent.hasOnly(['aurora', 'pilot', 'standard', 'barrier']);
+      allow list, create, update, delete: if false;
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

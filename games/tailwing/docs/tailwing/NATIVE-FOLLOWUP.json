@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-30",
+  "exitCode": 1,
+  "scope": "SYNTHETIC_DEBUG_EMULATOR_NOT_LIVE_OR_PHYSICAL_DEVICE",
+  "captures": [
+    "boss",
+    "result",
+    "retry"
+  ],
+  "flow": {
+    "scope": "actual_native_flutter_UI_automated_steering_not_human_or_physical_device",
+    "stage": 1,
+    "phase": "won",
+    "seconds": 273.4833330000279,
+    "bossSeen": true,
+    "framesPumped": 5469,
+    "wallMilliseconds": 422711,
+    "health": 2,
+    "score": 3700,
+    "recordCleared": true,
+    "stageDurationShortened": false,
+    "enemiesHealthScoreInjected": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-30",
+  "command": "flutter --suppress-analytics analyze --no-pub",
+  "exitCode": 0,
+  "findings": 0,
+  "seconds": 20.9,
+  "scope": "LOCAL_FULL_PROJECT_STATIC_ANALYSIS_NOT_LIVE_OR_PHYSICAL",
+  "initialFindings": 8,
+  "initialFindingType": "curly_braces_in_flow_control_structures",
+  "resolution": "braces_added_no_behavior_change"
+}

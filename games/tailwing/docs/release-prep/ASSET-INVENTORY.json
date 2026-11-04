@@ -1,0 +1,147 @@
+{
+  "date": "2026-10-29",
+  "status": "LOCAL_PREPARATION_RECORDED_NOT_SUBMISSION_READY",
+  "version": "0.1.0+1",
+  "appId": "com.example.raikeopeu2026.dev",
+  "purchaseLocked": true,
+  "signedAabProduced": false,
+  "ipaProduced": false,
+  "files": [
+    {
+      "path": "docs/release-prep/graphics/feature-source-v1.png",
+      "bytes": 2491311,
+      "sha256": "d9c490e8174bdc20f835850f3a0d27657b5d52ff9ebeb6a812449e1066bc6aba",
+      "width": 1794,
+      "height": 876,
+      "colorType": 2
+    },
+    {
+      "path": "docs/release-prep/graphics/icon-source-v1.png",
+      "bytes": 1886900,
+      "sha256": "f12b0dd8a55329fc395491b0ac6d6d450a1ad941dac8111eddc435e10f3b87a6",
+      "width": 1254,
+      "height": 1254,
+      "colorType": 2
+    },
+    {
+      "path": "docs/release-prep/graphics/ios-icon-1024.png",
+      "bytes": 1708347,
+      "sha256": "e2117330beeff5b07c32e93669c563d83e70cbdf89a69647724019e86d21601b",
+      "width": 1024,
+      "height": 1024,
+      "colorType": 2
+    },
+    {
+      "path": "docs/release-prep/graphics/play-feature-1024x500.png",
+      "bytes": 1204198,
+      "sha256": "b91a98a9e785b30287d0abfa3f4c8e941597e92be3b145fbd6c80aa0a9f988c2",
+      "width": 1024,
+      "height": 500,
+      "colorType": 2
+    },
+    {
+      "path": "docs/release-prep/graphics/play-icon-512.png",
+      "bytes": 474038,
+      "sha256": "6e33bc204fd1fecff5b75fc5f0937cdcced4388ae9fae54309e4bf0ed0eda664",
+      "width": 512,
+      "height": 512,
+      "colorType": 6
+    },
+    {
+      "path": "docs/release-prep/screenshots/android/01-home.png",
+      "bytes": 1136472,
+      "sha256": "009fea910db1934e3023905063319f5e9b40d17b3f5d8b7871826c6d0bca733b",
+      "width": 1080,
+      "height": 1920,
+      "colorType": 2
+    },
+    {
+      "path": "docs/release-prep/screenshots/android/02-stage1.png",
+      "bytes": 1284895,
+      "sha256": "961e0fd9c3e812a41cdbf75888da7fb891b791975d4be28591538ae9b5e3f2f1",
+      "width": 1080,
+      "height": 1920,
+      "colorType": 2
+    },
+    {
+      "path": "docs/release-prep/screenshots/android/03-free-shield.png",
+      "bytes": 1332985,
+      "sha256": "444a9a77ca4dde25ca77c76d9b665bd6d7837721d4fe447a5944502f93ef9cd8",
+      "width": 1080,
+      "height": 1920,
+      "colorType": 2
+    },
+    {
+      "path": "docs/release-prep/screenshots/android/04-stage1-flight.png",
+      "bytes": 1293847,
+      "sha256": "3b063ab794bc74c422103482ca3a3a1435a17a976e6e0347b71c738c6961fa17",
+      "width": 1080,
+      "height": 1920,
+      "colorType": 2
+    },
+    {
+      "path": "docs/release-prep/screenshots/android/raw/01-home.png",
+      "bytes": 922547,
+      "sha256": "d47f4c30477f22ae00ce9e5fb14597192c87dcb9980a63fa21fdc398df1b1c07",
+      "width": 1080,
+      "height": 1920,
+      "colorType": 6
+    },
+    {
+      "path": "docs/release-prep/screenshots/android/raw/02-stage1.png",
+      "bytes": 1122372,
+      "sha256": "ace916fd285993862bac398c4eefb89356aa70b01a5813ac096167e4e1b5fe81",
+      "width": 1080,
+      "height": 1920,
+      "colorType": 6
+    },
+    {
+      "path": "docs/release-prep/screenshots/android/raw/03-free-shield.png",
+      "bytes": 1188517,
+      "sha256": "f110c27c4950caae1de0fe90e1862d356abbc8f090121d65031fcec688d3a8f1",
+      "width": 1080,
+      "height": 1920,
+      "colorType": 6
+    },
+    {
+      "path": "docs/release-prep/screenshots/android/raw/04-stage1-flight.png",
+      "bytes": 1135939,
+      "sha256": "b9bbcae2a94a177debf606ad8c74306e3cafdb9441351e5de01bd0428b3c439c",
+      "width": 1080,
+      "height": 1920,
+      "colorType": 6
+    },
+    {
+      "path": "docs/release-prep/local-pages/delete-account.html",
+      "bytes": 6546,
+      "sha256": "04b2e8911dc26824f87f707870a639db45de968c9d856e5e5bcb5221c15277fc"
+    },
+    {
+      "path": "docs/release-prep/local-pages/index.html",
+      "bytes": 3280,
+      "sha256": "44ea8511dcd52f9ab73c42a1d1140c9c0daccee1690c4584d08675e6ccc35e96"
+    },
+    {
+      "path": "docs/release-prep/local-pages/privacy.html",
+      "bytes": 5162,
+      "sha256": "52a5b7a5a5e41b7548f3af86644a769b162465845b7324b54605d23882938065"
+    },
+    {
+      "path": "docs/release-prep/local-pages/support.html",
+      "bytes": 3105,
+      "sha256": "77bae7b754388dd65f99843e5f826871ddb5e4a4296371b308d2a6f629405cd8"
+    },
+    {
+      "path": "docs/release-prep/local-pages/terms.html",
+      "bytes": 3800,
+      "sha256": "08c99f37b3d8391b95b4904fade763cc7c996a6c1c7c8014ee3bae138e6b9909"
+    }
+  ],
+  "inspectionBuild": {
+    "path": "build/app/outputs/flutter-apk/app-release.apk",
+    "bytes": 79881957,
+    "sha256": "6a95455f0a26049d7c18f03ff3f6a3218e59b1f587532b163dcc6a5bf9c0147c",
+    "signature": "UNSIGNED_NOT_INSTALLABLE_OR_SUBMITTABLE"
+  },
+  "mobileSourceFingerprint": "90877fbf5354387208e9f4dfa8bf01387d63b5c6520ece4d4f84c02cbe05541a"
+}

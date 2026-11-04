@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-30",
+  "scope": "ISOLATED_DEBUG_MAIN_STARTUP_NOT_SUBMISSION_OR_PHYSICAL",
+  "sha256": "b3dea97445dbc1f54cf27bde72f01d30799c9220ab3f77c84cf05de07ab7dd75",
+  "appId": "com.example.raikeopeu2026.dev.integration",
+  "install": true,
+  "uninstallOrDataClear": false,
+  "normalAppTouched": false,
+  "launch": true,
+  "totalTimeMs": 11771,
+  "aliveAfter5Seconds": true
+}

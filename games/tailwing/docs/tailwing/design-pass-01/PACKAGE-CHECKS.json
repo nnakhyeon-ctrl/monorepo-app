@@ -1,0 +1,48 @@
+{
+    "date":  "2026-10-30",
+    "scope":  "DEBUG_APK_SEVEN_EXPECTED_ASSETS_ONLY_NOT_FULL_SECURITY_OR_RELEASE_CHECK",
+    "assets":  [
+                   {
+                       "path":  "assets/tailwing/rabbit_portrait_v2.png",
+                       "sha256":  "f0efb38d2a64f9647b6678fe4692b9238f52f61af01aad93d7f6c9beac782200",
+                       "matchesSource":  true,
+                       "bytes":  709405
+                   },
+                   {
+                       "path":  "assets/tailwing/rabbit_ship_v2.png",
+                       "sha256":  "0c95d7110b648e6221cb77192abd801adf844dd1b5b3fb0bfa3fb7a4f953cc63",
+                       "matchesSource":  true,
+                       "bytes":  1093470
+                   },
+                   {
+                       "path":  "assets/tailwing/rabbit_hero_v2.png",
+                       "sha256":  "26b110f525b3195a25279322263e4be109fd4096f14016c843332049a8282254",
+                       "matchesSource":  true,
+                       "bytes":  1084066
+                   },
+                   {
+                       "path":  "assets/tailwing/turtle_portrait_v2.png",
+                       "sha256":  "c8671b2415fa8e2ba7d7089af5fb4cee670f60cc7bf753e5c5755add0c5567e1",
+                       "matchesSource":  true,
+                       "bytes":  1158786
+                   },
+                   {
+                       "path":  "assets/tailwing/turtle_ship_v2.png",
+                       "sha256":  "a3d0eb6d3b0bb4654e398c1120730cc20a872552f1acb5ae2de6d2983dd8c898",
+                       "matchesSource":  true,
+                       "bytes":  1366486
+                   },
+                   {
+                       "path":  "assets/tailwing/turtle_hero_v2.png",
+                       "sha256":  "f463bd47e577e30d5fd7269386a95f7f255de263aa7eea294e69b45b833251af",
+                       "matchesSource":  true,
+                       "bytes":  1690681
+                   },
+                   {
+                       "path":  "assets/audio/tailwing_flight_v2.wav",
+                       "sha256":  "8a13b62b61f63b6aa05292abc8ddd2a13953e4e8d18f638cbaf43a81b2b6b672",
+                       "matchesSource":  true,
+                       "bytes":  1512044
+                   }
+               ]
+}

@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-30",
+  "method": "built-in imagegen edits of project-owned assets",
+  "status": "APPLIED_TO_RUNTIME_LOCAL_VERIFIED_NOT_LIVE_OR_PHYSICAL",
+  "jobs": [
+    {
+      "species": "rabbit",
+      "kind": "portrait",
+      "prompt": "Use case: precise-object-edit. Edit target: the provided ORIGINAL TAILWING rabbit portrait, made by this project. Preserve species, cream fur, one upright and one folded ear, gentle compact toy-cartoon identity. Improve to a plump round-cheeked young rabbit pilot with a playful asymmetric smile, lively eyes, short rounded limbs, confident leaning pose. Replace rustic stitched vest/spool/ruler accessories with a clean cream-and-mint futuristic flight jumpsuit, padded round cuffs, small teal light panels and a simple ear-shaped communication module integrated near the ear base, tiny translucent mint ear receiver, no goggles or scarf. Full body only, empty hands naturally on hips, clear chunky silhouette, crisp clean cartoon edges and layered soft shading, no realistic fur strands. Same cute bright SF universe as existing asset. One subject centered square, 12% clear margins, genuinely transparent background. High resolution game portrait intended for 1024px use. No background, text, logo, watermark, famous character resemblance, borrowed costume/emblem or UI.",
+      "reference": "assets/tailwing/rabbit_portrait.png",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-f00d7c8d-f813-4a0b-a5b1-45ba5c2be4aa.png",
+      "savedDraft": "docs/tailwing/design-pass-01/rabbit-portrait-draft.png",
+      "appliedToRuntime": true,
+      "width": 1254,
+      "height": 1254,
+      "pngColorType": 6,
+      "bytes": 848818,
+      "sha256": "a00c67d30e1c65dd14181d77ece410e5940f9067896636b02cbd90c6b8aa9a58",
+      "runtimePath": "assets/tailwing/rabbit_portrait_v2.png"
+    },
+    {
+      "species": "turtle",
+      "kind": "portrait",
+      "prompt": "Use case: precise-object-edit. Edit target: the provided ORIGINAL TAILWING turtle portrait, made by this project. Keep a sage/cream TURTLE and compact original toy-cartoon identity. Make its face reassuring, stout and very cute: round cheeks, small joyful confident grin, expressive eyes, sturdy short rounded limbs, low broad silhouette distinct from rabbit. Replace angular old shell and rustic ruler/vest with a large rounded segmented domed shell, thick soft hexagonal tiles, teal luminous inset panels with restrained bright edges, small symmetrical side propulsion pods integrated to a navy/teal futuristic flight suit. No weapon, ruler, goggles or scarf. Full body three-quarter standing character, shell visible over shoulder, one hand cheerfully raised. Crisp clean high-resolution cartoon edges, rich readable soft shading and compact volume, no realistic reptile scales or sharp spikes. One subject centered square with 12% clear margins, truly transparent background. 1024px game portrait quality. No scenery/text/logos/watermark/famous designs/copied emblems/UI.",
+      "reference": "assets/tailwing/turtle_portrait.png",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a1495d-1cc0-7f13-9c55-c05f365743f8\\exec-55ca532f-8fd8-4df2-bf5a-5658876178dd.png",
+      "savedDraft": "docs/tailwing/design-pass-01/turtle-portrait-draft.png",
+      "appliedToRuntime": true,
+      "width": 1254,
+      "height": 1254,
+      "pngColorType": 6,
+      "bytes": 1211511,
+      "sha256": "6bb652597e7003b8267f55ea5be58cec4aca7fbe8233445e4c1bacc2e02aa93a",
+      "runtimePath": "assets/tailwing/turtle_portrait_v2.png"
+    }
+  ],
+  "pending": [
+    "rabbit_ship_v2",
+    "rabbit_hero_v2",
+    "turtle_ship_v2",
+    "turtle_hero_v2",
+    "UI implementation",
+    "before/after native validation"
+  ],
+  "initialStatus": "DRAFTS_SAVED_NOT_APPLIED_USER_REQUESTED_STOP",
+  "resumedDate": "2026-10-30",
+  "remainingImages": []
+}

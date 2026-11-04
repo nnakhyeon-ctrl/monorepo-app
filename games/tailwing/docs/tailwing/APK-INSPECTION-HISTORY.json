@@ -1,0 +1,99 @@
+[
+  {
+    "date": "2026-10-29",
+    "scope": "LOCAL_UNSIGNED_APK_STATIC_INSPECTION_ONLY",
+    "path": "build/app/outputs/flutter-apk/app-release.apk",
+    "bytes": 88678439,
+    "sha256": "42431bb323bca13392090c2c5bf2db31dcc598511a8006f3c439ade759b9fb7f",
+    "appId": "com.example.raikeopeu2026.dev",
+    "displayLabel": "테일윙 · TAILWING",
+    "versionCode": "1",
+    "versionName": "0.1.0",
+    "minSdk": 24,
+    "targetSdk": 36,
+    "permissions": [
+      "android.permission.ACCESS_NETWORK_STATE",
+      "android.permission.INTERNET",
+      "com.android.vending.BILLING",
+      "com.example.raikeopeu2026.dev.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+      "com.google.android.providers.gsf.permission.READ_GSERVICES"
+    ],
+    "signature": "UNSIGNED_NOT_INSTALLABLE_OR_SUBMITTABLE",
+    "entriesScanned": 458,
+    "uncompressedBytes": 90222615,
+    "patterns": [
+      "private_key",
+      "service_account_credential",
+      "literal_bearer_token",
+      "oauth_refresh_token",
+      "email_action_link_token",
+      "isolated_test_marker"
+    ],
+    "matches": [],
+    "elf64": [
+      {
+        "entry": "lib/arm64-v8a/libapp.so",
+        "loadSegments": 3,
+        "aligned16KB": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libdartjni.so",
+        "loadSegments": 3,
+        "aligned16KB": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libdatastore_shared_counter.so",
+        "loadSegments": 3,
+        "aligned16KB": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libflutter.so",
+        "loadSegments": 3,
+        "aligned16KB": true
+      },
+      {
+        "entry": "lib/x86_64/libapp.so",
+        "loadSegments": 3,
+        "aligned16KB": true
+      },
+      {
+        "entry": "lib/x86_64/libdartjni.so",
+        "loadSegments": 3,
+        "aligned16KB": true
+      },
+      {
+        "entry": "lib/x86_64/libdatastore_shared_counter.so",
+        "loadSegments": 2,
+        "aligned16KB": true
+      },
+      {
+        "entry": "lib/x86_64/libflutter.so",
+        "loadSegments": 3,
+        "aligned16KB": true
+      }
+    ],
+    "checks": {
+      "existingAppId": true,
+      "existingVersion": true,
+      "expectedDisplayLabel": true,
+      "targetApi36OrHigher": true,
+      "backupDisabled": true,
+      "cleartextDisabled": true,
+      "notDebuggable": true,
+      "noBiometricPermissions": true,
+      "boundedPatternScan": true,
+      "zipAlignment16KB": true,
+      "elf64Alignment16KB": true
+    },
+    "status": "STATIC_CHECKS_PASS_SUBMISSION_BLOCKED",
+    "notChecked": [
+      "signed_aab",
+      "install_and_runtime_of_this_apk",
+      "16kb_device_runtime",
+      "real_auth_server_store",
+      "all_secret_encodings_or_sdk_collection",
+      "ios_and_physical_devices"
+    ],
+    "superseded": true
+  }
+]

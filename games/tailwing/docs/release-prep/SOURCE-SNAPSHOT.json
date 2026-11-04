@@ -1,0 +1,562 @@
+{
+  "date": "2026-10-29",
+  "scope": "ALLOWLISTED_MOBILE_SOURCE_AFTER_BUILD_NOT_PROOF_OF_BUILD_PROVENANCE",
+  "gitHead": null,
+  "gitStatus": "ALLOWLISTED_APP_SOURCE_UNTRACKED",
+  "fileCount": 108,
+  "fingerprint": "90877fbf5354387208e9f4dfa8bf01387d63b5c6520ece4d4f84c02cbe05541a",
+  "files": [
+    {
+      "path": "android/app/build.gradle.kts",
+      "bytes": 3336,
+      "sha256": "41ed3fa244c4858ad67c8b3aea9a7f6e201f4c68683db1338c5338a86ea3179f"
+    },
+    {
+      "path": "android/app/src/main/AndroidManifest.xml",
+      "bytes": 3559,
+      "sha256": "9d39eb67b8cd04464e12569f2749ec78c3520637fa9174148c270de06ace7f1f"
+    },
+    {
+      "path": "android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java",
+      "bytes": 4516,
+      "sha256": "3d414a93966bab0d24fec6e5129fd656945c19dda37170ed423ab0d7b37bd28e"
+    },
+    {
+      "path": "android/app/src/main/kotlin/com/example/raikeopeu2026/MainActivity.kt",
+      "bytes": 577,
+      "sha256": "35c7a73a3d4e13308ede88f9deed0b079f90dec75c7f27f377f36b7f5688dc24"
+    },
+    {
+      "path": "android/app/src/main/res/drawable-v21/launch_background.xml",
+      "bytes": 450,
+      "sha256": "b570e75d99be4a2b4ef21ec4ed38d2dab1dcd1177bcc291ec5a48baf10a02a21"
+    },
+    {
+      "path": "android/app/src/main/res/drawable/launch_background.xml",
+      "bytes": 450,
+      "sha256": "b570e75d99be4a2b4ef21ec4ed38d2dab1dcd1177bcc291ec5a48baf10a02a21"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "bytes": 11748,
+      "sha256": "337dc976af2ce8c969acfdeb70dbcc6569aa83b6f08f3873f931556594349e0d"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "bytes": 5618,
+      "sha256": "72dc4648a750862c9f9c85622abefe7142cdeefeb6f6fcdeb42e8107dcd88ffd"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "bytes": 19786,
+      "sha256": "35b0749ec9fe9bd8f1f5a6a9ecb39e5cf4359db1456f418cff79a713b5aee6ac"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "bytes": 41784,
+      "sha256": "354462628a7d3cada62e515615b1d7d991e8ea60c880fc6d8dfa5e755439396e"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "bytes": 71935,
+      "sha256": "e13eb97507043fe9186ea60a9845ebef8e3e7645763e4bf2eff5f07bae800bb3"
+    },
+    {
+      "path": "android/app/src/main/res/values-night/styles.xml",
+      "bytes": 1246,
+      "sha256": "38ea2a2524f6430a11d9feddeb4bf6ad28873c772b64f19fee16c8f114edb0ac"
+    },
+    {
+      "path": "android/app/src/main/res/values/colors.xml",
+      "bytes": 116,
+      "sha256": "e4bcdb7966dc8c6aac3d507f64c461e9dbb52fe8bb9f8b95ac7e6c4cd24b31f4"
+    },
+    {
+      "path": "android/app/src/main/res/values/styles.xml",
+      "bytes": 1247,
+      "sha256": "60abb06c096c3e3dd87c409f04c7558294bccb22924b66add28ceb53a20543b8"
+    },
+    {
+      "path": "android/app/src/main/res/xml/data_extraction_rules.xml",
+      "bytes": 630,
+      "sha256": "eda9dddce1e895de1efd716fe75e244187bf8f91a3bb7444c6ea1731e51c74a8"
+    },
+    {
+      "path": "android/build.gradle.kts",
+      "bytes": 561,
+      "sha256": "218f400e3fff31c9c986a2535dfb974560e1b4d33cc27b7c1fee96a2b7e44454"
+    },
+    {
+      "path": "android/gradle.properties",
+      "bytes": 306,
+      "sha256": "7714698de712a7872e371f0dbae626c255fc83ac1c15e52e7cd9fcaa241b5092"
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 295,
+      "sha256": "f2343f56a54e3f606a3b7190c654dd4318daf2cc7141145239bd414c3dc676bd"
+    },
+    {
+      "path": "android/settings.gradle.kts",
+      "bytes": 796,
+      "sha256": "092ba880c8d4a07591aafc082f45deedc9afcf60c113a4bb3d13cbe1a1fce9de"
+    },
+    {
+      "path": "assets/audio/clear.wav",
+      "bytes": 26504,
+      "sha256": "f884256ed7ed12c8a4be265afed70cd43e200248a478bb3c09ee3a689641c9dc"
+    },
+    {
+      "path": "assets/audio/flight_loop.wav",
+      "bytes": 352844,
+      "sha256": "904b12b3ae9fd588576504485cecbd05b5064eb6cbef513f310e44684a3bf2e5"
+    },
+    {
+      "path": "assets/audio/hit.wav",
+      "bytes": 7100,
+      "sha256": "83a26935848b8ac9119c70815d570e9ad09c99079adf97f1bc8826bf1ecf8357"
+    },
+    {
+      "path": "assets/audio/shot.wav",
+      "bytes": 4014,
+      "sha256": "e917dd467a637643d2a092ac01865f6261de140321aefb63269aaf41102278ce"
+    },
+    {
+      "path": "assets/audio/skill.wav",
+      "bytes": 13274,
+      "sha256": "4609c88e473de3e8ef8423bb940a34051ec8d20c43d2202105f2eceab4602007"
+    },
+    {
+      "path": "assets/brand/google_g.png",
+      "bytes": 33661,
+      "sha256": "d1ce9c2af0b10a7333abc99bc706f9a6a199e5b65bf3e3009624f076b8638e6a"
+    },
+    {
+      "path": "assets/brand/kakao_login_official.svg",
+      "bytes": 2681,
+      "sha256": "ab90ab44616f14a671844cd991b3fbb33277f42c5bb2cc5a9422344a854c9398"
+    },
+    {
+      "path": "assets/images/aurora_aviation_hd.png",
+      "bytes": 1143182,
+      "sha256": "4e3f7ecbc8a532b1ede85fcb9119dd347bb7e2160d69bbae383fccd6542a7b84"
+    },
+    {
+      "path": "assets/images/aurora_mk2.png",
+      "bytes": 1292895,
+      "sha256": "98c8adbe75564788f93af229862fb505f6c041a468601127e057a6f41b44151e"
+    },
+    {
+      "path": "assets/images/aurora_player.png",
+      "bytes": 1068389,
+      "sha256": "792ddd3c2ca92e6f9fbe5c7ceaac41b9c2a30847249762fdf8f3bb54d92fa910"
+    },
+    {
+      "path": "assets/images/cloud_bank_hd.png",
+      "bytes": 941064,
+      "sha256": "28cfa7f70406c63a69c159814847df035e3b7a762c5a89da2bd7ddeef9edabf0"
+    },
+    {
+      "path": "assets/images/dawn_coast_hd.png",
+      "bytes": 2366838,
+      "sha256": "f41ee825536ca74014894bb2a59dc22c74e9515f7c6b95e1f122f10abb6a4849"
+    },
+    {
+      "path": "assets/images/enemy_aviation_atlas.png",
+      "bytes": 1451548,
+      "sha256": "03a30f686e8e07fad2286e131a849add52a127c104eae800d9310a625e6f5b6f"
+    },
+    {
+      "path": "assets/images/explosion_hd_atlas.png",
+      "bytes": 1725528,
+      "sha256": "8619801cc878e94c1920c96397588d7b5114c9fafdfdac5ef1af4f0fe141a4a8"
+    },
+    {
+      "path": "assets/images/flight_hero_v2.png",
+      "bytes": 2135294,
+      "sha256": "76d174efd9c31f36aa6651c17d662d4acf794079855b20788422b84dba473dd2"
+    },
+    {
+      "path": "assets/images/hangar_hero.png",
+      "bytes": 2232566,
+      "sha256": "de8a51d8bdc2d5c620857705b8bb8944d29334fabf796a515f9809b42b5b98c0"
+    },
+    {
+      "path": "assets/images/safeguard_mk2.png",
+      "bytes": 1428625,
+      "sha256": "f48842ca41852db5cf60b046126a942b285b49ad99809f0b6577b14ce031b17f"
+    },
+    {
+      "path": "assets/images/vector_mk2.png",
+      "bytes": 719252,
+      "sha256": "6e2c3e82ff9ea86bbc954a8683a758ee6b6892083e430660c92ac8c86d6aa963"
+    },
+    {
+      "path": "ios/Runner.xcodeproj/project.pbxproj",
+      "bytes": 26609,
+      "sha256": "ab28c147ee58d55a882a68fb20f06b7bf2ea2e1313e86563437bbb408de56212"
+    },
+    {
+      "path": "ios/Runner/AppDelegate.swift",
+      "bytes": 555,
+      "sha256": "54a5e98d6c3e8a79413ad50607b83aac8ded8828bc913eda1fe86bb33a66cd5d"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "bytes": 2641,
+      "sha256": "5f8b941b774bde4496d73347c1f79cbdd786bb76fbdab9ed1f3f0cb78a0fb0d3"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
+      "bytes": 1708347,
+      "sha256": "e2117330beeff5b07c32e93669c563d83e70cbdf89a69647724019e86d21601b"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png",
+      "bytes": 1125,
+      "sha256": "f65892ecd6206586efea7b1186260c003a7aeebd3e56b3ec3a2af9f26ab26736"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png",
+      "bytes": 3691,
+      "sha256": "bebb5ed715556fe78bcb6bb04592318390aacd1667f87193216f8bc872676586"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png",
+      "bytes": 7627,
+      "sha256": "2d1ea5d819c84824ee7eddcc00965f9aeb49ec8ce8083abdcdc422b7409090dc"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png",
+      "bytes": 2104,
+      "sha256": "23dd5dcd85e30291406e05bad0c16c922ff65e17bb3211869e2f4260ed46cee3"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png",
+      "bytes": 7215,
+      "sha256": "32c954479665ee320f971e5549df9d591b643e6ccff78bc9d54a3d7e186a7475"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png",
+      "bytes": 15201,
+      "sha256": "ce8ccf31e62d487592b6fefc2d17d076760645329958bd9549eb9fb0b14bc760"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png",
+      "bytes": 3691,
+      "sha256": "bebb5ed715556fe78bcb6bb04592318390aacd1667f87193216f8bc872676586"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png",
+      "bytes": 12981,
+      "sha256": "eb46aa3a8c03d30df526e81cbe3dc7eb322fba5317d2b2f3d83803c7657fd1e1"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png",
+      "bytes": 27552,
+      "sha256": "3a1930a543209a7d94930212f37363260ea8cb79e305feee12765e3c9263deca"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png",
+      "bytes": 27552,
+      "sha256": "3a1930a543209a7d94930212f37363260ea8cb79e305feee12765e3c9263deca"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png",
+      "bytes": 59256,
+      "sha256": "f2626047a51e9d7b77a8fbdd75f5a85751e782bb0dfa38009722d2e80d35d589"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png",
+      "bytes": 11850,
+      "sha256": "b0c7147ce817460689e336938bae15d68fa0bbf68839f87fd4f14b7d24acd1f3"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png",
+      "bytes": 42774,
+      "sha256": "70d9eed6630fe2e7b310423b2298277880b58bee84143453449fba45d070aa99"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png",
+      "bytes": 51462,
+      "sha256": "d2b7203efb4cbcc285e60fa49dbec51185f3baac9bbccdbc0d9b6caaff0cc38c"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json",
+      "bytes": 414,
+      "sha256": "fbd112a9f3b541a1d811f71ac8e4fe68b6176687d973a5f4d99b7aa4a722e94e"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png",
+      "bytes": 68,
+      "sha256": "93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png",
+      "bytes": 68,
+      "sha256": "93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png",
+      "bytes": 68,
+      "sha256": "93ae7d494fad0fb30cbf3ae746a39c4bc7a0f8bbf87fbb587a3f3c01f3c5ce20"
+    },
+    {
+      "path": "ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md",
+      "bytes": 545,
+      "sha256": "251618ce522828c3db42bbe29c468b8680f61ac9f86516ab56705f63ce3f2ca0"
+    },
+    {
+      "path": "ios/Runner/Info.plist",
+      "bytes": 2853,
+      "sha256": "26ad3d3ee5ae859d3703e9c0ba933d471bed0a3e87278ab6c6f98f8be04a998f"
+    },
+    {
+      "path": "ios/Runner/Runner.entitlements",
+      "bytes": 270,
+      "sha256": "727f60731050dbf3f5371aa309353b89e837b35dd9012c009083b898ee888683"
+    },
+    {
+      "path": "lib/app.dart",
+      "bytes": 8514,
+      "sha256": "6ac44094bb887cd6116cbe3fd4cbe0c5ef9f0366a98147be23cb6abaf13affff"
+    },
+    {
+      "path": "lib/coop/client.dart",
+      "bytes": 7000,
+      "sha256": "abaf0b52546ecdfed00aa112a75709d61b135230c73b76b5fcd4e14f0e1391e2"
+    },
+    {
+      "path": "lib/coop/protocol.dart",
+      "bytes": 3216,
+      "sha256": "7676470fda94a7368ed4dd8f7f705264d1530d840888f31d6d6ae2f38bd1ca17"
+    },
+    {
+      "path": "lib/core/branding.dart",
+      "bytes": 465,
+      "sha256": "031e8cdc1a5c2237d09231204bc4535f5c349ad59cc02d1b43b9052d71a3b04c"
+    },
+    {
+      "path": "lib/core/design.dart",
+      "bytes": 9254,
+      "sha256": "fe7536eeb243598c813f1128801379f9c9733be9009bedd4ff24b23b35346dbb"
+    },
+    {
+      "path": "lib/core/device_options.dart",
+      "bytes": 1806,
+      "sha256": "5625e7edd7fccb588bc3a8e6dab94227c22b49660708dbb6f8cf6de2cc29f58f"
+    },
+    {
+      "path": "lib/core/external_services.dart",
+      "bytes": 2742,
+      "sha256": "4047bce66b7621474b0fd24f3f7f09013e983b4fe1dedeb2945934e91f871ccf"
+    },
+    {
+      "path": "lib/core/game_feedback.dart",
+      "bytes": 5562,
+      "sha256": "c66cfbfd5a4c7f7a1fc5a955ee26bda45c6f830da63dd1ee70956000c25546e3"
+    },
+    {
+      "path": "lib/core/readiness.dart",
+      "bytes": 4474,
+      "sha256": "0b450497987512556b1a73e5752f7f611715ad5e6723bdba50ee3b8573a87e40"
+    },
+    {
+      "path": "lib/core/store_catalog.dart",
+      "bytes": 2041,
+      "sha256": "6e082702cb63265934bc74dfc0a6d90c7bd7fb5b3054ac95880f56600e763c85"
+    },
+    {
+      "path": "lib/features/account_management.dart",
+      "bytes": 8944,
+      "sha256": "a88d8e605e1526f5660dbc1d982dbd6fd1c510c25c0f346d895e3713793039bd"
+    },
+    {
+      "path": "lib/features/account.dart",
+      "bytes": 26837,
+      "sha256": "99e7cffe5052f53507b3f5c78907b629548828c4e53121e1d7ed131bd65cc7f9"
+    },
+    {
+      "path": "lib/features/battle_hud.dart",
+      "bytes": 4454,
+      "sha256": "a368dde7b9096ca345788eadd0ad485528e4f9c85ad5a1f08f51b5459ecc8564"
+    },
+    {
+      "path": "lib/features/battle_preview.dart",
+      "bytes": 3829,
+      "sha256": "b837b897b5e4543a8865b6afc7bb660e0131183cde2eb2069006881aeb964a1d"
+    },
+    {
+      "path": "lib/features/battle.dart",
+      "bytes": 25315,
+      "sha256": "ddf8a7d7ecdb95b68c0990a7c9cd109b1bac55a8b60243eab8afd167ffba1de3"
+    },
+    {
+      "path": "lib/features/concept_art.dart",
+      "bytes": 6550,
+      "sha256": "046a6b93b08a66a05446533f7c7a2fd0fb0590edbb2069734c39167f9f637048"
+    },
+    {
+      "path": "lib/features/coop.dart",
+      "bytes": 5891,
+      "sha256": "34eac4ffe03bf6059fee444dcb1c82dd821c5a3de442b1268d9d7b89748faa2c"
+    },
+    {
+      "path": "lib/features/email_actions.dart",
+      "bytes": 18248,
+      "sha256": "cea9bbaa18616131cb8aa704c0f70b93890ffd8eaf638751cf5b5e7616f296ed"
+    },
+    {
+      "path": "lib/features/hangar.dart",
+      "bytes": 14634,
+      "sha256": "f707db29b3c7bfb77f19a96661c2a1fc95c20f5e599e82c9dbe776bd7a75cac1"
+    },
+    {
+      "path": "lib/features/home.dart",
+      "bytes": 15365,
+      "sha256": "a18846adf010b5f124844cd34d7dcaf2d49ff4db6897495e26a452c1bb0052a4"
+    },
+    {
+      "path": "lib/features/loadout_art.dart",
+      "bytes": 9866,
+      "sha256": "3379f8c6ab66032e0e4e460032d927a1168cce4d5b539abf8a5c29058ced43ee"
+    },
+    {
+      "path": "lib/features/services.dart",
+      "bytes": 18221,
+      "sha256": "7db94ef17f3ece9f14f9928d5d28238f043c56434a03d179387320a7fa95a549"
+    },
+    {
+      "path": "lib/features/settings.dart",
+      "bytes": 10233,
+      "sha256": "c8772593900926db46a37537ff8826b2c1d59168767bba77d434d96ff6ef1048"
+    },
+    {
+      "path": "lib/features/stages.dart",
+      "bytes": 3085,
+      "sha256": "59c568e43eb9485c8e1b0fd7cec12d73cdb9519dd61c8a6d3e9e9da9143d4aa9"
+    },
+    {
+      "path": "lib/features/subscription_plans.dart",
+      "bytes": 8230,
+      "sha256": "8cfbfc58c501c2e49af69525f533750c0f54e42f418750c2bf86453b8a00fbda"
+    },
+    {
+      "path": "lib/features/support.dart",
+      "bytes": 10132,
+      "sha256": "e5ee28b0511b50422e0141905839cc07bc891cda0d5ed0e76fbb458248513bf8"
+    },
+    {
+      "path": "lib/game/account_records.dart",
+      "bytes": 2397,
+      "sha256": "418df2c489f6905b9e9a87bee27f9a0a31c92f639f7df27a7a3d42bff4b4700a"
+    },
+    {
+      "path": "lib/game/assets.dart",
+      "bytes": 3042,
+      "sha256": "2249d31ff2933721aac3a7fe7d3bec53fccaa21dc92b598fed6b8762dc1e08e7"
+    },
+    {
+      "path": "lib/game/catalog.dart",
+      "bytes": 8537,
+      "sha256": "b796ee15ce27291d1c7361e541ba57db2b0e44c88616a7bfc4c0c81760b463e7"
+    },
+    {
+      "path": "lib/game/combat_model.dart",
+      "bytes": 1091,
+      "sha256": "60028ba66fbc4add3719abd0c5f48452c46eab5aaafd522d33b4d887664d9f43"
+    },
+    {
+      "path": "lib/game/engine.dart",
+      "bytes": 14227,
+      "sha256": "f8ce7bed22e362265ff23adc5d719953996da4607fb8c86858a67ed65f36e38b"
+    },
+    {
+      "path": "lib/game/progress.dart",
+      "bytes": 16629,
+      "sha256": "471e14d4dab4b8624bb92f59a52be5a964c5ed5e745dfa56b1d4e1ca9eef6101"
+    },
+    {
+      "path": "lib/game/rendering.dart",
+      "bytes": 16053,
+      "sha256": "4a9ba43bbd34c1fdc3e2a00d1cf183981b020c368e31c95219545e6613ca05b8"
+    },
+    {
+      "path": "lib/game/saved_loadout.dart",
+      "bytes": 1409,
+      "sha256": "0a4ded87368b880209fbdfa6f563b8b5762e8bebdbdfce13ee2f5ae4bc7dc15c"
+    },
+    {
+      "path": "lib/game/stages.dart",
+      "bytes": 2224,
+      "sha256": "0b977eee5825881e0ba702f86417bebffe5b5166074d5e92d5dfb759738f6268"
+    },
+    {
+      "path": "lib/main.dart",
+      "bytes": 111,
+      "sha256": "173df5e70084d98f5cc9b4cfb96a9546b5dad75443d78e3e821aeaa01d574b5b"
+    },
+    {
+      "path": "lib/security/account_game.dart",
+      "bytes": 4118,
+      "sha256": "56e76791a149dd421242f0005b99439ea38b57fa8d60a254b9df8708ac3cb74c"
+    },
+    {
+      "path": "lib/security/backend_session.dart",
+      "bytes": 8150,
+      "sha256": "cf0ad02d450b9db59338d43a55a3e4fa23010293faf33cf3a2c8feaa739057c9"
+    },
+    {
+      "path": "lib/security/billing.dart",
+      "bytes": 17014,
+      "sha256": "167b739bbb0ce39db7884f2c5145c7de157eaef78b7765208e2b160856e98288"
+    },
+    {
+      "path": "lib/security/email_auth.dart",
+      "bytes": 34845,
+      "sha256": "ec72cea6df752e4b0b6a538594ec02a03b002fcf766581da8d7a8aa2207d6eb4"
+    },
+    {
+      "path": "lib/security/firebase_email.dart",
+      "bytes": 10810,
+      "sha256": "b4b088c1ce57c4aaff887f4fe2e0e2e4a80d90d08c4e8074625f9b4e2e03458d"
+    },
+    {
+      "path": "lib/security/native_billing.dart",
+      "bytes": 4544,
+      "sha256": "6be4f457001c10e5e534e75f1299141c6e4134522e304669ec4a0208371a9bdd"
+    },
+    {
+      "path": "lib/security/native_social.dart",
+      "bytes": 7239,
+      "sha256": "6723056abe69cac6c56557d533295079d8a1d7c82eb2514edde714423d42af5a"
+    },
+    {
+      "path": "lib/security/social_types.dart",
+      "bytes": 1325,
+      "sha256": "0ce146e49a43e4651658b37db9d1ebe7e408e616d457a8ff72ca6e8a560421c1"
+    },
+    {
+      "path": "pubspec.lock",
+      "bytes": 33092,
+      "sha256": "f709bdd18c606314bc196fa5cd2684246cb27a5a6bd0e8a73321e0dafd7a21cd"
+    },
+    {
+      "path": "pubspec.yaml",
+      "bytes": 965,
+      "sha256": "e5af71f8d8ca35f9589292b87816ff9bc0924823ee0fcc3ef0faab9bdcc05576"
+    }
+  ],
+  "excludes": [
+    "server",
+    "test",
+    "integration_test",
+    "docs",
+    "tool",
+    "config/.local-public",
+    "local auth xcconfig",
+    "secrets",
+    "user data",
+    "build and SDK caches"
+  ]
+}

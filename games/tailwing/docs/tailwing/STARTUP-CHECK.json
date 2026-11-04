@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-30",
+  "scope": "OWNED_DEBUG_EMULATOR_STARTUP_ONLY_NOT_REAL_DEVICE_OR_PERFORMANCE_PASS",
+  "apk": "build/tailwing-preview/tailwing-preview-debug.apk",
+  "sha256": "ae0a1ac6a26c9c0ddd3a3a7325fbf33aa199a5a3f4b8c15d5d75eb5dce3e423e",
+  "appId": "com.example.raikeopeu2026.dev.integration",
+  "totalHostMemoryBytes": 16806252544,
+  "freeHostMemoryBeforeInstall": 228106240,
+  "install": {
+    "success": true,
+    "signatureMismatch": false
+  },
+  "runs": [
+    {
+      "attempt": 1,
+      "controlledColdStart": true,
+      "launchExit": 0,
+      "launchStatus": "ok",
+      "totalTimeMs": 8239,
+      "waitTimeMs": 8250,
+      "processAfterLaunch": true,
+      "freeHostMemoryBytes": 156401664,
+      "processAfter5s": true,
+      "processAfter15s": true
+    },
+    {
+      "attempt": 2,
+      "controlledColdStart": true,
+      "launchExit": 0,
+      "launchStatus": "ok",
+      "totalTimeMs": 5083,
+      "waitTimeMs": 5093,
+      "processAfterLaunch": true,
+      "freeHostMemoryBytes": 1201061888,
+      "processAfter5s": true,
+      "processAfter15s": true
+    },
+    {
+      "attempt": 3,
+      "controlledColdStart": true,
+      "launchExit": 0,
+      "launchStatus": "ok",
+      "totalTimeMs": 3627,
+      "waitTimeMs": 3629,
+      "processAfterLaunch": true,
+      "freeHostMemoryBytes": 776933376,
+      "processAfter5s": true,
+      "processAfter15s": true
+    }
+  ],
+  "normalAppTouched": false,
+  "uninstallOrDataClear": false,
+  "notChecked": [
+    "physical_devices",
+    "release_profile_performance",
+    "original_historical_exit_cause",
+    "all_runtime_failures"
+  ],
+  "warmLaunch": {
+    "status": "ok",
+    "waitTimeMs": 10
+  },
+  "processAfterExtra30s": true,
+  "packageExitReasonEnums": [
+    "10:USER REQUESTED"
+  ],
+  "exitReasonLimit": "History includes earlier test installs and our controlled force-stops; does not establish prior PID-loss cause.",
+  "reproducedProcessLoss": false,
+  "status": "LIMITED_STARTUP_CHECK_PASS",
+  "packageExitSubreasonEnums": [
+    "21:FORCE STOP"
+  ],
+  "ownedEmulatorStopped": true
+}

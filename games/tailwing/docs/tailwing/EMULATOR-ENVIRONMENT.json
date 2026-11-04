@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-30",
+  "totalMemoryBytes": 16806252544,
+  "freeMemoryBeforeVm": 3379568640,
+  "logicalCpus": 12,
+  "ownedVm": {
+    "avd": "Medium_Phone_API_37.0",
+    "ramMB": 2048,
+    "cores": 4,
+    "gpu": "host",
+    "vulkan": false,
+    "snapshot": false,
+    "port": 5554,
+    "physical": false
+  },
+  "previousDisappearanceCause": "not established; no historical crash proof"
+}

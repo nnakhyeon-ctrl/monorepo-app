@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-30",
+  "exitCode": 0,
+  "mode": "lab-only",
+  "scope": "SYNTHETIC_DEBUG_EMULATOR_NOT_LIVE_OR_PHYSICAL_DEVICE",
+  "captures": [
+    "lab-turtle",
+    "lab-squirrel",
+    "lab-frog"
+  ],
+  "lab": {
+    "scope": "native_debug_lab_synthetic_no_real_entitlements",
+    "pilots": [
+      "pilot",
+      "rion",
+      "tw_bear",
+      "eden",
+      "tw_otter",
+      "tw_owl",
+      "tw_squirrel",
+      "tw_hedgehog",
+      "tw_penguin",
+      "tw_chameleon",
+      "tw_eagle",
+      "tw_volt"
+    ],
+    "records": 0,
+    "normalPremiumGranted": false,
+    "expiry": "model_steps_after_native_button_activation"
+  }
+}

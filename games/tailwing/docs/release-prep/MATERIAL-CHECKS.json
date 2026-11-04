@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-29",
+  "scope": "LOCAL_MATERIAL_VERIFICATION_ONLY",
+  "status": "PASS_NOT_SUBMISSION_READY",
+  "checks": [
+    {
+      "id": "all_saved_asset_hashes_match",
+      "status": "PASS"
+    },
+    {
+      "id": "all_saved_asset_sizes_match",
+      "status": "PASS"
+    },
+    {
+      "id": "play_icon_format_size",
+      "status": "PASS"
+    },
+    {
+      "id": "play_feature_rgb",
+      "status": "PASS"
+    },
+    {
+      "id": "ios_icon_rgb",
+      "status": "PASS"
+    },
+    {
+      "id": "four_android_screenshots_rgb_9_16",
+      "status": "PASS"
+    },
+    {
+      "id": "five_native_android_icon_sizes",
+      "status": "PASS"
+    },
+    {
+      "id": "native_ios_icons_contents_match",
+      "status": "PASS"
+    },
+    {
+      "id": "inspection_apk_hash_matches",
+      "status": "PASS"
+    },
+    {
+      "id": "inspection_static_checks_pass",
+      "status": "PASS"
+    },
+    {
+      "id": "unsigned_submission_block_preserved",
+      "status": "PASS"
+    },
+    {
+      "id": "mobile_source_snapshot_matches",
+      "status": "PASS"
+    },
+    {
+      "id": "purchase_lock_and_pending_config_preserved",
+      "status": "PASS"
+    },
+    {
+      "id": "local_html_no_forms_scripts_remote_resources",
+      "status": "PASS"
+    },
+    {
+      "id": "document_and_local_page_links_exist",
+      "status": "PASS"
+    },
+    {
+      "id": "saved_status_not_submission_ready",
+      "status": "PASS"
+    }
+  ],
+  "checkedDocumentLinks": 31,
+  "checkedLocalHtmlLinks": 17,
+  "notChecked": [
+    "browser_screenreader_rendering",
+    "native_launcher_masks",
+    "signed_aab_ipa",
+    "real_server_login_store",
+    "ios_physical_16kb_devices"
+  ]
+}

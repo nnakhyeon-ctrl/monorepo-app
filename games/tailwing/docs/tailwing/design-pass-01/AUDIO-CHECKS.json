@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-30",
+  "method": "original procedural PCM; no external samples",
+  "file": "assets/audio/tailwing_flight_v2.wav",
+  "bpm": 112,
+  "bars": 16,
+  "seconds": 34.285714285714285,
+  "sampleRate": 22050,
+  "channels": 1,
+  "bits": 16,
+  "peak": 0.29382270513122505,
+  "rms": 0.052554748891566076,
+  "clippedSamples": 0,
+  "firstSample": 0,
+  "lastSample": 0,
+  "listeningOnPhysicalDevice": "NOT_VERIFIED",
+  "rights": "No third-party samples; legal exclusivity not assessed"
+}

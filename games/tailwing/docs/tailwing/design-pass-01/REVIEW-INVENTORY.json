@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-30",
+  "scope": "LOCAL_DESIGN_REVIEW_NOT_STORE_SUBMISSION",
+  "files": [
+    {
+      "path": "assets/tailwing/rabbit_portrait_v2.png",
+      "bytes": 709405,
+      "sha256": "f0efb38d2a64f9647b6678fe4692b9238f52f61af01aad93d7f6c9beac782200"
+    },
+    {
+      "path": "assets/tailwing/turtle_portrait_v2.png",
+      "bytes": 1158786,
+      "sha256": "c8671b2415fa8e2ba7d7089af5fb4cee670f60cc7bf753e5c5755add0c5567e1"
+    },
+    {
+      "path": "assets/tailwing/rabbit_ship_v2.png",
+      "bytes": 1093470,
+      "sha256": "0c95d7110b648e6221cb77192abd801adf844dd1b5b3fb0bfa3fb7a4f953cc63"
+    },
+    {
+      "path": "assets/tailwing/turtle_ship_v2.png",
+      "bytes": 1366486,
+      "sha256": "a3d0eb6d3b0bb4654e398c1120730cc20a872552f1acb5ae2de6d2983dd8c898"
+    },
+    {
+      "path": "assets/tailwing/rabbit_hero_v2.png",
+      "bytes": 1084066,
+      "sha256": "26b110f525b3195a25279322263e4be109fd4096f14016c843332049a8282254"
+    },
+    {
+      "path": "assets/tailwing/turtle_hero_v2.png",
+      "bytes": 1690681,
+      "sha256": "f463bd47e577e30d5fd7269386a95f7f255de263aa7eea294e69b45b833251af"
+    },
+    {
+      "path": "assets/audio/tailwing_flight_v2.wav",
+      "bytes": 1512044,
+      "sha256": "8a13b62b61f63b6aa05292abc8ddd2a13953e4e8d18f638cbaf43a81b2b6b672"
+    },
+    {
+      "path": "docs/tailwing/design-pass-01/before/home-rabbit.png",
+      "bytes": 1240284,
+      "sha256": "07de3233f61b470bded18fd133340063cfe0b7662f5e52573822aff914158b7e"
+    },
+    {
+      "path": "docs/tailwing/design-pass-01/after/home-rabbit.png",
+      "bytes": 1331758,
+      "sha256": "9d59744abe9ce5b86faac56a0d2bdcd3ba8b39fb3602ed03b760ac40ef7ba4eb"
+    },
+    {
+      "path": "docs/tailwing/design-pass-01/before/home-turtle.png",
+      "bytes": 1282302,
+      "sha256": "d880d0cdf16d68056963c5beedb938de7dfabf241b24793d84f5ffc3c52da105"
+    },
+    {
+      "path": "docs/tailwing/design-pass-01/after/home-turtle.png",
+      "bytes": 1433671,
+      "sha256": "ac0e443cfa6f19241a8c6462bee37e652d99a59ef83d74fd9d94eddf98fbd47a"
+    },
+    {
+      "path": "docs/tailwing/design-pass-01/before/hangar-top.png",
+      "bytes": 195026,
+      "sha256": "7fe6998b6ebf9444467dff1af0103e26ae4459050bac738283222fd783242176"
+    },
+    {
+      "path": "docs/tailwing/design-pass-01/after/hangar-top.png",
+      "bytes": 469592,
+      "sha256": "a9b9e0042aca7cf27c52330b4c734aefa5bf70bf1883cca6d107c4992969e893"
+    },
+    {
+      "path": "docs/tailwing/design-pass-01/before/hangar-cards.png",
+      "bytes": 270558,
+      "sha256": "66b9c9cf453be754236525815269a560f3ffe7dc0eb32b555b4b4894b1b87105"
+    },
+    {
+      "path": "docs/tailwing/design-pass-01/after/hangar-cards.png",
+      "bytes": 436712,
+      "sha256": "64d7a252afda325e57dc7e03e7c1a8cb20940197d58243c122e360076540381a"
+    },
+    {
+      "path": "docs/tailwing/design-pass-01/before/shield-active.png",
+      "bytes": 1513747,
+      "sha256": "a9080c23dcf35b95ffdfdf7beafd4677e619e73ff228292cbac3068c86a72093"
+    },
+    {
+      "path": "docs/tailwing/design-pass-01/after/shield-active.png",
+      "bytes": 1145798,
+      "sha256": "e708563b1fd867fe1f52d8f30ce78b81b0497778d7262ae369ba2fd91d41236a"
+    },
+    {
+      "path": "docs/tailwing/design-pass-01/before/shield-ended.png",
+      "bytes": 1530284,
+      "sha256": "2d1dd447872a918582185b368d32b770e2df46519fb396223fc022dd2f21744a"
+    },
+    {
+      "path": "docs/tailwing/design-pass-01/after/shield-ended.png",
+      "bytes": 1197772,
+      "sha256": "b34702535bf582f710ce3ae85b637e77d6c2d8e3bb38b2829792ab1594027cab"
+    },
+    {
+      "path": "docs/tailwing/design-pass-01/after/rabbit-combat.png",
+      "bytes": 1353773,
+      "sha256": "f7c2ee96ee330562cc01af2dc48905199480ee6d5ba585c6d05f2d3ca1b68ebd"
+    }
+  ]
+}

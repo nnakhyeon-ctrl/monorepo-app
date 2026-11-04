@@ -1,0 +1,335 @@
+{
+  "date": "2026-10-30",
+  "status": "LOCAL_RENEWAL_NOT_LIVE_OR_SUBMISSION_READY",
+  "files": [
+    {
+      "path": "assets/tailwing/bear_portrait.png",
+      "bytes": 299338,
+      "sha256": "13f495f9beebea0eef5072f8d4cb12677f0d7748e60a777d928384f5da7b63fc",
+      "width": 512,
+      "height": 536
+    },
+    {
+      "path": "assets/tailwing/bear_ship.png",
+      "bytes": 324210,
+      "sha256": "0f4278d9daa84221295cb8e928f56066574b5bdf090cf250a160418834c2bb4f",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/tailwing/eagle_portrait.png",
+      "bytes": 242322,
+      "sha256": "5ba6a3bb23ee3d3c57e45f5efcc05e7e777cfacf9ceae922173dd00890eb248a",
+      "width": 512,
+      "height": 546
+    },
+    {
+      "path": "assets/tailwing/eagle_ship.png",
+      "bytes": 263455,
+      "sha256": "2b1727c0f1f8066b26c33e287dc3f6fbe5ddae4f96a4204369f7e69eb2becdd5",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/tailwing/fox_portrait.png",
+      "bytes": 312498,
+      "sha256": "7c8e871c5f2ad2ddac0c8e29a807b0e55a0916c15468827d1d03455b2bdca0e7",
+      "width": 512,
+      "height": 519
+    },
+    {
+      "path": "assets/tailwing/fox_ship.png",
+      "bytes": 263499,
+      "sha256": "b2416729e7dff8d46823e0d767d9cc7bd6b9f5fe4ce2de3e5ea997f078e463e0",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/tailwing/frog_portrait.png",
+      "bytes": 255347,
+      "sha256": "c2eb6f229b23478f68a3813be0cf8ebb471ae3aa6e44f6e3801bb9cb30360dae",
+      "width": 512,
+      "height": 536
+    },
+    {
+      "path": "assets/tailwing/frog_ship.png",
+      "bytes": 335952,
+      "sha256": "f6a0491bf8f0bc089cfe40a9e7190938165d5241ad42f2d08409897b2b131e15",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/tailwing/hedgehog_portrait.png",
+      "bytes": 305388,
+      "sha256": "6db98aad0a2147f693a7d343d5e7c8748b3b75f12983aebddf5a58a08d653fb3",
+      "width": 512,
+      "height": 554
+    },
+    {
+      "path": "assets/tailwing/hedgehog_ship.png",
+      "bytes": 325601,
+      "sha256": "fcd075368826e6c90a50adb5a31a4a54163ece07f857188c09d6c139d71a0279",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/tailwing/otter_portrait.png",
+      "bytes": 314293,
+      "sha256": "341951a8a92ad2cb29850080f9dd98cc49232c4e309be7369156cc26288ad999",
+      "width": 512,
+      "height": 614
+    },
+    {
+      "path": "assets/tailwing/otter_ship.png",
+      "bytes": 371780,
+      "sha256": "1142655e791e9ecef01891c37b03767ec402ca29e98506dcb6685105e2ae71f4",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/tailwing/owl_portrait.png",
+      "bytes": 320972,
+      "sha256": "03f28041c1889e99161a102046fc4b973d652cd4cdec3e84c2f74849610c11f9",
+      "width": 512,
+      "height": 577
+    },
+    {
+      "path": "assets/tailwing/owl_ship.png",
+      "bytes": 303638,
+      "sha256": "a5e9b43dbc34991cdc8ce1653151c57a565d5529c8f8594bf91b16ec3e53bf33",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/tailwing/penguin_portrait.png",
+      "bytes": 218176,
+      "sha256": "4aef2a8611ea19ee756ac9b30057749bd3539068c331e719ab85ce0eaf81ad5c",
+      "width": 512,
+      "height": 576
+    },
+    {
+      "path": "assets/tailwing/penguin_ship.png",
+      "bytes": 323912,
+      "sha256": "00a5341fc46f0d1af53d2e5436383dbc4d175464d2e21655d9dec34d77436731",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/tailwing/rabbit_hero.png",
+      "bytes": 208182,
+      "sha256": "aed6c7bee3a4297c9fb26a9c92b04177851f2fe6ee23143e14f70fbbd4f3b240",
+      "width": 512,
+      "height": 341
+    },
+    {
+      "path": "assets/tailwing/rabbit_portrait.png",
+      "bytes": 247575,
+      "sha256": "6137b0f145f1a69730497e54d9311c3b4c1b34e166587d633fb029493abe3015",
+      "width": 512,
+      "height": 614
+    },
+    {
+      "path": "assets/tailwing/rabbit_ship.png",
+      "bytes": 232324,
+      "sha256": "d223a7d352a9cc3a700a781fb5c63fdec2099e78fb0297aa2e86390c937b6a17",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/tailwing/squirrel_portrait.png",
+      "bytes": 367984,
+      "sha256": "7eef55e435945ecfa7765aec0f018b476c57771019f276dc3473c81b0e647614",
+      "width": 512,
+      "height": 546
+    },
+    {
+      "path": "assets/tailwing/squirrel_ship.png",
+      "bytes": 376332,
+      "sha256": "1e83221746ff717830fa0e1b32741023d83938de66149b5fb44fcc56a2307138",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/tailwing/turtle_portrait.png",
+      "bytes": 254541,
+      "sha256": "76f4c1c22fa558408aeb73b16db86ca7edd256c4d433461a2038d112666b8e7e",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/tailwing/turtle_ship.png",
+      "bytes": 351992,
+      "sha256": "a83ba2969bb7627d470bc3c5ffa3ed76b35e29a1dffb750db4870273b626e0b6",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/tailwing/volt_portrait.png",
+      "bytes": 203166,
+      "sha256": "4e5d67cde41f4d27329cfcd56f67f8a186fec4d682d6db70e39ae2f67235d9a4",
+      "width": 512,
+      "height": 468
+    },
+    {
+      "path": "assets/tailwing/volt_ship.png",
+      "bytes": 282944,
+      "sha256": "245634d3860dd19d526633c015c53a901efa441d08dea03d7abcc31d7ce53d7b",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/tailwing/world_background.png",
+      "bytes": 939158,
+      "sha256": "41d6583a722c1994d0b3696f8e0d5e9f2b705b748f6099d289688a797255cddc",
+      "width": 720,
+      "height": 480
+    },
+    {
+      "path": "assets/tailwing/world_enemies.png",
+      "bytes": 349860,
+      "sha256": "4fb833a018ecb067831962ed31b2e2aa92059aef8ec812c7959b3ce9f1b64c5c",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "docs/tailwing/screenshots/00-home.png",
+      "bytes": 1240284,
+      "sha256": "07de3233f61b470bded18fd133340063cfe0b7662f5e52573822aff914158b7e",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/screenshots/bear.png",
+      "bytes": 1540981,
+      "sha256": "2f687bdf76cdf23ff75c67f3cbbcb4af7289366abff977b6d9ac3387018b5619",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/screenshots/eagle.png",
+      "bytes": 1519481,
+      "sha256": "4c3419158215c831f3f3324e3181422f72c3dd348c4a6a3e50b5a230f7e92470",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/screenshots/fox.png",
+      "bytes": 1580569,
+      "sha256": "cdedce428b392855fef78f4b0005a7bf9fc44c380e5136d2e16e283a11819e35",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/screenshots/frog.png",
+      "bytes": 1540451,
+      "sha256": "1104d5d9d95e76c081a342cf5fa29f6606a96847cb90e503b10bc694c57947ec",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/screenshots/hedgehog.png",
+      "bytes": 1541767,
+      "sha256": "1747bc8fafe918cdc3fdfc911193bc57cd075ce280437429bfb31af06764aef4",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/screenshots/otter.png",
+      "bytes": 1551671,
+      "sha256": "3f60806782ca147d1fc54d2eacfeedff8b4c5c8b12de074ce49eef4f828ce854",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/screenshots/owl.png",
+      "bytes": 1533848,
+      "sha256": "4b7cc83a24bcde6c33af0be1966015a741f6dac2f5db3dfba0450d3f168496d8",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/screenshots/penguin.png",
+      "bytes": 1558963,
+      "sha256": "e59094121f7813b64855956ec4cab98f674965cd4968699ea72110948024cdcc",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/screenshots/rabbit.png",
+      "bytes": 1528734,
+      "sha256": "242afa26ab6407cc8961eb8d9f20fa31a4396f119c92f3cc4ee3b4f730e91ca1",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/screenshots/skill-cards.png",
+      "bytes": 295688,
+      "sha256": "810162f2f6c8e461faac080de72ac056bb204aba582b5e342533869a9fc2d2a1",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/screenshots/squirrel.png",
+      "bytes": 1529625,
+      "sha256": "9cca1494289e56971e2ff045881667a879eb91a57fe608899187af88c87bce4b",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/screenshots/turtle.png",
+      "bytes": 1529868,
+      "sha256": "1b1658b3d788894f4199d71a08d324201307ae861fbd0de9d53d3457d18fa56c",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/screenshots/volt.png",
+      "bytes": 1560623,
+      "sha256": "a615cf651d7017fae02dda7dbee5bc24cde0255e9cf5349999ad6533d2957a58",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/followup-screenshots/boss.png",
+      "bytes": 1302103,
+      "sha256": "dc2f673be9fa9b4fbeb7104cf1af1d2318d553bbee8be27fa3f7ccc9c2795ade",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/followup-screenshots/lab-frog.png",
+      "bytes": 2896705,
+      "sha256": "532d3ea71ac6effe9b277375df85703daf6bc3ce34042e499a0ca46e01b2b6fc",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/followup-screenshots/lab-squirrel.png",
+      "bytes": 2894647,
+      "sha256": "aad8ac1c140ab408d2c15dc0842a5e8c0fdc22a59708d7916451a207b8332515",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/followup-screenshots/lab-turtle.png",
+      "bytes": 2895923,
+      "sha256": "22a93ba58ee7e819407e2c3ded583581683176ab34a6832ec329b432df737da5",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/followup-screenshots/result.png",
+      "bytes": 739495,
+      "sha256": "465e4d28fec4dbe365caf0c1b3950b6159a25a5d7c359818eb86d8dd5c3c950b",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "path": "docs/tailwing/followup-screenshots/retry.png",
+      "bytes": 1506925,
+      "sha256": "b85fa7f27333e92f4ef62d3fd90cac9ae41e8bd0d0330caa8f96c88ab1726497",
+      "width": 1080,
+      "height": 1920
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "functions": [{ "source": ".", "codebase": "airzero-auth", "runtime": "nodejs22",
+    "ignore": ["node_modules", ".git", ".firebase", ".runtime", "test", "tool", "build/test", "*.log", ".env*", "*.local"] }],
+  "firestore": { "rules": "firestore.prod.rules" }
+}

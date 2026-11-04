@@ -1,22 +1,22 @@
 # Flutter 앱 작업 저장소
 
-GitHub 저장은 아직 미완료다. 로컬 첫 커밋 `f77f482`(583개 파일)은 완료했으나 PC Git 인증이 없어 push가 실패했다. [검증·저장 결과](games/airzero-strike/docs/VERIFICATION-2026-11-04.md)를 따른다.
+GitHub 저장은 아직 미완료다. 로컬 첫 커밋 `f77f482`(583개 파일)은 완료했으나 PC Git 인증이 없어 push가 실패했다. [검증·저장 결과](games/tailwing/docs/VERIFICATION-2026-11-04.md)를 따른다.
 
-2026-11-04 전체 검증 후속은 [테일윙 결과](games/airzero-strike/docs/VERIFICATION-2026-11-04.md)를 따른다. 전체 Flutter 185개·서버 단위 21개/demo 43개·루트 CI 통과. 사용자 요청으로 기존 GitHub에 검토된 소스/자산/문서를 저장하며 로컬 SDK·비밀·빌드 캐시는 제외한다.
+2026-11-04 전체 검증 후속은 [테일윙 결과](games/tailwing/docs/VERIFICATION-2026-11-04.md)를 따른다. 전체 Flutter 185개·서버 단위 21개/demo 43개·루트 CI 통과. 사용자 요청으로 기존 GitHub에 검토된 소스/자산/문서를 저장하며 로컬 SDK·비밀·빌드 캐시는 제외한다.
 
-2026-11-04 테일윙 재개: [중단 지점·Git/GitHub·현재 PC 복구](games/airzero-strike/docs/RESUME-2026-11-04.md). 최신 대상은 같은 `games/airzero-strike/` 앱이다. 기존 디자인 적용과 미검증 Android 실행/성능을 구분한다.
+2026-11-04 테일윙 재개: [중단 지점·Git/GitHub·현재 PC 복구](games/tailwing/docs/RESUME-2026-11-04.md). 최신 대상은 같은 `games/tailwing/` 앱이다. 기존 디자인 적용과 미검증 Android 실행/성능을 구분한다.
 
-2026-10-20 AIRZERO STRIKE의 최신 원격 후속은 [개발 등록 결과](games/airzero-strike/docs/SOCIAL-REMOTE-SETUP.md)다. 승인받은 무료 Firebase 프로젝트·Google 클라이언트 3개·카카오 플랫폼/OIDC·공개 설정을 준비했다. 무료 Spark 유지·원하지 않은 결제 금지·중요 변경 전 확인을 적용한다. 실제 서버 로그인·Apple/iOS native는 미검증이며 Apple은 마지막이다. 아래는 이전 로컬 단계의 이력이다.
+2026-10-20 AIRZERO STRIKE의 최신 원격 후속은 [개발 등록 결과](games/tailwing/docs/SOCIAL-REMOTE-SETUP.md)다. 승인받은 무료 Firebase 프로젝트·Google 클라이언트 3개·카카오 플랫폼/OIDC·공개 설정을 준비했다. 무료 Spark 유지·원하지 않은 결제 금지·중요 변경 전 확인을 적용한다. 실제 서버 로그인·Apple/iOS native는 미검증이며 Apple은 마지막이다. 아래는 이전 로컬 단계의 이력이다.
 
-AIRZERO STRIKE 최신 요청은 [8단계 소셜 로그인](games/airzero-strike/docs/SOCIAL-AUTH-RESULTS.md)이다. 사용자가 선택한 로컬 우선 범위로 Google·카카오·iOS Apple을 기존 인증에 연결하고 자동 병합/기록 손실을 막는다. 실제 공급자 등록/로그인·운영 적용은 대기이며 [사용자 설정 순서](games/airzero-strike/docs/SOCIAL-SETUP.md)를 따른다. 아래 이전 단계의 소셜 제한은 당시 이력이다. 다른 앱·가입/배포·commit/push는 진행하지 않는다.
+AIRZERO STRIKE 최신 요청은 [8단계 소셜 로그인](games/tailwing/docs/SOCIAL-AUTH-RESULTS.md)이다. 사용자가 선택한 로컬 우선 범위로 Google·카카오·iOS Apple을 기존 인증에 연결하고 자동 병합/기록 손실을 막는다. 실제 공급자 등록/로그인·운영 적용은 대기이며 [사용자 설정 순서](games/tailwing/docs/SOCIAL-SETUP.md)를 따른다. 아래 이전 단계의 소셜 제한은 당시 이력이다. 다른 앱·가입/배포·commit/push는 진행하지 않는다.
 
-AIRZERO STRIKE의 최신 작업은 [7단계 이메일 인증](games/airzero-strike/docs/EMAIL-AUTH-RESULTS.md)이다. 기존 Firebase/계정 화면에 공식 SDK를 연결하며 무료 기기 플레이·기록/설정을 유지한다. 로컬 검증과 실제 메일/앱 복귀/운영 설정 대기를 구분하고 클라우드/스토어 배포는 하지 않는다. 아래 기본 화면/SDK 미연결 설명은 이전 작업 이력이다.
+AIRZERO STRIKE의 최신 작업은 [7단계 이메일 인증](games/tailwing/docs/EMAIL-AUTH-RESULTS.md)이다. 기존 Firebase/계정 화면에 공식 SDK를 연결하며 무료 기기 플레이·기록/설정을 유지한다. 로컬 검증과 실제 메일/앱 복귀/운영 설정 대기를 구분하고 클라우드/스토어 배포는 하지 않는다. 아래 기본 화면/SDK 미연결 설명은 이전 작업 이력이다.
 
-최신 변경은 AIRZERO STRIKE의 실제 무료 전투·15탄·기기 기록 저장·유료 선택 능력·협동 시험 구현입니다. 수익 모델은 기본 무료+추가 콘텐츠 월간/연간 구독이며 가격은 관리자 최종 설정 대기입니다. 완료/검증/외부 연동 대기는 [현재 실행 기록](games/airzero-strike/docs/PLAYABLE-RESULTS.md)과 [출시 준비표](games/airzero-strike/docs/RELEASE-READINESS.md)를 확인하세요.
+최신 변경은 AIRZERO STRIKE의 실제 무료 전투·15탄·기기 기록 저장·유료 선택 능력·협동 시험 구현입니다. 수익 모델은 기본 무료+추가 콘텐츠 월간/연간 구독이며 가격은 관리자 최종 설정 대기입니다. 완료/검증/외부 연동 대기는 [현재 실행 기록](games/tailwing/docs/PLAYABLE-RESULTS.md)과 [출시 준비표](games/tailwing/docs/RELEASE-READINESS.md)를 확인하세요.
 
-사용자가 새 앱 이름을 ‘AIRZERO STRIKE’로 선택했습니다. 작업 폴더는 games/airzero-strike이며 메인 타이틀·앱 표시명·F5 설정·문서 경로를 맞췄습니다. 기존 라이커프 시리즈 2026·스톰윙과 같은 앱이며 개발 식별자는 유지합니다. 출시 명칭·상표 가용성은 미확인입니다.
+사용자가 새 앱 이름을 ‘AIRZERO STRIKE’로 선택했습니다. 작업 폴더는 games/tailwing이며 메인 타이틀·앱 표시명·F5 설정·문서 경로를 맞췄습니다. 기존 라이커프 시리즈 2026·스톰윙과 같은 앱이며 개발 식별자는 유지합니다. 출시 명칭·상표 가용성은 미확인입니다.
 
-Windows 11에서 Flutter 개발을 위한 2단계 준비와 3단계 계획을 마치고 [AIRZERO STRIKE](games/airzero-strike/README.md)의 4단계 실제 Flutter 프로젝트·기본 화면을 준비했습니다. 원격은 [사용자 저장소](https://github.com/nnakhyeon-ctrl/monorepo-app)이며 commit·push는 하지 않았습니다. Untitled-1.txt는 기존 빈 파일입니다.
+Windows 11에서 Flutter 개발을 위한 2단계 준비와 3단계 계획을 마치고 [AIRZERO STRIKE](games/tailwing/README.md)의 4단계 실제 Flutter 프로젝트·기본 화면을 준비했습니다. 원격은 [사용자 저장소](https://github.com/nnakhyeon-ctrl/monorepo-app)이며 commit·push는 하지 않았습니다. Untitled-1.txt는 기존 빈 파일입니다.
 
 ## 현재 구조
 
@@ -26,11 +26,11 @@ Windows 11에서 Flutter 개발을 위한 2단계 준비와 3단계 계획을 �
 - infra/: 호스팅 참고 구성, 선택·공개·인프라 생성 없음
 - docs/SETUP-RESULTS.md: 환경·검사 결과와 미실행 항목
 - docs/AI-EXCLUSIONS.md: Git 제외와 AI 접근 제한의 차이
-- games/airzero-strike/: 실제 Android/iOS Flutter 프로젝트, 격납고 첫 화면과 계정·이용권·기록 안내 화면. 핵심 게임과 실제 서비스 연결은 이후 단계
+- games/tailwing/: 실제 Android/iOS Flutter 프로젝트, 격납고 첫 화면과 계정·이용권·기록 안내 화면. 핵심 게임과 실제 서비스 연결은 이후 단계
 
 앱별 pubspec.yaml·pubspec.lock과 루트 Node 도구를 분리합니다. npm workspace·Melos·공유 Dart 패키지는 강제하지 않습니다. 배포용 Node 패키지는 별도 폴더에 있고 현재 설치하지 않았습니다.
 
-앱 실행과 F5 안내, 검증 결과는 [4단계 기록](games/airzero-strike/docs/STAGE4-RESULTS.md)을 따릅니다. VS Code 실행 구성은 .vscode/launch.json에 있으며 기존 settings.json은 보존했습니다.
+앱 실행과 F5 안내, 검증 결과는 [4단계 기록](games/tailwing/docs/STAGE4-RESULTS.md)을 따릅니다. VS Code 실행 구성은 .vscode/launch.json에 있으며 기존 settings.json은 보존했습니다.
 
 ## Windows에서 검사
 
