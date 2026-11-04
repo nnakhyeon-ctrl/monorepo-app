@@ -25,11 +25,15 @@ function fixture(t) {
 const valid = ['--name=sample-app','--platform=flutter','--category=utilities'];
 
 test('Git은 비밀·실제 데이터·캡처·로컬 도구를 제외하고 앱 lockfile은 보존', () => {
-  const excluded = ['.env','utilities/app/.env.production','secret.p8','key.properties','service-account-test.json','private/sample.json','data/sample.csv','captures/sample.png','screenshot-test.png','logs/sample.log','.tools/terraform/1.9.8/terraform.exe'];
+  const excluded = ['.env','utilities/app/.env.production','secret.p8','key.properties','service-account-test.json','private/sample.json','data/sample.csv','captures/sample.png','screenshot-test.png','logs/sample.log','.tools/terraform/1.9.8/terraform.exe','.claude/settings.json','.codex/config.toml','flutter/bin/flutter.bat','games/tailwing/.flutter_tool_state'];
   const locks = ['utilities/app/pubspec.lock','apps-deployment/flutter/scripts/package-lock.json'];
   const output = execFileSync('git',['check-ignore','--stdin','-z'],{cwd:root,encoding:'utf8',input:[...excluded,...locks].join('\0') + '\0'}).split('\0').filter(Boolean);
   assert.deepEqual(output,excluded);
-  JSON.parse(fs.readFileSync(path.join(root,'.claude/settings.json'),'utf8'));
+  // Local agent settings are deliberately untracked and absent in clean CI checkouts.
+  // Validate a developer's optional file when present; its absence is already covered
+  // by the required Git exclusion assertions above.
+  const localSettings = path.join(root,'.claude/settings.json');
+  if (fs.existsSync(localSettings)) JSON.parse(fs.readFileSync(localSettings,'utf8'));
 });
 
 test('경로·플랫폼·식별자·호스팅·중복 옵션을 쓰기 전에 거부', t => {

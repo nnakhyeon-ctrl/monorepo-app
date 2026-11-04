@@ -1,6 +1,6 @@
 # 테일윙 · TAILWING
 
-Git 저장 상태: 583개 파일의 로컬 커밋 `f77f482` 완료. GitHub push는 현재 PC의 Git 인증 미설정으로 실패하여 원격 미저장이다. [상세 결과/재실행 명령](docs/VERIFICATION-2026-11-04.md)을 따른다. 아래 저장 진행 문구는 요청/진행 당시 기록이다.
+현재 경로는 `games/tailwing`, 작업공간 파일은 루트의 `tailwing-codex.code-workspace`다. 기존 GitHub main에 전체 소스·자산 저장을 완료했다. [이름 변경·저장·검증 결과](docs/TAILWING-RENAME-2026-11-04.md)를 따른다. 아래 이전 경로/인증 실패는 당시 이력이다.
 
 2026-11-04 후속: [오류 수정·전체 검증·GitHub 저장 범위·다음 단계](docs/VERIFICATION-2026-11-04.md). 전체 Flutter 185개·서버 단위 21개/demo 통합 43개 및 루트 CI 통과. 사용자 요청으로 기존 원격에 commit/push하며 SDK/비밀/캐시/빌드는 제외한다. Android SDK 준비와 native 재검증은 남아 있다.
 

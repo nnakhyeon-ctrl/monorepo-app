@@ -1,6 +1,6 @@
 # 테일윙 · TAILWING 개발 계획
 
-현재 Git 저장: 로컬 `f77f482` 완료 / GitHub push 인증 실패. 원격 완료로 체크하지 않는다. 본인 Git 로그인 후 `git push -u origin main` 재실행·원격 일치 확인이 남는다.
+현재 완료: games/tailwing 및 tailwing-codex.code-workspace로 이름 변경, 새 경로에서 Flutter 185개·서버 단위 21개/가상 통합 43개·분석/루트 CI 통과. GitHub main 저장과 583개 파일 트리 일치 확인 완료. [최신 결과](docs/TAILWING-RENAME-2026-11-04.md). 아래 인증 실패/원격 미저장은 해결 전 기록이다.
 
 ## 2026-11-04 전체 검증·저장 후속
 

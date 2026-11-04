@@ -1,6 +1,6 @@
 # Flutter 앱 작업 저장소
 
-GitHub 저장은 아직 미완료다. 로컬 첫 커밋 `f77f482`(583개 파일)은 완료했으나 PC Git 인증이 없어 push가 실패했다. [검증·저장 결과](games/tailwing/docs/VERIFICATION-2026-11-04.md)를 따른다.
+현재 앱은 **테일윙 · TAILWING**, 폴더는 `games/tailwing`, 작업공간 파일은 `tailwing-codex.code-workspace`다. 기존 GitHub `main`에 [전체 소스 저장](https://github.com/nnakhyeon-ctrl/monorepo-app/tree/main/games/tailwing)을 완료했다. [이름 변경·검증 결과](games/tailwing/docs/TAILWING-RENAME-2026-11-04.md)를 따른다. 아래 이전 이름/인증 실패 문구는 당시 이력이다.
 
 2026-11-04 전체 검증 후속은 [테일윙 결과](games/tailwing/docs/VERIFICATION-2026-11-04.md)를 따른다. 전체 Flutter 185개·서버 단위 21개/demo 43개·루트 CI 통과. 사용자 요청으로 기존 GitHub에 검토된 소스/자산/문서를 저장하며 로컬 SDK·비밀·빌드 캐시는 제외한다.
 
