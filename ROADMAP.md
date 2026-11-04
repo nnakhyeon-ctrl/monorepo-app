@@ -1,5 +1,7 @@
 # 저장소 진행 상태
 
+2026-11-04 테일윙 12·13단계: [새 로컬 자료/직접 절차](games/tailwing/docs/release-prep-2026-11-04/index.html), [결과](games/tailwing/docs/STAGE12-13-2026-11-04.md). 자료·도구 검증/편집 복귀 절차는 준비했고 서명/실서비스/공식 테스트·moderate 전체16/production6 보안 검토는 대기다. 사용자가 만족한 뒤 Google Play 게시를 직접 결정하며 지금은 서버/페이지·스토어 공개하지 않는다.
+
 현재 완료: 테일윙 폴더/작업공간 이름 변경, 새 경로에서 Flutter 185개·서버 단위 21개/가상 통합 43개·분석/루트 CI 통과. GitHub 연결 도구로 기존 main에 583개 파일을 저장하고 전체 트리 해시 일치를 확인했다. [최신 결과](games/tailwing/docs/TAILWING-RENAME-2026-11-04.md). 아래 Git 인증 실패는 해결 전 이력이다.
 
 2026-11-04 전체 검증/저장 후속: [결과](games/tailwing/docs/VERIFICATION-2026-11-04.md). 주요 로컬 도구 경로/Java 탐색 수정, Flutter 185개·서버 단위 21개/demo 43개·루트 CI 통과. 기존 원격 저장은 사용자 명시 요청으로 진행하며 실제 Android 재실행/성능·실서비스/배포는 완료 범위에서 제외한다.

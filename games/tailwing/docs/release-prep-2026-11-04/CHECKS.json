@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-04",
+  "scope": "LOCAL_SOURCE_AND_MATERIAL_CHECKS_NOT_SIGNED_BUILD_OR_STORE_VERIFICATION",
+  "checks": [
+    {
+      "id": "current_source_fingerprint",
+      "status": "PASS"
+    },
+    {
+      "id": "all_material_hashes",
+      "status": "PASS"
+    },
+    {
+      "id": "no_false_submission_success",
+      "status": "PASS"
+    },
+    {
+      "id": "historical_screenshots_labelled",
+      "status": "PASS"
+    },
+    {
+      "id": "technique_not_presented_as_free_shield",
+      "status": "PASS"
+    },
+    {
+      "id": "source_debug_and_network_guards",
+      "status": "PASS"
+    },
+    {
+      "id": "graphic_format_play-icon-512.png",
+      "status": "PASS"
+    },
+    {
+      "id": "graphic_format_play-feature-1024x500.png",
+      "status": "PASS"
+    },
+    {
+      "id": "graphic_format_ios-icon-1024.png",
+      "status": "PASS"
+    },
+    {
+      "id": "offline_page_delete-account.html",
+      "status": "PASS"
+    },
+    {
+      "id": "offline_page_index.html",
+      "status": "PASS"
+    },
+    {
+      "id": "offline_page_privacy.html",
+      "status": "PASS"
+    },
+    {
+      "id": "offline_page_support.html",
+      "status": "PASS"
+    },
+    {
+      "id": "offline_page_terms.html",
+      "status": "PASS"
+    },
+    {
+      "id": "local_links_exist",
+      "status": "PASS"
+    }
+  ],
+  "links": 42,
+  "broken": [],
+  "passed": 15,
+  "failed": 0
+}

@@ -47,5 +47,6 @@ const terraform = process.platform === 'win32' && fs.existsSync(localTerraform) 
 run('Terraform 포맷 (인프라 연결 없음)', terraform, ['fmt','-check','-recursive','infra/aws']);
 run('생성기·경로·공개 파일·환경 검사 회귀 테스트', process.execPath, ['--test','scripts/tests/safety.test.mjs']);
 run('게임 로컬 도구 경로·인증정보 비상속', process.execPath, ['--test','games/tailwing/tool/local_tools.test.mjs']);
+run('출시 자료 소스 변경 감지·서명 파일 제외', process.execPath, ['--test','games/tailwing/tool/release_candidate.test.mjs']);
 if (failed) process.exitCode = 1;
 else console.log('전체 로컬 CI 통과');

@@ -1,5 +1,7 @@
 # Flutter 앱 작업 저장소
 
+테일윙 최신 12·13단계는 [로컬 출시 자료](games/tailwing/docs/release-prep-2026-11-04/index.html)·[검증/미검증 결과](games/tailwing/docs/STAGE12-13-2026-11-04.md)를 따른다. 서명 제출 파일·실서비스/공식 테스트는 미완료이며 만족할 때까지 계속 편집한다. 최신 보안 감사 moderate 전체16/production6을 대기로 기록했다. 게시/배포는 하지 않는다.
+
 현재 앱은 **테일윙 · TAILWING**, 폴더는 `games/tailwing`, 작업공간 파일은 `tailwing-codex.code-workspace`다. 기존 GitHub `main`에 [전체 소스 저장](https://github.com/nnakhyeon-ctrl/monorepo-app/tree/main/games/tailwing)을 완료했다. [이름 변경·검증 결과](games/tailwing/docs/TAILWING-RENAME-2026-11-04.md)를 따른다. 아래 이전 이름/인증 실패 문구는 당시 이력이다.
 
 2026-11-04 전체 검증 후속은 [테일윙 결과](games/tailwing/docs/VERIFICATION-2026-11-04.md)를 따른다. 전체 Flutter 185개·서버 단위 21개/demo 43개·루트 CI 통과. 사용자 요청으로 기존 GitHub에 검토된 소스/자산/문서를 저장하며 로컬 SDK·비밀·빌드 캐시는 제외한다.

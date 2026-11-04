@@ -1,5 +1,7 @@
 # 테일윙 · TAILWING
 
+2026-11-04 12·13단계: [로컬 출시 자료/직접 빌드 조건](docs/release-prep-2026-11-04/index.html)과 [결과/미검증](docs/STAGE12-13-2026-11-04.md)을 준비했다. 서명 AAB/IPA·실서비스/공식 테스트는 미완료이며 캐릭터·스킬·기능은 만족할 때까지 계속 편집한다. 최신 npm 감사의 moderate 전체16/production6은 보안 대기로 남긴다. 스토어/페이지 공개는 하지 않는다.
+
 현재 경로는 `games/tailwing`, 작업공간 파일은 루트의 `tailwing-codex.code-workspace`다. 기존 GitHub main에 전체 소스·자산 저장을 완료했다. [이름 변경·저장·검증 결과](docs/TAILWING-RENAME-2026-11-04.md)를 따른다. 아래 이전 경로/인증 실패는 당시 이력이다.
 
 2026-11-04 후속: [오류 수정·전체 검증·GitHub 저장 범위·다음 단계](docs/VERIFICATION-2026-11-04.md). 전체 Flutter 185개·서버 단위 21개/demo 통합 43개 및 루트 CI 통과. 사용자 요청으로 기존 원격에 commit/push하며 SDK/비밀/캐시/빌드는 제외한다. Android SDK 준비와 native 재검증은 남아 있다.

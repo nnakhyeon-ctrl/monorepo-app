@@ -1,5 +1,7 @@
 # 12단계 제출·출시 자료 준비 결과
 
+**현재 테일윙 준비본:** [2026-11-04의 12·13단계 결과](STAGE12-13-2026-11-04.md)와 [새 로컬 자료 목록](release-prep-2026-11-04/index.html)을 따른다. 아래 AIRZERO 자료/미서명 APK는 과거 이력이다. 현재 signed AAB/Archive/IPA·실제 실행/공식 테스트·최종 제출은 미완료이며 사용자 만족 전까지 계속 편집한다.
+
 ## 2026-10-30 두 캐릭터/홈·선택/전투·음악 변경 후
 
 [로컬 전후13장·새 음악](tailwing/design-pass-01/index.html)과 [결과/범위](TAILWING-DESIGN-PASS-RESULTS.md),[새 개발용 preview APK](tailwing/BUILDS.json)만 갱신했다. preview는0.1.0+1/별도 `.integration` ID이며 설치/제한 시작 확인까지다. 기존 release-inspection과 APK-INSPECTION·20장 갤러리/기존 소개는 **이전 소스의 보존 이력**이고 이번 앱의 최종 제출 증거가 아니다. 새 서명 제출 파일·스토어 캡처/아이콘/소개·정책·실서비스/실기기/iOS/보안 대기가 남는다. 제출 파일을 확정하거나 재배포/스토어 등록하지 않았다.

@@ -1,0 +1,237 @@
+{
+  "date": "2026-11-04",
+  "app": "테일윙 · TAILWING",
+  "appPath": "games/tailwing",
+  "version": "0.1.0+1",
+  "status": "LOCAL_EDITABLE_PREPARATION_ONLY_SUBMISSION_BLOCKED",
+  "submissionReady": false,
+  "stage13": "OPEN_FOR_CONTINUED_EDITING",
+  "sourceCommit": "f8f8b3af3532efda60fd01e9c2b117d9c26c7ce8",
+  "trackedWorktreeDirty": true,
+  "sourceFingerprint": "5f2d35fec84a062483b4801fad92c0bd1c04de922eca4c4bf2a3530e880399bb",
+  "android": {
+    "applicationId": "com.example.raikeopeu2026.dev",
+    "targetSdkFromInstalledFlutter": 36,
+    "targetRequirementChecked": "API_36_2026-11-04",
+    "toolsPresent": false,
+    "toolchainStatus": "ANDROID_SDK_MISSING",
+    "signingPathConfigured": false,
+    "signingPathExists": false,
+    "signingContentsRead": false,
+    "releaseSigningConnected": false,
+    "signedAabProduced": false,
+    "pageSize16k": "CURRENT_BINARY_AND_DEVICE_NOT_VERIFIED",
+    "releaseExecution": "NOT_RUN",
+    "callbackExecution": "NOT_RUN"
+  },
+  "ios": {
+    "host": "win32",
+    "macAvailable": false,
+    "xcode": "NOT_VERIFIED_ON_WINDOWS",
+    "bundleId": "com.example.raikeopeu2026.dev",
+    "signing": "OWNER_PREPARATION_REQUIRED",
+    "archiveProduced": false,
+    "ipaProduced": false,
+    "execution": "NOT_RUN",
+    "appPrivacyManifestPresent": false,
+    "mergedSdkPrivacyManifests": "NOT_VERIFIED"
+  },
+  "cloudBuild": "NOT_SELECTED_NOT_USED",
+  "releaseGuardChecks": [
+    {
+      "id": "auth_emulator_debug_only",
+      "status": "STATIC_PASS",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "backend_emulator_rejects_release",
+      "status": "STATIC_PASS",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "research_loadout_free_outside_debug",
+      "status": "STATIC_PASS",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "research_home_debug_only",
+      "status": "STATIC_PASS",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "release_integration_build_rejected",
+      "status": "STATIC_PASS",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "android_cleartext_disabled",
+      "status": "STATIC_PASS",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "android_backup_disabled",
+      "status": "STATIC_PASS",
+      "runtime": "NOT_RUN"
+    },
+    {
+      "id": "ios_arbitrary_loads_disabled",
+      "status": "STATIC_PASS",
+      "runtime": "NOT_RUN"
+    }
+  ],
+  "applicationLogCallFiles": [],
+  "sdkRuntimeLogging": "NOT_VERIFIED",
+  "billing": {
+    "source": "EXAMPLE_ONLY_NOT_RUNTIME",
+    "status": "PENDING",
+    "liveVerification": "NOT_RUN",
+    "authLocalStatus": "PASS",
+    "authLiveVerification": "NOT_RUN",
+    "pending": [
+      {
+        "id": "AIRZERO_PLAY_SUBSCRIPTION_ID",
+        "status": "PENDING",
+        "code": "not_configured"
+      },
+      {
+        "id": "AIRZERO_PLAY_MONTHLY_PLAN",
+        "status": "PENDING",
+        "code": "not_configured"
+      },
+      {
+        "id": "AIRZERO_PLAY_ANNUAL_PLAN",
+        "status": "PENDING",
+        "code": "not_configured"
+      },
+      {
+        "id": "AIRZERO_APPLE_MONTHLY_PRODUCT",
+        "status": "PENDING",
+        "code": "not_configured"
+      },
+      {
+        "id": "AIRZERO_APPLE_ANNUAL_PRODUCT",
+        "status": "PENDING",
+        "code": "not_configured"
+      },
+      {
+        "id": "AIRZERO_APPLE_SUBSCRIPTION_GROUP",
+        "status": "PENDING",
+        "code": "not_configured"
+      },
+      {
+        "id": "AIRZERO_APPLE_STORE_APP_ID",
+        "status": "PENDING",
+        "code": "not_configured"
+      },
+      {
+        "id": "AIRZERO_TERMS_URL",
+        "status": "PENDING",
+        "code": "not_configured"
+      },
+      {
+        "id": "AIRZERO_PRIVACY_URL",
+        "status": "PENDING",
+        "code": "not_configured"
+      },
+      {
+        "id": "AIRZERO_SUPPORT_URL",
+        "status": "PENDING",
+        "code": "not_configured"
+      },
+      {
+        "id": "AIRZERO_ACCOUNT_DELETION_URL",
+        "status": "PENDING",
+        "code": "not_configured"
+      },
+      {
+        "id": "play_distinct_base_plans",
+        "status": "PENDING",
+        "code": "distinct_monthly_and_annual_required"
+      },
+      {
+        "id": "apple_distinct_products",
+        "status": "PENDING",
+        "code": "distinct_monthly_and_annual_required"
+      }
+    ]
+  },
+  "releaseArtifacts": [
+    {
+      "path": "build/tailwing-preview/tailwing-preview-debug.apk",
+      "exists": true,
+      "bytes": 243184894,
+      "sha256": "b3dea97445dbc1f54cf27bde72f01d30799c9220ab3f77c84cf05de07ab7dd75",
+      "signature": "NOT_VERIFIED",
+      "sourceMatchesCurrent": "NOT_VERIFIED",
+      "execution": "NOT_RUN",
+      "submissionReady": false
+    },
+    {
+      "path": "build/app/outputs/flutter-apk/app-release.apk",
+      "exists": true,
+      "bytes": 88678439,
+      "sha256": "d227fe565182ee60834aba153349b6e5a53401c2a4df86aaf3c5d97a1b50c129",
+      "signature": "NOT_VERIFIED",
+      "sourceMatchesCurrent": "NOT_VERIFIED",
+      "execution": "NOT_RUN",
+      "submissionReady": false
+    },
+    {
+      "path": "build/app/outputs/bundle/release/app-release.aab",
+      "exists": false,
+      "signature": "NOT_VERIFIED",
+      "sourceMatchesCurrent": "NOT_VERIFIED",
+      "execution": "NOT_RUN",
+      "submissionReady": false
+    },
+    {
+      "path": "build/app/outputs/bundle/release/app.aab",
+      "exists": false,
+      "signature": "NOT_VERIFIED",
+      "sourceMatchesCurrent": "NOT_VERIFIED",
+      "execution": "NOT_RUN",
+      "submissionReady": false
+    }
+  ],
+  "dependencyAudit": {
+    "scope": "NODE_LOCKFILE_AUDIT_NOT_MOBILE_OR_RUNTIME_SECURITY_PROOF",
+    "reports": [
+      {
+        "scope": "SERVER_WITH_DEVELOPMENT_TOOLS",
+        "status": "AUDIT_RETURNED",
+        "counts": {
+          "info": 0,
+          "low": 0,
+          "moderate": 16,
+          "high": 0,
+          "critical": 0,
+          "total": 16
+        }
+      },
+      {
+        "scope": "SERVER_PRODUCTION_DEPENDENCIES",
+        "status": "AUDIT_RETURNED",
+        "counts": {
+          "info": 0,
+          "low": 0,
+          "moderate": 6,
+          "high": 0,
+          "critical": 0,
+          "total": 6
+        }
+      }
+    ]
+  },
+  "blockers": [
+    "STAGE11_LIVE_VERIFICATION_PENDING",
+    "ANDROID_SDK_AND_SIGNING",
+    "MAC_XCODE_AND_SIGNING",
+    "LIVE_AUTH_CALLBACKS_AND_BACKEND",
+    "STORE_PRODUCTS_PRICES_AND_BILLING_TESTS",
+    "PUBLIC_POLICY_SUPPORT_DELETION_URLS",
+    "FINAL_ICON_SELECTION_AND_NATIVE_ICON_UPDATE",
+    "CURRENT_SIGNED_BUILD_SCREENSHOTS_AND_RUNTIME_TESTS",
+    "CURRENT_DEPENDENCY_AUDIT_REVIEW_REQUIRED"
+  ],
+  "storesOrHostingChanged": false
+}

@@ -1,0 +1,60 @@
+{
+  "screenshots": [
+    {
+      "path": "historical-frames/home-rabbit.png",
+      "source": "docs/tailwing/design-pass-01/after/home-rabbit.png",
+      "captured": "2026-10-30",
+      "width": 1080,
+      "height": 1920,
+      "bitDepth": 8,
+      "colorType": 6,
+      "sha256": "9d59744abe9ce5b86faac56a0d2bdcd3ba8b39fb3602ed03b760ac40ef7ba4eb",
+      "kind": "HISTORICAL_REAL_ANDROID_DEBUG_RENDER_WITH_SYNTHETIC_DATA",
+      "currentReleaseCapture": false,
+      "entitlement": "FREE_ROSTER_OR_LOCKED_SELECTION",
+      "submissionReady": false
+    },
+    {
+      "path": "historical-frames/home-turtle.png",
+      "source": "docs/tailwing/design-pass-01/after/home-turtle.png",
+      "captured": "2026-10-30",
+      "width": 1080,
+      "height": 1920,
+      "bitDepth": 8,
+      "colorType": 6,
+      "sha256": "ac0e443cfa6f19241a8c6462bee37e652d99a59ef83d74fd9d94eddf98fbd47a",
+      "kind": "HISTORICAL_REAL_ANDROID_DEBUG_RENDER_WITH_SYNTHETIC_DATA",
+      "currentReleaseCapture": false,
+      "entitlement": "FREE_ROSTER_OR_LOCKED_SELECTION",
+      "submissionReady": false
+    },
+    {
+      "path": "historical-frames/hangar-cards.png",
+      "source": "docs/tailwing/design-pass-01/after/hangar-cards.png",
+      "captured": "2026-10-30",
+      "width": 1080,
+      "height": 1920,
+      "bitDepth": 8,
+      "colorType": 6,
+      "sha256": "64d7a252afda325e57dc7e03e7c1a8cb20940197d58243c122e360076540381a",
+      "kind": "HISTORICAL_REAL_ANDROID_DEBUG_RENDER_WITH_SYNTHETIC_DATA",
+      "currentReleaseCapture": false,
+      "entitlement": "FREE_ROSTER_OR_LOCKED_SELECTION",
+      "submissionReady": false
+    },
+    {
+      "path": "historical-frames/shield-active.png",
+      "source": "docs/tailwing/design-pass-01/after/shield-active.png",
+      "captured": "2026-10-30",
+      "width": 1080,
+      "height": 1920,
+      "bitDepth": 8,
+      "colorType": 6,
+      "sha256": "e708563b1fd867fe1f52d8f30ce78b81b0497778d7262ae369ba2fd91d41236a",
+      "kind": "HISTORICAL_REAL_ANDROID_DEBUG_RENDER_WITH_SYNTHETIC_DATA",
+      "currentReleaseCapture": false,
+      "entitlement": "SYNTHETIC_SUBSCRIPTION_TECHNIQUE_NOT_FREE_BASIC_SHIELD",
+      "submissionReady": false
+    }
+  ]
+}

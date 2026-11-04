@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-04",
+  "registry": "https://registry.npmjs.org",
+  "scope": "NODE_LOCKFILE_AUDIT_NOT_MOBILE_OR_RUNTIME_SECURITY_PROOF",
+  "reports": [
+    {
+      "scope": "SERVER_WITH_DEVELOPMENT_TOOLS",
+      "status": "AUDIT_RETURNED",
+      "exitCode": 1,
+      "counts": {
+        "info": 0,
+        "low": 0,
+        "moderate": 16,
+        "high": 0,
+        "critical": 0,
+        "total": 16
+      },
+      "advisories": [
+        {
+          "package": "@opentelemetry/core",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-8988-4f7v-96qf"
+        },
+        {
+          "package": "glob",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-3g3m-2fjr-6pw4"
+        },
+        {
+          "package": "minimatch",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-g3hv-75wg-m249"
+        },
+        {
+          "package": "uuid",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-w5hq-g745-h8pq"
+        }
+      ],
+      "packagesChanged": false,
+      "credentialsRead": false
+    },
+    {
+      "scope": "SERVER_PRODUCTION_DEPENDENCIES",
+      "status": "AUDIT_RETURNED",
+      "exitCode": 1,
+      "counts": {
+        "info": 0,
+        "low": 0,
+        "moderate": 6,
+        "high": 0,
+        "critical": 0,
+        "total": 6
+      },
+      "advisories": [
+        {
+          "package": "glob",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-3g3m-2fjr-6pw4"
+        },
+        {
+          "package": "minimatch",
+          "severity": "moderate",
+          "url": "https://github.com/advisories/GHSA-g3hv-75wg-m249"
+        }
+      ],
+      "packagesChanged": false,
+      "credentialsRead": false
+    }
+  ]
+}

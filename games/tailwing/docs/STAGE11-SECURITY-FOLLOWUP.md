@@ -1,5 +1,7 @@
 # 11단계 잔여 보안 점검 — 2026-10-29
 
+**2026-11-04 현재 재감사:** [새 lockfile 감사](release-prep-2026-11-04/DEPENDENCY-AUDIT.json)는 전체 moderate 16개·production moderate 6개(high/critical 0)를 보고했다. 아래 5/0은 과거 시점 기록이다. glob/minimatch production 경고와 개발 도구 경고를 호환성 단계에서 검토해야 하며 최종 보안/제출 준비 완료가 아니다. [12·13단계 현재 결과](STAGE12-13-2026-11-04.md)를 따른다. 강제 의존성 수정/배포는 하지 않았다.
+
 ## 2026-10-30 재감사·호환 수정 재검토
 
 [감사/공식 레지스트리 메타데이터/lock 해시/dry-run](tailwing/SECURITY-RECHECK.json): 전체 moderate5/high0/critical0,production0 유지. 경고는 아래와 같은 직접 권고2건+상위 전파3개다. 패키지/lock을 변경하지 않았고 안전한 호환 패치가 확인되지 않아 경고를 숨기거나 완료로 표시하지 않는다.

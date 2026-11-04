@@ -1,0 +1,163 @@
+{
+  "status": "DRAFT_NOT_SUBMISSION_READY",
+  "files": [
+    {
+      "path": "delete-account.html",
+      "bytes": 2866,
+      "sha256": "542542ebb5fbca88545cb42b651f749b5b226a897e60ba3236e71931059bcf38"
+    },
+    {
+      "path": "DEPENDENCY-AUDIT.json",
+      "bytes": 1821,
+      "sha256": "1b72df09b6db89819854129cc208a1cca73cb80b2fdacf83d734f9ae453e4466"
+    },
+    {
+      "path": "FRAME-EVIDENCE.json",
+      "bytes": 2195,
+      "sha256": "233440003b9ab59a2bc7cca10258f229f4195f878b5f3ed7c55f3ec9fd516e59"
+    },
+    {
+      "path": "graphics/feature-master.svg",
+      "bytes": 1201,
+      "sha256": "27afd5e54821d704144f7b20555ee4dd8df4863c2a263be1ec9c87fb4737f348"
+    },
+    {
+      "path": "graphics/icon-master.svg",
+      "bytes": 2048,
+      "sha256": "ca1bd59c146bf2e15b815da55c683feace3ada67fff47f9471dfc190bffda192"
+    },
+    {
+      "path": "graphics/ios-icon-1024.png",
+      "bytes": 174256,
+      "sha256": "d36ad3a18b53c2222966fff998562133ddf89ad647a6f3d4b79cde324ee7956c",
+      "width": 1024,
+      "height": 1024,
+      "bitDepth": 8,
+      "colorType": 2
+    },
+    {
+      "path": "graphics/ios-icon-master.svg",
+      "bytes": 2050,
+      "sha256": "7931d0a1ab029fe148e24a3cea3a0337746d0eb2d2b8ff529ddc77d36e863e43"
+    },
+    {
+      "path": "graphics/play-feature-1024x500.png",
+      "bytes": 137801,
+      "sha256": "234c87613c7c0e3ae26f05a1ca06ddd7d7c1bfde3ef4cb30ca90753de9b88b40",
+      "width": 1024,
+      "height": 500,
+      "bitDepth": 8,
+      "colorType": 2
+    },
+    {
+      "path": "graphics/play-icon-512.png",
+      "bytes": 63588,
+      "sha256": "dc7219e2a2ac8b64331797f14e05d4fbe84dd0cb3e47e7cbe03ed9d8e8aec5fc",
+      "width": 512,
+      "height": 512,
+      "bitDepth": 8,
+      "colorType": 6
+    },
+    {
+      "path": "historical-frames/hangar-cards.png",
+      "bytes": 436712,
+      "sha256": "64d7a252afda325e57dc7e03e7c1a8cb20940197d58243c122e360076540381a",
+      "width": 1080,
+      "height": 1920,
+      "bitDepth": 8,
+      "colorType": 6
+    },
+    {
+      "path": "historical-frames/home-rabbit.png",
+      "bytes": 1331758,
+      "sha256": "9d59744abe9ce5b86faac56a0d2bdcd3ba8b39fb3602ed03b760ac40ef7ba4eb",
+      "width": 1080,
+      "height": 1920,
+      "bitDepth": 8,
+      "colorType": 6
+    },
+    {
+      "path": "historical-frames/home-turtle.png",
+      "bytes": 1433671,
+      "sha256": "ac0e443cfa6f19241a8c6462bee37e652d99a59ef83d74fd9d94eddf98fbd47a",
+      "width": 1080,
+      "height": 1920,
+      "bitDepth": 8,
+      "colorType": 6
+    },
+    {
+      "path": "historical-frames/shield-active.png",
+      "bytes": 1145798,
+      "sha256": "e708563b1fd867fe1f52d8f30ce78b81b0497778d7262ae369ba2fd91d41236a",
+      "width": 1080,
+      "height": 1920,
+      "bitDepth": 8,
+      "colorType": 6
+    },
+    {
+      "path": "index.html",
+      "bytes": 4589,
+      "sha256": "39198131ca239078b89a434c6aebbefa15386a594d6d53fb4f08f7b4d4b25df0"
+    },
+    {
+      "path": "OWNER.json",
+      "bytes": 88,
+      "sha256": "0af7812c598a6e3eb0d19bbbc889bb285c081ac0366762629d6f000416edda91"
+    },
+    {
+      "path": "PAGE-GENERATION.json",
+      "bytes": 501,
+      "sha256": "b9bc3c860dbf2520f52ad6c1383202c9297cac57bab598bf7f757d4809c95bc1"
+    },
+    {
+      "path": "privacy.html",
+      "bytes": 3929,
+      "sha256": "94be0a138cabaea5a97f1737ead0173eeb44e8b15e61c7211eb0e86d995c378e"
+    },
+    {
+      "path": "READINESS.json",
+      "bytes": 6569,
+      "sha256": "cf5c1b9c81d67d5a9a783aceec9b6db12f982a594e47d168a6a6a0fbebb20f21"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6334,
+      "sha256": "9120944887060cc4f9cfafc4e5663ae403ea9801a7ae45f659e6051f2700fdc0"
+    },
+    {
+      "path": "RELEASE-STEPS.md",
+      "bytes": 4958,
+      "sha256": "48e793c1ab3004b8b3e30180087e249d96008799fcd8160c169600b4ab8d1d18"
+    },
+    {
+      "path": "SOURCE-SNAPSHOT.json",
+      "bytes": 30110,
+      "sha256": "400d99d8e74d2bb7b19c5972de0649a59cc1118c51b3f042454a9d5c863712f1"
+    },
+    {
+      "path": "STAGE13-EDITING.md",
+      "bytes": 2512,
+      "sha256": "37a58ba0a5fd28bf972751590a4930af891ae02a20b08b0a1a69c5b111679cb2"
+    },
+    {
+      "path": "STORE-CHECKLIST.md",
+      "bytes": 2900,
+      "sha256": "f04b9dd0432b30f17f14b4566750cf26c7e6045318c2c6294116f999f46c9662"
+    },
+    {
+      "path": "STORE-COPY.md",
+      "bytes": 2211,
+      "sha256": "4029ee7adf3133f575da7d6bb378fa6a399989132274c80771070654b9567504"
+    },
+    {
+      "path": "support.html",
+      "bytes": 2487,
+      "sha256": "a18dfee8635bbd125e07dbcf862adb07d5b98694d08ca7e8803bfd13488c4cd9"
+    },
+    {
+      "path": "terms.html",
+      "bytes": 2772,
+      "sha256": "24ed0f4d712079e72549a2d62ddf8cf6bbb2bc045cbef845411c0ea18a8e21f3"
+    }
+  ]
+}
