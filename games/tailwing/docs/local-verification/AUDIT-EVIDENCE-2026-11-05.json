@@ -1,0 +1,173 @@
+{
+  "date": "2026-11-05",
+  "app": "TAILWING",
+  "version": "0.1.0+1",
+  "baseCommit": "188de1a3d5a7d938bcbe65c4ae11571fa081cb3c",
+  "scope": "LOCAL_SYNTHETIC_NOT_NATIVE_SIGNED_OR_LIVE",
+  "regressions": {
+    "reproducedBeforeFix": 3,
+    "passedAfterFix": 3,
+    "file": "test/regression_audit_test.dart"
+  },
+  "checks": [
+    {
+      "target": "Flutter synthetic widgets/engine/account/entitlement/storage",
+      "method": "node tool/check_combat_pass.mjs audit",
+      "result": "PASS",
+      "passed": 240,
+      "failed": 0
+    },
+    {
+      "target": "Dart source",
+      "method": "dart format changed files; flutter analyze --no-pub",
+      "result": "PASS",
+      "formatChanges": 0,
+      "issues": 0
+    },
+    {
+      "target": "TypeScript server",
+      "method": "npm.cmd run build; npm.cmd test",
+      "result": "PASS",
+      "passed": 21,
+      "failed": 0
+    },
+    {
+      "target": "Demo Auth/Firestore/Functions",
+      "method": "npm.cmd run test:emulator (Android Studio JBR)",
+      "result": "PASS",
+      "passed": 44,
+      "failed": 0,
+      "warning": "Functions configured Node22; local host Node24"
+    },
+    {
+      "target": "Monorepo static/document/tool regression checks",
+      "method": "node scripts/ci.mjs",
+      "result": "PASS",
+      "markdown": 116,
+      "javascript": 77,
+      "bash": 16,
+      "safetyTests": 9,
+      "localToolTests": 1,
+      "releaseToolTests": 3
+    },
+    {
+      "target": "Official anonymous npm lockfile audit",
+      "method": "node tool/audit_release_dependencies.mjs --current",
+      "result": "WARNINGS_REMAIN",
+      "exitCode": 1,
+      "reports": [
+        {
+          "scope": "SERVER_WITH_DEVELOPMENT_TOOLS",
+          "status": "AUDIT_RETURNED",
+          "counts": {
+            "info": 0,
+            "low": 0,
+            "moderate": 14,
+            "high": 0,
+            "critical": 0,
+            "total": 14
+          }
+        },
+        {
+          "scope": "SERVER_PRODUCTION_DEPENDENCIES",
+          "status": "AUDIT_RETURNED",
+          "counts": {
+            "info": 0,
+            "low": 0,
+            "moderate": 6,
+            "high": 0,
+            "critical": 0,
+            "total": 6
+          }
+        }
+      ]
+    }
+  ],
+  "dependencyCandidate": {
+    "scope": "isolated lockfile copy only",
+    "method": "npm.cmd audit fix --package-lock-only --ignore-scripts",
+    "applied": false,
+    "reason": "Partial dependency downgrades and unresolved warnings; no compatibility/security completion evidence",
+    "packageJsonChanged": false,
+    "sourceLockChanged": false,
+    "installedPackagesChanged": false
+  },
+  "sourceSha256": [
+    {
+      "path": "lib/game/engine.dart",
+      "sha256": "049f52ca01d31b80c6c0f7a04164306e5d916cf07087a684a6eaaa049241234c"
+    },
+    {
+      "path": "lib/game/projectile_pool.dart",
+      "sha256": "ee536f6e6a8384c6c823652a64746243a3b95c906347697ff133045e67194d73"
+    },
+    {
+      "path": "test/regression_audit_test.dart",
+      "sha256": "9bd34050356ef614be6d373b6b8523555bf509ad371ddb0e7816a75a440bca8c"
+    },
+    {
+      "path": "tool/check_combat_pass.mjs",
+      "sha256": "10e01d4e02821519099118e30d8f7b986ad9abeed98074cb8d1b4ab5da2181e8"
+    },
+    {
+      "path": "tool/audit_release_dependencies.mjs",
+      "sha256": "02e6e9d23159d4f33de7f2b6c961983a47504866af97c83855f4643fe8e5087b"
+    },
+    {
+      "path": "pubspec.yaml",
+      "sha256": "2ff9279ca1ff023e015c68162712a38da662b3faafee757f65596ce3c56f60c8"
+    },
+    {
+      "path": "pubspec.lock",
+      "sha256": "f709bdd18c606314bc196fa5cd2684246cb27a5a6bd0e8a73321e0dafd7a21cd"
+    },
+    {
+      "path": "server/firebase/package.json",
+      "sha256": "a15ef8f6290022f491a2cbaee809047773ff5f8966afbfe888f6f489d44fbec7"
+    },
+    {
+      "path": "server/firebase/package-lock.json",
+      "sha256": "b5ed88e40a8b3ab44e37f0781eb4b0a44ccb4e0995376410b894c5b00df59148"
+    }
+  ],
+  "resultSha256": [
+    {
+      "path": "docs/local-verification/AUDIT-2026-11-05.json",
+      "sha256": "ab1d43c15b3c7dd12563a205c2edf152c1eec3535553ec3956bc136ad1784dfd"
+    },
+    {
+      "path": "docs/local-verification/DEPENDENCIES-2026-11-05.json",
+      "sha256": "72a72559963e9e4ec7f8fef84e6607234b8d834e22b7b661b76eb28931bcc428"
+    }
+  ],
+  "notRun": [
+    {
+      "target": "Android/iOS physical device startup, GPU FPS/GC/heat",
+      "reason": "No physical-device execution in this audit"
+    },
+    {
+      "target": "Two-device cooperative battle",
+      "reason": "Local protocol/engine fixtures only; public entry remains disabled"
+    },
+    {
+      "target": "Signed AAB/Archive/IPA and official store tests",
+      "reason": "Signing/device/store work not performed or represented as complete"
+    },
+    {
+      "target": "Live account callback, store payment/restore and operational backend",
+      "reason": "Synthetic fixtures/demo emulators only"
+    },
+    {
+      "target": "Node22 runtime",
+      "reason": "Host Node24 used by local emulator"
+    }
+  ],
+  "preserved": [
+    "existing save schema1/records/accounts",
+    "app IDs and storage namespaces",
+    "12 pilots/free3 and paid verification boundary",
+    "combat/shield stats and hitboxes",
+    "owner editor settings and untracked note"
+  ],
+  "deploymentsPerformed": false
+}

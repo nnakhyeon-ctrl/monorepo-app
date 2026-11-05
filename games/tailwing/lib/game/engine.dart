@@ -290,6 +290,7 @@ class BattleEngine {
     final strategy = advancedSkillStrategies[skill];
     if (strategy != null) {
       strategy.activate(this);
+      _finishIfTerminal();
       return true;
     }
     _effect(
@@ -314,6 +315,7 @@ class BattleEngine {
         }
         _collectDefeated();
     }
+    _finishIfTerminal();
     return true;
   }
 
@@ -631,18 +633,33 @@ class BattleEngine {
           b.position.dx > width + 30,
     );
     _collectDefeated();
-    enemies.removeWhere((e) => e.position.dy > height + 60);
+    enemies.removeWhere(
+      (e) =>
+          e.position.dy > height + 60 ||
+          // Chargers can dive sideways/upwards after locking a mobile target.
+          // Spawn positions remain valid; only an already diving craft can exit.
+          (e.kind == EnemyKind.charger &&
+              e.fireClock >= 2.1 &&
+              (e.position.dx < -60 ||
+                  e.position.dx > width + 60 ||
+                  e.position.dy < -60)),
+    );
     if (health <= 0 && (second == null || second.health <= 0)) {
       phase = BattlePhase.lost;
     }
     if (elapsed >= stage.timeLimit && phase == BattlePhase.playing) {
       phase = BattlePhase.lost;
     }
-    if (phase == BattlePhase.won || phase == BattlePhase.lost) {
-      // No more simulation ticks run on the result screen. Cancel lingering
-      // beacons/decoys/decks/collected rounds now, without a late counter shot.
-      _clearTransientAbilities();
-      cooldown = 0;
+    _finishIfTerminal();
+  }
+
+  void _finishIfTerminal() {
+    if (phase != BattlePhase.won && phase != BattlePhase.lost) return;
+    // Both instant actions and frame updates can finish a battle. A result
+    // screen must not depend on another tick to clear either pilot's effects.
+    for (final fighter in [this, ?partner]) {
+      fighter._clearTransientAbilities();
+      fighter.cooldown = fighter._basicShieldCooldown = 0;
     }
   }
 

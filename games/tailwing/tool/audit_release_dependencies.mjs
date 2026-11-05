@@ -4,7 +4,9 @@ import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import {inside} from './release_candidate.mjs';
-if(process.argv.length!==2)throw Error('no_arguments_accepted');
+import {kstDate} from './local_tools.mjs';
+const current=process.argv[2]==='--current';
+if(process.argv.length!==2&&!(current&&process.argv.length===3))throw Error('invalid_audit_scope');
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const runtime=inside(root,'server/firebase/.runtime/stage12-audit');fs.mkdirSync(runtime,{recursive:true});
 for(const name of ['package.json','package-lock.json'])fs.copyFileSync(inside(root,'server/firebase/'+name),path.join(runtime,name));
@@ -19,9 +21,13 @@ for(const productionOnly of [false,true]){
  reports.push({scope:productionOnly?'SERVER_PRODUCTION_DEPENDENCIES':'SERVER_WITH_DEVELOPMENT_TOOLS',
   status:valid?'AUDIT_RETURNED':'NOT_VERIFIED',exitCode:result.status,
   ...(valid?{counts:data.metadata.vulnerabilities,advisories:[...new Map(Object.values(data.vulnerabilities||{}).flatMap(v=>v.via.filter(x=>typeof x==='object').map(x=>[x.url,{package:x.name,severity:x.severity,url:x.url}]))).values()]}:{reason:'REGISTRY_OR_LOCAL_TOOL_UNAVAILABLE'}),
+  ...(valid?{affectedPackages:Object.values(data.vulnerabilities||{}).map(v=>({name:v.name,severity:v.severity,direct:v.isDirect,range:v.range,fixAvailable:v.fixAvailable}))}:{}),
   packagesChanged:false,credentialsRead:false});
 }
-const report={date:'2026-11-04',registry:'https://registry.npmjs.org',scope:'NODE_LOCKFILE_AUDIT_NOT_MOBILE_OR_RUNTIME_SECURITY_PROOF',reports};
-fs.writeFileSync(inside(root,'docs/release-prep-2026-11-04/DEPENDENCY-AUDIT.json'),JSON.stringify(report,null,2)+'\n');
+const report={date:current?kstDate():'2026-11-04',registry:'https://registry.npmjs.org',scope:'NODE_LOCKFILE_AUDIT_NOT_MOBILE_OR_RUNTIME_SECURITY_PROOF',reports};
+const output=current?`docs/local-verification/DEPENDENCIES-${kstDate()}.json`:'docs/release-prep-2026-11-04/DEPENDENCY-AUDIT.json';
+fs.mkdirSync(path.dirname(inside(root,output)),{recursive:true});
+fs.writeFileSync(inside(root,output),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(reports.map(r=>({scope:r.scope,status:r.status,counts:r.counts}))));
 if(reports.some(r=>r.status==='NOT_VERIFIED'))process.exitCode=2;
+else if(current&&reports.some(r=>r.counts.total>0))process.exitCode=1;

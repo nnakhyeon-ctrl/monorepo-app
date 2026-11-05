@@ -63,6 +63,17 @@ extension GuidedProjectiles on BattleEngine {
       }
       if (nearest == null) return;
       target = nearest.position;
+    } else {
+      final second = partner;
+      if (second != null &&
+          second.health > 0 &&
+          (health <= 0 ||
+              (second.player - b.position).distance <
+                  (player - b.position).distance)) {
+        target = second.player;
+      } else if (health <= 0) {
+        return; // No live target: keep the last velocity until cleanup.
+      }
     }
     final speed = b.velocity.distance;
     final direction = target - b.position;
