@@ -18,7 +18,12 @@ class BattleSkillDock extends StatelessWidget {
   Widget build(BuildContext context) {
     final g = game;
     final selected = g.skill != 'barrier';
-    final charging = g.advanced.phase == SkillStage.charging;
+    final spec = advancedSkillSpecs[g.skill];
+    final charging =
+        selected &&
+        spec != null &&
+        spec.charge > 0 &&
+        g.advanced.phase == SkillStage.charging;
     return Padding(
       padding: const EdgeInsets.only(top: 8),
       child: Column(
@@ -38,8 +43,7 @@ class BattleSkillDock extends StatelessWidget {
                       ? '${g.basicShieldCooldown.ceil()}초 후'
                       : '방어 준비 · Z',
                   progress:
-                      g.basicShieldCooldown /
-                      (10 * (g.equipment == 'tuner' ? .9 : 1)),
+                      g.basicShieldCooldown / g.basicShieldRechargeDuration,
                   enabled:
                       g.basicShieldCooldown <= 0 &&
                       g.phase == BattlePhase.playing,
@@ -66,9 +70,10 @@ class BattleSkillDock extends StatelessWidget {
                       : g.cooldown > 0
                       ? '${g.cooldown.ceil()}초 후'
                       : '발사 준비 · SPACE',
-                  progress: charging
-                      ? g.advanced.chargeRemaining /
-                            advancedSkillSpecs[g.skill]!.charge
+                  progress: !selected
+                      ? 0
+                      : charging
+                      ? g.advanced.chargeRemaining / spec.charge
                       : g.cooldown / g.skillRechargeDuration,
                   enabled:
                       selected &&

@@ -350,6 +350,16 @@ class _HangarScreenState extends State<HangarScreen> {
                     ),
                   ),
                   const SizedBox(height: 4),
+                  Text(
+                    p.role,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Color(p.color),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
                   Wrap(
                     alignment: WrapAlignment.center,
                     crossAxisAlignment: WrapCrossAlignment.center,
@@ -467,6 +477,11 @@ class _HangarScreenState extends State<HangarScreen> {
             ],
           ),
           SignatureInfo(p),
+          const SizedBox(height: 8),
+          Text(
+            '조종 팁 · ${pilotTips[p.id]}',
+            style: const TextStyle(fontSize: 13, color: Palette.muted),
+          ),
           const Text(
             '고유 기술은 구독 스킬에서 선택합니다. 무료 플레이는 기본 사격·보호막을 사용합니다.',
             style: TextStyle(fontSize: 13, color: Palette.muted),

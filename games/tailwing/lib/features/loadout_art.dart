@@ -7,6 +7,7 @@ import '../game/assets.dart';
 import '../game/catalog.dart';
 import '../game/animal_roster.dart';
 import '../core/readiness.dart';
+import 'equipment_art.dart';
 
 Color catalogAccent(String id) => animalPilot(id) != null
     ? Color(animalPilot(id)!.color)
@@ -20,6 +21,11 @@ Color catalogAccent(String id) => animalPilot(id) != null
         'blackhole' => const Color(0xFFC7AEFF),
         'emp' => const Color(0xFF9BE7B7),
         'chain' => const Color(0xFFF6E4A4),
+        'petal_orbit' => const Color(0xFFF9B6D6),
+        'aurora_sweep' => const Color(0xFF9FDFED),
+        'landing_beacon' || 'safety_cell' => const Color(0xFFBAE6A4),
+        'capacitor' => const Color(0xFFFFCE88),
+        'gyro' => const Color(0xFFB9C5FF),
         'safeguard' || 'eden' || 'prism' => const Color(0xFF81CFFF),
         _ => Palette.teal,
       };
@@ -40,6 +46,9 @@ String catalogRole(String id) =>
       'blackhole' => '제어 · 중력 견인',
       'emp' => '제어 · 범위 이동 감속',
       'chain' => '공격 · 근접 적 연결',
+      'petal_orbit' => '호위 · 드론 접촉 차단',
+      'aurora_sweep' => '공격 · 전방 광선 쓸기',
+      'landing_beacon' => '지원 · 제한 회복·지역 방어',
       'signature' => '캐릭터별 전용 기술 · 구독',
       'pilot' => '균형 · 기본 구성',
       'rion' => '공격 · 집중 사격',
@@ -47,6 +56,9 @@ String catalogRole(String id) =>
       'standard' => '기본 자동 사격',
       'echo' => '화력 지원 · 보조 탄환',
       'prism' => '생존 지원 · 자동 보호막',
+      'gyro' => '정밀 지원 · 분산·유도 제어',
+      'capacitor' => '공격 지원 · 명중 축전',
+      'safety_cell' => '생존 지원 · 위기 반응',
       _ => '강화 지원 · 공격과 스킬',
     };
 
@@ -196,7 +208,7 @@ class CatalogArt extends StatelessWidget {
                     )
                   : entry.category == CatalogCategory.skill
                   ? CustomPaint(painter: SkillArt(entry.id))
-                  : Icon(entry.icon, color: catalogAccent(entry.id), size: 64),
+                  : CustomPaint(painter: EquipmentArt(entry.id)),
             ),
           ],
         ),
@@ -220,7 +232,44 @@ class SkillArt extends CustomPainter {
       ..color = color
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2.2;
-    if (id == 'missile_storm') {
+    if (id == 'petal_orbit') {
+      canvas.drawCircle(
+        Offset.zero,
+        39,
+        p..color = color.withValues(alpha: .4),
+      );
+      for (var i = 0; i < 3; i++) {
+        final a = i * math.pi * 2 / 3;
+        final at = Offset(math.sin(a) * 39, math.cos(a) * 39);
+        canvas.drawOval(
+          Rect.fromCenter(center: at, width: 19, height: 13),
+          p..color = color,
+        );
+        canvas.drawCircle(at, 3, Paint()..color = Colors.white);
+      }
+    } else if (id == 'aurora_sweep') {
+      for (final side in [-1, 1]) {
+        canvas.drawPath(
+          Path()
+            ..moveTo(0, 45)
+            ..quadraticBezierTo(side * 19.0, -6, side * 48.0, -43),
+          p..strokeWidth = 4,
+        );
+      }
+      canvas.drawArc(
+        const Rect.fromLTWH(-46, -60, 92, 35),
+        0,
+        math.pi,
+        false,
+        p..strokeWidth = 2,
+      );
+    } else if (id == 'landing_beacon') {
+      canvas.drawOval(const Rect.fromLTWH(-46, 5, 92, 41), p);
+      canvas.drawLine(const Offset(0, 16), const Offset(0, -35), p);
+      canvas.drawCircle(const Offset(0, -23), 17, p);
+      canvas.drawLine(const Offset(-7, -23), const Offset(7, -23), p);
+      canvas.drawLine(const Offset(0, -30), const Offset(0, -16), p);
+    } else if (id == 'missile_storm') {
       for (final x in [-27.0, 0.0, 27.0]) {
         final y = x == 0 ? -10.0 : 10.0;
         canvas.drawPath(

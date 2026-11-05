@@ -6,6 +6,7 @@ import 'combat_model.dart';
 import 'progress.dart';
 import 'animal_roster.dart';
 import 'advanced_skill_catalog.dart';
+import 'equipment_catalog.dart';
 export 'combat_model.dart' show CatalogCategory;
 
 class CatalogEntry {
@@ -26,7 +27,7 @@ class CatalogEntry {
   final IconData icon;
 }
 
-final catalogEntries = <CatalogEntry>[
+final catalogEntries = List<CatalogEntry>.unmodifiable(<CatalogEntry>[
   CatalogEntry(
     'aurora',
     '오로라-01',
@@ -89,6 +90,9 @@ final catalogEntries = <CatalogEntry>[
         'absorb' => Icons.shield_moon_outlined,
         'blackhole' => Icons.blur_circular,
         'emp' => Icons.radar,
+        'petal_orbit' => Icons.filter_vintage_outlined,
+        'aurora_sweep' => Icons.waves,
+        'landing_beacon' => Icons.local_hospital_outlined,
         _ => Icons.hub_outlined,
       },
     ),
@@ -177,36 +181,24 @@ final catalogEntries = <CatalogEntry>[
     CatalogCategory.skill,
     icon: Icons.pets,
   ),
-  CatalogEntry(
-    'standard',
-    '기본 무장',
-    '기본 자동 사격 · 추가 강화 없음',
-    CatalogCategory.equipment,
-    premium: false,
-    icon: Icons.adjust,
-  ),
-  CatalogEntry(
-    'echo',
-    '에코 윙',
-    '보조 사격 2발 추가 · 각 기본 피해의 50%',
-    CatalogCategory.equipment,
-    icon: Icons.toys_outlined,
-  ),
-  CatalogEntry(
-    'prism',
-    '프리즘 가드',
-    '12초마다 1초 자동 보호막',
-    CatalogCategory.equipment,
-    icon: Icons.shield_outlined,
-  ),
-  CatalogEntry(
-    'tuner',
-    '코어 튜너',
-    '사격 피해 +10% · 스킬 대기시간 -10%',
-    CatalogCategory.equipment,
-    icon: Icons.tune,
-  ),
-];
+  for (final spec in equipmentSpecs.values)
+    CatalogEntry(
+      spec.id,
+      spec.name,
+      spec.detail,
+      CatalogCategory.equipment,
+      premium: spec.premium,
+      icon: switch (spec.id) {
+        'echo' => Icons.toys_outlined,
+        'prism' => Icons.shield_outlined,
+        'tuner' => Icons.tune,
+        'gyro' => Icons.explore_outlined,
+        'capacitor' => Icons.battery_charging_full,
+        'safety_cell' => Icons.energy_savings_leaf_outlined,
+        _ => Icons.adjust,
+      },
+    ),
+]);
 
 CatalogEntry catalogEntry(String id) =>
     catalogEntries.firstWhere((e) => e.id == id);

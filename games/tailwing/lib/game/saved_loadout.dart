@@ -18,6 +18,9 @@ class SavedLoadout {
       'blackhole',
       'emp',
       'chain',
+      'petal_orbit',
+      'aurora_sweep',
+      'landing_beacon',
     ],
     CatalogCategory.character: [
       'pilot',
@@ -33,7 +36,15 @@ class SavedLoadout {
       'tw_eagle',
       'tw_volt',
     ],
-    CatalogCategory.equipment: ['standard', 'echo', 'prism', 'tuner'],
+    CatalogCategory.equipment: [
+      'standard',
+      'echo',
+      'prism',
+      'tuner',
+      'gyro',
+      'capacitor',
+      'safety_cell',
+    ],
   };
   String selected(CatalogCategory category) =>
       _values[category] ?? allowed[category]!.first;

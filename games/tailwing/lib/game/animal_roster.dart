@@ -14,6 +14,22 @@ const techniqueTargets = {
   'tw_volt': TechniqueTarget.normalEnemies,
 };
 
+/// Original briefings describe existing roles without granting new abilities.
+const pilotTips = <String, String>{
+  'pilot': '일정한 간격으로 움직여 탄 사이의 안전한 길을 이어 보세요.',
+  'rion': '좁은 연사를 적의 중앙에 맞추세요. 장갑이 적으니 예고선을 먼저 피하세요.',
+  'eden': '넓은 사격으로 길을 열고, 갑판은 전방 일반탄에 맞춰 펼치세요.',
+  'tw_bear': '일반탄을 가까이 모으고 반격이 나갈 전방을 확보하세요.',
+  'tw_otter': '가까이 모인 적에게 명중시키면 방울 릴레이를 활용하기 좋아요.',
+  'tw_owl': '표시된 우선 목표가 사라지기 전에 정밀탄의 발사 시점을 확인하세요.',
+  'tw_squirrel': '적의 이동 길목에 씨앗을 놓고 안전한 쪽으로 이동하세요.',
+  'tw_hedgehog': '회전 공격은 근거리용이에요. 적과 직접 부딪히지 않게 거리를 두세요.',
+  'tw_penguin': '전방의 일반 적이 냉기 항로 안에 들어오도록 위치를 잡으세요.',
+  'tw_chameleon': '장갑기의 조준이 잔상에 고정된 뒤 옆으로 빠져나오세요.',
+  'tw_eagle': '예고 사격이 나갈 항로를 고른 뒤 적이 지나갈 위치를 읽어 보세요.',
+  'tw_volt': '가까운 일반 적의 발사 간격을 흐트러뜨려 움직일 틈을 만드세요.',
+};
+
 class AnimalPilot {
   const AnimalPilot(
     this.id,
@@ -33,12 +49,12 @@ class AnimalPilot {
   final TechniqueBalance balance;
   TechniqueTarget get target =>
       techniqueTargets[id] ?? TechniqueTarget.allEnemies;
-  String get _artVersion => art == 'rabbit' || art == 'turtle' ? '_v2' : '';
+  bool get hasMountedHero => const {'rabbit', 'turtle', 'fox'}.contains(art);
+  String get _artVersion => hasMountedHero ? '_v2' : '';
   String get portrait => 'assets/tailwing/${art}_portrait$_artVersion.png';
   String get aircraft => 'assets/tailwing/${art}_ship$_artVersion.png';
-  String get hero => art == 'rabbit' || art == 'turtle'
-      ? 'assets/tailwing/${art}_hero_v2.png'
-      : aircraft;
+  String get hero =>
+      hasMountedHero ? 'assets/tailwing/${art}_hero_v2.png' : aircraft;
 }
 
 class TechniqueBalance {

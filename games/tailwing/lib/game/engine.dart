@@ -9,6 +9,7 @@ part 'animal_combat.dart';
 part 'projectile_pool.dart';
 part 'enemy_behaviors.dart';
 part 'advanced_skills.dart';
+part 'equipment_effects.dart';
 
 enum BattlePhase { playing, paused, won, lost }
 
@@ -48,6 +49,7 @@ class Projectile {
   bool friendly;
   bool collectible, precision;
   bool homing = false;
+  bool baseShot = false;
   double steeringRemaining = 1.2;
   ProjectilePool? _owner;
   bool _leased = false;
@@ -138,6 +140,7 @@ class BattleEngine {
   final List<Projectile> bullets = [];
   final projectilePool = ProjectilePool();
   final advanced = AdvancedSkillState();
+  final itemState = EquipmentState();
   final List<Enemy> enemies = [];
   final animal = AnimalCombatState();
   AnimalPilot get pilot => animalPilot(character) ?? animalPilots.first;
@@ -177,7 +180,7 @@ class BattleEngine {
         _basicShieldCooldown > 0) {
       return false;
     }
-    _basicShieldCooldown = 10 * (equipment == 'tuner' ? .9 : 1);
+    _basicShieldCooldown = basicShieldRechargeDuration;
     shieldRemaining = shieldDuration;
     _effect(player, EffectKind.skill, size: 42);
     return true;
@@ -226,6 +229,8 @@ class BattleEngine {
   bool get hitReaction => _invulnerable > .65;
   int get defeated => _defeated;
 
+  void synchronizeLoadout() => _validate();
+
   void _validate() {
     loadout.sanitize();
     if (_configuration != _fingerprint) {
@@ -245,6 +250,7 @@ class BattleEngine {
     skillRemaining = 0;
     animal.clear();
     advanced.clear();
+    itemState.clear();
     _prismClock = 0;
     for (final enemy in enemies) {
       enemy.slowRemaining = 0;
@@ -312,6 +318,7 @@ class BattleEngine {
   }
 
   void _fire() {
+    final volleyBoost = itemState.consumeVolley(equipment);
     shotsFired++;
     _effect(player + const Vec(0, -25), EffectKind.muzzle, size: 12);
     final refracting =
@@ -325,13 +332,18 @@ class BattleEngine {
         : character == 'rion'
         ? [-.015, .015]
         : [-.04, .04];
-    for (final angle in spread) {
+    for (final baseAngle in spread) {
+      final angle = baseAngle * (equipment == 'gyro' ? 0.65 : 1);
       bullets.add(
         projectilePool.acquire(
           player + const Vec(0, -24),
           Vec(math.sin(angle) * 420, -math.cos(angle) * 420),
-          damage: shotDamage * (refracting ? pilot.balance.damage : 1),
+          damage:
+              shotDamage *
+              (refracting ? pilot.balance.damage : 1) *
+              volleyBoost,
           friendly: true,
+          baseShot: true,
         ),
       );
     }
@@ -357,6 +369,7 @@ class BattleEngine {
       .05,
     ); // Never fast-forward after a stalled frame/background.
     elapsed += dt;
+    itemState.tick(dt);
     playerAircraft.stepPresentation(dt);
     for (final effect in effects) {
       effect.age += dt;
@@ -571,7 +584,11 @@ class BattleEngine {
         for (final enemy in enemies) {
           if (enemy.health > 0 &&
               (bullet.position - enemy.position).distance < enemy.radius + 4) {
+            final before = enemy.health;
             damageEnemy(enemy, bullet.damage, impact: bullet.position);
+            if (bullet.baseShot && enemy.health < before) {
+              itemState.recordHit(equipment);
+            }
             _relayAnimal(enemy, bullet);
             _effect(bullet.position, EffectKind.hit);
             consumed.add(bullet);
@@ -635,6 +652,15 @@ class BattleEngine {
       return;
     }
     if (_invulnerable > 0) return;
+    if (health == 1 &&
+        equipment == 'safety_cell' &&
+        itemState.emergencyCooldown <= 0) {
+      itemState.emergencyCooldown = 24;
+      itemState.flash = 1.2;
+      shieldRemaining = 1.2;
+      _effect(player, EffectKind.shieldHit, size: 40);
+      return;
+    }
     health = math.max(0, health - 1);
     _invulnerable = 1;
     _effect(player, EffectKind.damage, size: 38);

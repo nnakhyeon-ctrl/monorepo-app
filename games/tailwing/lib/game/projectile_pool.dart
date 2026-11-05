@@ -16,6 +16,7 @@ class ProjectilePool {
     bool collectible = true,
     bool precision = false,
     bool homing = false,
+    bool baseShot = false,
   }) {
     final Projectile bullet;
     if (_available.isEmpty) {
@@ -33,6 +34,7 @@ class ProjectilePool {
       ..collectible = collectible
       ..precision = precision
       ..homing = homing
+      ..baseShot = baseShot
       ..steeringRemaining = friendly ? 3 : 1.2
       .._owner = this
       .._leased = true;
@@ -70,7 +72,7 @@ extension GuidedProjectiles on BattleEngine {
       math.sin(desired - current),
       math.cos(desired - current),
     );
-    final rate = b.friendly ? 3.0 : .65;
+    final rate = b.friendly ? 3.0 * (equipment == 'gyro' ? 1.3 : 1) : .65;
     final angle = current + difference.clamp(-rate * dt, rate * dt);
     b.velocity = Vec(math.cos(angle) * speed, math.sin(angle) * speed);
   }

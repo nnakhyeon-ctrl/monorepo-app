@@ -5,6 +5,7 @@ import '../game/catalog.dart';
 import '../game/engine.dart';
 import '../game/deck_status.dart';
 import '../game/battle_pacing.dart';
+import '../game/advanced_skill_catalog.dart';
 
 class BattleHud extends StatelessWidget {
   const BattleHud(this.game, {super.key});
@@ -136,7 +137,8 @@ class BattleHud extends StatelessWidget {
                 ),
                 if (deck == null)
                   Text(
-                    g.advanced.phase == SkillStage.charging
+                    advancedSkillSpecs.containsKey(g.skill) &&
+                            g.advanced.phase == SkillStage.charging
                         ? '${catalogEntry(g.skill).name} 차지 ${g.advanced.chargeRemaining.toStringAsFixed(1)}초'
                         : g.skillRemaining > 0
                         ? '${g.skill == 'signature' ? g.pilot.technique : catalogEntry(g.skill).name} ${g.skillRemaining.toStringAsFixed(1)}초'
@@ -152,6 +154,18 @@ class BattleHud extends StatelessWidget {
                   Text(
                     '흡수 에너지 ${g.advanced.energy.toInt()}/60',
                     key: const Key('absorbEnergy'),
+                  ),
+                if ((g.skill == 'petal_orbit' || g.skill == 'landing_beacon') &&
+                    g.advanced.phase == SkillStage.active)
+                  Text(
+                    '차단 ${g.advanced.blocks}/${g.skill == 'petal_orbit' ? 6 : 3}',
+                    key: const Key('supportCharges'),
+                  ),
+                if (g.equipment != 'standard')
+                  Text(
+                    '${catalogEntry(g.equipment).name} · ${g.equipmentStatus}',
+                    key: const Key('equipmentStatus'),
+                    style: const TextStyle(fontSize: 12, color: Palette.muted),
                   ),
                 if (g.repairNotice > 0)
                   const Text(

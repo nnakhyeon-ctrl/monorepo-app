@@ -98,7 +98,8 @@ test('failed acknowledgement stays unverified and retry recovers without consumi
   assert.equal((r.entitlement as any).status, 'active');
 });
 test('monthly and annual verified subscriptions include every advanced skill; pending and revoked replies keep them locked', async () => {
-  const advanced = ['missile_storm', 'beam', 'absorb', 'blackhole', 'emp', 'chain'];
+  const advanced = ['missile_storm', 'beam', 'absorb', 'blackhole', 'emp', 'chain',
+    'petal_orbit', 'aurora_sweep', 'landing_beacon', 'gyro', 'capacitor', 'safety_cell'];
   for (const period of ['monthly', 'annual'] as const) {
     const f = await fixture(), a = await f.actor(), ref = f.purchase(a, period, 'pending');
     const value = f.verifier.values.get(ref)!; value.period = period;

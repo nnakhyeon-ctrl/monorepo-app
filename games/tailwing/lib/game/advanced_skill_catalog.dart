@@ -63,4 +63,28 @@ const advancedSkillSpecs = <String, AdvancedSkillSpec>{
     3,
     15,
   ),
+  'petal_orbit': AdvancedSkillSpec(
+    'petal_orbit',
+    '꽃잎 호위',
+    '0.25초 차지 → 호위 드론3기·5초 · 드론 접촉 일반탄 최대6회 차단 · 근접 피해 총48 상한 · 대기17초',
+    .25,
+    5,
+    17,
+  ),
+  'aurora_sweep': AdvancedSkillSpec(
+    'aurora_sweep',
+    '오로라 부채',
+    '0.4초 차지 → 전방 부채꼴 쌍광선3초 · 길이420·광선당 초당 피해20 · 대기19초',
+    .4,
+    3,
+    19,
+  ),
+  'landing_beacon': AdvancedSkillSpec(
+    'landing_beacon',
+    '구름 정박지',
+    '현재 위치 반경55·4초 · 영역 안에서 손상 장갑1회복(1회)·일반탄3회 차단 · 대기22초',
+    0,
+    4,
+    22,
+  ),
 };

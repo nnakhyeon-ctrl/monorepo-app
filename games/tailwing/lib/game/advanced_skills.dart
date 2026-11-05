@@ -6,6 +6,9 @@ class AdvancedSkillState {
   SkillStage phase = SkillStage.idle;
   double chargeRemaining = 0, remaining = 0, energy = 0, freeze = 0, clock = 0;
   int emitted = 0;
+  int blocks = 0;
+  double activeElapsed = 0, spent = 0;
+  bool repaired = false;
   Vec anchor = Vec.zero;
   final links = <(Vec, Vec)>[];
   final tethered = <Enemy>[];
@@ -13,6 +16,9 @@ class AdvancedSkillState {
     phase = SkillStage.idle;
     chargeRemaining = remaining = energy = freeze = clock = 0;
     emitted = 0;
+    blocks = 0;
+    activeElapsed = spent = 0;
+    repaired = false;
     links.clear();
     tethered.clear();
     anchor = Vec.zero;
@@ -55,6 +61,7 @@ abstract class AdvancedSkillStrategy {
     }
     if (a.phase != SkillStage.active) return;
     final activeDt = math.min(dt, a.remaining);
+    a.activeElapsed += activeDt;
     onTick(g, activeDt);
     a.remaining = math.max(0, a.remaining - dt);
     g.skillRemaining = a.remaining;
@@ -70,6 +77,7 @@ abstract class AdvancedSkillStrategy {
   void onTick(BattleEngine g, double dt) {}
   void onEnd(BattleEngine g) {}
   double movementFactor(BattleEngine g, Enemy enemy) => 1;
+  bool intercept(BattleEngine g, Projectile b) => false;
 }
 
 class MissileStormStrategy extends AdvancedSkillStrategy {
@@ -114,6 +122,13 @@ class BeamStrategy extends AdvancedSkillStrategy {
 
 class AbsorbStrategy extends AdvancedSkillStrategy {
   const AbsorbStrategy() : super('absorb');
+  @override
+  bool intercept(BattleEngine g, Projectile b) {
+    if ((b.position - g.player).distance > 50) return false;
+    g.advanced.energy = math.min(60, g.advanced.energy + b.damage);
+    return true;
+  }
+
   @override
   void onEnd(BattleEngine g) {
     for (var i = 0; i < 6; i++) {
@@ -206,18 +221,124 @@ const advancedSkillStrategies = <String, AdvancedSkillStrategy>{
   'blackhole': BlackholeStrategy(),
   'emp': EmpStrategy(),
   'chain': ChainStrategy(),
+  'petal_orbit': PetalOrbitStrategy(),
+  'aurora_sweep': AuroraSweepStrategy(),
+  'landing_beacon': LandingBeaconStrategy(),
 };
 
 extension Absorption on BattleEngine {
   bool _absorbProjectile(Projectile b) {
-    if (b.friendly ||
-        skill != 'absorb' ||
-        advanced.phase != SkillStage.active ||
-        (b.position - player).distance > 50) {
+    if (b.friendly || advanced.phase != SkillStage.active || health <= 0) {
       return false;
     }
-    advanced.energy = math.min(60, advanced.energy + b.damage);
+    if (!(advancedSkillStrategies[skill]?.intercept(this, b) ?? false)) {
+      return false;
+    }
     _effect(b.position, EffectKind.shieldHit, size: 16);
+    return true;
+  }
+}
+
+class PetalOrbitStrategy extends AdvancedSkillStrategy {
+  const PetalOrbitStrategy() : super('petal_orbit');
+  static Vec drone(BattleEngine g, int index) {
+    final angle = g.advanced.activeElapsed * 2.2 + index * math.pi * 2 / 3;
+    return g.player + Vec(math.sin(angle) * 44, math.cos(angle) * 44);
+  }
+
+  @override
+  void onFire(BattleEngine g) => g.advanced.blocks = 6;
+  @override
+  bool intercept(BattleEngine g, Projectile b) {
+    if (!b.collectible || g.advanced.blocks <= 0) return false;
+    for (var i = 0; i < 3; i++) {
+      if ((b.position - drone(g, i)).distance <= 12) {
+        g.advanced.blocks--;
+        return true;
+      }
+    }
+    return false;
+  }
+
+  @override
+  void onTick(BattleEngine g, double dt) {
+    final a = g.advanced;
+    a.clock -= dt;
+    if (a.clock > 0 || a.spent >= 48) return;
+    a.clock += .25;
+    for (final e in g.enemies) {
+      if (e.health <= 0) continue;
+      for (var i = 0; i < 3; i++) {
+        if (a.spent < 48 &&
+            (e.position - drone(g, i)).distance <= e.radius + 9) {
+          final damage = math.min(4.0, 48 - a.spent);
+          g.damageEnemy(e, damage);
+          a.spent += damage;
+          g._effect(e.position, EffectKind.hit);
+          break;
+        }
+      }
+    }
+  }
+}
+
+class AuroraSweepStrategy extends AdvancedSkillStrategy {
+  const AuroraSweepStrategy() : super('aurora_sweep');
+  static Vec end(BattleEngine g, int side) {
+    final angle = math.sin(g.advanced.activeElapsed * 2.6) * .48 + side * .16;
+    return g.player + Vec(math.sin(angle) * 420, -math.cos(angle) * 420);
+  }
+
+  @override
+  void onTick(BattleEngine g, double dt) {
+    for (final e in g.enemies) {
+      if (e.health <= 0 ||
+          e.position.dy < 0 ||
+          e.position.dy >= g.player.dy - 24) {
+        continue;
+      }
+      for (final side in [-1, 1]) {
+        if (_segmentDistance(
+              e.position,
+              g.player + const Vec(0, -24),
+              end(g, side),
+            ) <=
+            e.radius + 4) {
+          g.damageEnemy(e, 20 * dt);
+        }
+      }
+    }
+  }
+}
+
+class LandingBeaconStrategy extends AdvancedSkillStrategy {
+  const LandingBeaconStrategy() : super('landing_beacon');
+  @override
+  void onFire(BattleEngine g) {
+    g.advanced.anchor = g.player;
+    g.advanced.blocks = 3;
+  }
+
+  @override
+  void onTick(BattleEngine g, double dt) {
+    if (!g.advanced.repaired &&
+        g.health > 0 &&
+        g.health < g.maxHealth &&
+        (g.player - g.advanced.anchor).distance <= 55) {
+      g.health++;
+      g.advanced.repaired = true;
+      g._effect(g.player, EffectKind.shieldHit, size: 28);
+    }
+  }
+
+  @override
+  bool intercept(BattleEngine g, Projectile b) {
+    if (!b.collectible ||
+        g.advanced.blocks <= 0 ||
+        (b.position - g.advanced.anchor).distance > 55) {
+      return false;
+    }
+    g.advanced.blocks--;
     return true;
   }
 }

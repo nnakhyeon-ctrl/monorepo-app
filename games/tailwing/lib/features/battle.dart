@@ -35,6 +35,21 @@ class _BattleScreenState extends State<BattleScreen>
   int _stage = 1;
   int _accountEpoch = 0;
   CampaignController? _campaign;
+  LoadoutController? _loadout;
+  bool _rightsScheduled = false;
+  void _rightsChanged() {
+    if (!mounted || _rightsScheduled) return;
+    _rightsScheduled = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _rightsScheduled = false;
+      if (!mounted || _game == null) return;
+      _game!.synchronizeLoadout();
+      _paintFrame.value++;
+      setState(() {});
+    });
+    WidgetsBinding.instance.ensureVisualUpdate();
+  }
+
   bool _accountChanged = false;
   void _checkAccount() {
     if (_game != null &&
@@ -100,6 +115,10 @@ class _BattleScreenState extends State<BattleScreen>
   Future<void> _prepare() async {
     try {
       final services = AppServices.of(context);
+      if (_loadout == null) {
+        _loadout = services.loadout;
+        _loadout!.addListener(_rightsChanged);
+      }
       if (_campaign == null) {
         _campaign = services.campaign;
         _campaign!.addListener(_checkAccount);
@@ -234,6 +253,7 @@ class _BattleScreenState extends State<BattleScreen>
 
   @override
   void dispose() {
+    _loadout?.removeListener(_rightsChanged);
     _campaign?.removeListener(_checkAccount);
     _ticker.dispose();
     _paintFrame.dispose();

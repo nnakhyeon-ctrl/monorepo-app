@@ -1,0 +1,439 @@
+{
+  "date": "2026-11-05",
+  "sourceBaseline": "0a28bfcac1cc6c908814085fcc162c98e101bc97",
+  "version": "0.1.0+1",
+  "scope": "LOCAL_SYNTHETIC_APP_WIDGETS_NOT_SIGNED_NATIVE",
+  "images": [
+    {
+      "path": "docs/character-item-pass-2026-11-05/aurora_sweep.png",
+      "bytes": 1442701,
+      "width": 792,
+      "height": 1720,
+      "pngColorType": 6,
+      "sha256": "f29d8931bea4a65c557b1e40ae2c3ebbd3e9d3fec68d3d3b97ced156f5423682"
+    },
+    {
+      "path": "docs/character-item-pass-2026-11-05/equipment-capacitor.png",
+      "bytes": 572066,
+      "width": 792,
+      "height": 1720,
+      "pngColorType": 6,
+      "sha256": "f4fd5f8317270ab8f1e4c72923e1e5a231d8b2cd711e2f3be46f4d0d0619b86b"
+    },
+    {
+      "path": "docs/character-item-pass-2026-11-05/landing_beacon.png",
+      "bytes": 1450201,
+      "width": 792,
+      "height": 1720,
+      "pngColorType": 6,
+      "sha256": "e00261d9df6b584b491420f2cacb39571c9a840cdb7aa230cf55269a07b7eb22"
+    },
+    {
+      "path": "docs/character-item-pass-2026-11-05/petal_orbit.png",
+      "bytes": 1444409,
+      "width": 792,
+      "height": 1720,
+      "pngColorType": 6,
+      "sha256": "937a36853922734e89886f3ee37230cf48f69807a669ee00a8ad26f61501fc0d"
+    },
+    {
+      "path": "docs/character-item-pass-2026-11-05/sera-home.png",
+      "bytes": 834801,
+      "width": 792,
+      "height": 1720,
+      "pngColorType": 6,
+      "sha256": "89ff19227b13185dea434c6236b6f28906a22591dc4c784d0b36422514abc7f3"
+    },
+    {
+      "path": "docs/character-item-pass-2026-11-05/sera-selection.png",
+      "bytes": 270319,
+      "width": 792,
+      "height": 1720,
+      "pngColorType": 6,
+      "sha256": "9261b28b6b04cd732a31a968a37ae6ef60f902bac39792c573bf82d563224409"
+    },
+    {
+      "path": "assets/tailwing/fox_portrait_v2.png",
+      "bytes": 1164027,
+      "width": 1254,
+      "height": 1254,
+      "pngColorType": 6,
+      "sha256": "b217265f06b5cd3b1fe49d83f02f0e7c9f1dc11055b817e55ae09b0ab7573335"
+    },
+    {
+      "path": "assets/tailwing/fox_ship_v2.png",
+      "bytes": 1124631,
+      "width": 1254,
+      "height": 1254,
+      "pngColorType": 6,
+      "sha256": "303d358c235982173987e66a2cf0a2818a394e0d3bd864ee96a9acc9e5363936"
+    },
+    {
+      "path": "assets/tailwing/fox_hero_v2.png",
+      "bytes": 1402046,
+      "width": 1254,
+      "height": 1254,
+      "pngColorType": 6,
+      "sha256": "5c4bd3eb09741ab47ec044a40d065ad769c8f7ab2e6afebb4672f06649b2a15e"
+    }
+  ],
+  "sources": [
+    {
+      "path": "lib/game/engine.dart",
+      "rawSha256": "ba3ab339265d0dc89e33ca6abbcb9c4d700dd2150b6c0242616db32a85f27061",
+      "lfSha256": "ba3ab339265d0dc89e33ca6abbcb9c4d700dd2150b6c0242616db32a85f27061"
+    },
+    {
+      "path": "lib/game/advanced_skill_catalog.dart",
+      "rawSha256": "37d11a4518095015f0602d3f44757d7174cbfd04dd6e4c801ea86fb070b383b9",
+      "lfSha256": "37d11a4518095015f0602d3f44757d7174cbfd04dd6e4c801ea86fb070b383b9"
+    },
+    {
+      "path": "lib/game/advanced_skills.dart",
+      "rawSha256": "73d3a2cb049acc3733e386331a86c4e1e55581a8de3b05123dcfbc8271a7eaf2",
+      "lfSha256": "73d3a2cb049acc3733e386331a86c4e1e55581a8de3b05123dcfbc8271a7eaf2"
+    },
+    {
+      "path": "lib/game/equipment_catalog.dart",
+      "rawSha256": "e535e7bb584531d4d148cdab2ed32dff6ec0c67fdd01dc34179b67d580532a47",
+      "lfSha256": "e535e7bb584531d4d148cdab2ed32dff6ec0c67fdd01dc34179b67d580532a47"
+    },
+    {
+      "path": "lib/game/equipment_effects.dart",
+      "rawSha256": "70302759c1479bead3f0119bf451156dbc0328884a614bc79c0669760654949d",
+      "lfSha256": "70302759c1479bead3f0119bf451156dbc0328884a614bc79c0669760654949d"
+    },
+    {
+      "path": "lib/game/projectile_pool.dart",
+      "rawSha256": "dc55737b88bbc09f16c19de5e3d3709f3fb6c2a4d0ee656ed07602ee4031d6c7",
+      "lfSha256": "dc55737b88bbc09f16c19de5e3d3709f3fb6c2a4d0ee656ed07602ee4031d6c7"
+    },
+    {
+      "path": "lib/game/animal_roster.dart",
+      "rawSha256": "e80b1f3fcf4a3bb363791bcd2d58118c663b89de37c3401ffe5692f427ac03c9",
+      "lfSha256": "e80b1f3fcf4a3bb363791bcd2d58118c663b89de37c3401ffe5692f427ac03c9"
+    },
+    {
+      "path": "lib/game/rendering.dart",
+      "rawSha256": "bddbc74be71de7a1aafa1b85a133545292faf0c88dd68ee7a521f91479bef6cc",
+      "lfSha256": "bddbc74be71de7a1aafa1b85a133545292faf0c88dd68ee7a521f91479bef6cc"
+    },
+    {
+      "path": "lib/game/catalog.dart",
+      "rawSha256": "61caba2784447a406e55fb835584785396ecb8b5baeda1a5e6cfa850a59b9bec",
+      "lfSha256": "61caba2784447a406e55fb835584785396ecb8b5baeda1a5e6cfa850a59b9bec"
+    },
+    {
+      "path": "lib/game/saved_loadout.dart",
+      "rawSha256": "2ce264e6d7c94f4a643f5f006d12e2778373efd53e67902df24ffe6f26c750e6",
+      "lfSha256": "2ce264e6d7c94f4a643f5f006d12e2778373efd53e67902df24ffe6f26c750e6"
+    },
+    {
+      "path": "lib/features/battle.dart",
+      "rawSha256": "fdf1d7510e5dde0fd6432d30c951691062908d66d62b8634f9de21011d85d582",
+      "lfSha256": "fdf1d7510e5dde0fd6432d30c951691062908d66d62b8634f9de21011d85d582"
+    },
+    {
+      "path": "lib/features/battle_hud.dart",
+      "rawSha256": "68fd100f62736a64acd62107434301bfa47beab47ff175ab0a943e20a56e753a",
+      "lfSha256": "68fd100f62736a64acd62107434301bfa47beab47ff175ab0a943e20a56e753a"
+    },
+    {
+      "path": "lib/features/battle_skill_dock.dart",
+      "rawSha256": "82e66f06a6a831eab3321d0e1f8a39a8ca6663f62856d9232a18d779bfe95a6a",
+      "lfSha256": "82e66f06a6a831eab3321d0e1f8a39a8ca6663f62856d9232a18d779bfe95a6a"
+    },
+    {
+      "path": "lib/features/hangar.dart",
+      "rawSha256": "db7c4df2dcc3f1d64a95fb6160fcad9e906cc6714670c2dba7b02b8da1a07462",
+      "lfSha256": "db7c4df2dcc3f1d64a95fb6160fcad9e906cc6714670c2dba7b02b8da1a07462"
+    },
+    {
+      "path": "lib/features/loadout_art.dart",
+      "rawSha256": "a8a45743ada7ee7dba49d9eaf48c0eb07664fe82271c743c458731df694c0c02",
+      "lfSha256": "a8a45743ada7ee7dba49d9eaf48c0eb07664fe82271c743c458731df694c0c02"
+    },
+    {
+      "path": "lib/features/equipment_art.dart",
+      "rawSha256": "76422228c41296ab0c15057c68161fdce0a1dc4c7f99fd944e44f8e68fa3b1b3",
+      "lfSha256": "76422228c41296ab0c15057c68161fdce0a1dc4c7f99fd944e44f8e68fa3b1b3"
+    },
+    {
+      "path": "server/firebase/src/content-catalog.ts",
+      "rawSha256": "2f9bc3aafb88c4b69154771f467ce872d8ada18e5c26452378dc5965438f2baf",
+      "lfSha256": "2f9bc3aafb88c4b69154771f467ce872d8ada18e5c26452378dc5965438f2baf"
+    },
+    {
+      "path": "server/firebase/test/billing-emulator.test.ts",
+      "rawSha256": "fb680dc0c2995caad0d29c0b1fcbeeba2b50bd806fc3ec574bd699eaf68c0a0c",
+      "lfSha256": "fb680dc0c2995caad0d29c0b1fcbeeba2b50bd806fc3ec574bd699eaf68c0a0c"
+    },
+    {
+      "path": "test/skills_items_test.dart",
+      "rawSha256": "723d5da4e15dd8840499f59b91771b2946bbfdaf74febcdf7812ff75771d9a88",
+      "lfSha256": "723d5da4e15dd8840499f59b91771b2946bbfdaf74febcdf7812ff75771d9a88"
+    },
+    {
+      "path": "test/character_item_pass_test.dart",
+      "rawSha256": "f259c8b8fccfd01b1a23d4a60d43854f6e26ec9e261e4db6a1d3c54845b1ca6e",
+      "lfSha256": "f259c8b8fccfd01b1a23d4a60d43854f6e26ec9e261e4db6a1d3c54845b1ca6e"
+    },
+    {
+      "path": "test/character_item_capture_test.dart",
+      "rawSha256": "9687ae43c8ff2ea913093e4518a1c14d68136c2a59c83d74d05e53375e657f31",
+      "lfSha256": "9687ae43c8ff2ea913093e4518a1c14d68136c2a59c83d74d05e53375e657f31"
+    },
+    {
+      "path": "tool/check_combat_pass.mjs",
+      "rawSha256": "865a02415a945dd1b59fdb314c1cc7dc2fbbf9ba0cef3b735406e13075993b89",
+      "lfSha256": "865a02415a945dd1b59fdb314c1cc7dc2fbbf9ba0cef3b735406e13075993b89"
+    }
+  ],
+  "probe": [
+    {
+      "stage": 1,
+      "result": "won",
+      "seconds": 171,
+      "health": 3,
+      "score": 8700,
+      "peakProjectiles": 29,
+      "damageEvents": [],
+      "peakEffects": 5,
+      "projectileAllocations": 30,
+      "projectileReuses": 1428,
+      "retainedProjectiles": 6
+    },
+    {
+      "stage": 2,
+      "result": "won",
+      "seconds": 223,
+      "health": 1,
+      "score": 7100,
+      "peakProjectiles": 46,
+      "damageEvents": [
+        {
+          "time": 97,
+          "x": 251,
+          "near": ""
+        },
+        {
+          "time": 114,
+          "x": 215,
+          "near": ""
+        },
+        {
+          "time": 145,
+          "x": 189,
+          "near": ""
+        }
+      ],
+      "peakEffects": 5,
+      "projectileAllocations": 46,
+      "projectileReuses": 2148,
+      "retainedProjectiles": 12
+    },
+    {
+      "stage": 3,
+      "result": "won",
+      "seconds": 173,
+      "health": 3,
+      "score": 7600,
+      "peakProjectiles": 41,
+      "damageEvents": [],
+      "peakEffects": 6,
+      "projectileAllocations": 41,
+      "projectileReuses": 1454,
+      "retainedProjectiles": 4
+    },
+    {
+      "stage": 4,
+      "result": "won",
+      "seconds": 178,
+      "health": 3,
+      "score": 8000,
+      "peakProjectiles": 49,
+      "damageEvents": [],
+      "peakEffects": 5,
+      "projectileAllocations": 49,
+      "projectileReuses": 1499,
+      "retainedProjectiles": 5
+    },
+    {
+      "stage": 5,
+      "result": "won",
+      "seconds": 189,
+      "health": 3,
+      "score": 8500,
+      "peakProjectiles": 39,
+      "damageEvents": [],
+      "peakEffects": 6,
+      "projectileAllocations": 39,
+      "projectileReuses": 1645,
+      "retainedProjectiles": 12
+    },
+    {
+      "stage": 6,
+      "result": "won",
+      "seconds": 190,
+      "health": 2,
+      "score": 6600,
+      "peakProjectiles": 42,
+      "damageEvents": [
+        {
+          "time": 176,
+          "x": 249,
+          "near": ""
+        }
+      ],
+      "peakEffects": 5,
+      "projectileAllocations": 42,
+      "projectileReuses": 1671,
+      "retainedProjectiles": 11
+    },
+    {
+      "stage": 7,
+      "result": "won",
+      "seconds": 178,
+      "health": 3,
+      "score": 8600,
+      "peakProjectiles": 38,
+      "damageEvents": [],
+      "peakEffects": 5,
+      "projectileAllocations": 39,
+      "projectileReuses": 1504,
+      "retainedProjectiles": 12
+    },
+    {
+      "stage": 8,
+      "result": "won",
+      "seconds": 202,
+      "health": 3,
+      "score": 8100,
+      "peakProjectiles": 38,
+      "damageEvents": [],
+      "peakEffects": 7,
+      "projectileAllocations": 38,
+      "projectileReuses": 1808,
+      "retainedProjectiles": 7
+    },
+    {
+      "stage": 9,
+      "result": "won",
+      "seconds": 202,
+      "health": 3,
+      "score": 7600,
+      "peakProjectiles": 46,
+      "damageEvents": [],
+      "peakEffects": 6,
+      "projectileAllocations": 47,
+      "projectileReuses": 1882,
+      "retainedProjectiles": 10
+    },
+    {
+      "stage": 10,
+      "result": "won",
+      "seconds": 178,
+      "health": 3,
+      "score": 8600,
+      "peakProjectiles": 37,
+      "damageEvents": [],
+      "peakEffects": 6,
+      "projectileAllocations": 37,
+      "projectileReuses": 1497,
+      "retainedProjectiles": 8
+    },
+    {
+      "stage": 11,
+      "result": "won",
+      "seconds": 184,
+      "health": 3,
+      "score": 8300,
+      "peakProjectiles": 43,
+      "damageEvents": [],
+      "peakEffects": 7,
+      "projectileAllocations": 43,
+      "projectileReuses": 1577,
+      "retainedProjectiles": 5
+    },
+    {
+      "stage": 12,
+      "result": "won",
+      "seconds": 178,
+      "health": 3,
+      "score": 6600,
+      "peakProjectiles": 40,
+      "damageEvents": [],
+      "peakEffects": 5,
+      "projectileAllocations": 41,
+      "projectileReuses": 1517,
+      "retainedProjectiles": 13
+    },
+    {
+      "stage": 13,
+      "result": "won",
+      "seconds": 204,
+      "health": 3,
+      "score": 8200,
+      "peakProjectiles": 42,
+      "damageEvents": [],
+      "peakEffects": 6,
+      "projectileAllocations": 43,
+      "projectileReuses": 1879,
+      "retainedProjectiles": 8
+    },
+    {
+      "stage": 14,
+      "result": "won",
+      "seconds": 184,
+      "health": 3,
+      "score": 8200,
+      "peakProjectiles": 37,
+      "damageEvents": [],
+      "peakEffects": 6,
+      "projectileAllocations": 37,
+      "projectileReuses": 1576,
+      "retainedProjectiles": 6
+    },
+    {
+      "stage": 15,
+      "result": "won",
+      "seconds": 194,
+      "health": 3,
+      "score": 7200,
+      "peakProjectiles": 37,
+      "damageEvents": [],
+      "peakEffects": 5,
+      "projectileAllocations": 37,
+      "projectileReuses": 1705,
+      "retainedProjectiles": 10
+    }
+  ],
+  "validation": {
+    "flutter": 237,
+    "analyze": "PASS",
+    "serverUnit": 21,
+    "demoIntegration": 44,
+    "rootCI": "PASS",
+    "native": "NOT_RUN"
+  },
+  "android": {
+    "available": false,
+    "reason": "Android SDK unavailable: install SDK via Android Studio or set ANDROID_HOME",
+    "execution": "NOT_RUN"
+  },
+  "limitations": [
+    "device GPU/FPS/GC",
+    "iOS/Mac and signed AAB/IPA",
+    "real store and provider callbacks",
+    "Node22 operating environment",
+    "legal/trademark clearance"
+  ],
+  "graphics": {
+    "mode": "built-in imagegen edit",
+    "references": "project-owned fox portrait/ship and rabbit portrait only",
+    "promptFile": "ART-PROMPTS.md",
+    "originalsPreserved": true,
+    "fontsRedistributed": false
+  },
+  "submissionReady": false
+}

@@ -8,6 +8,7 @@ import 'assets.dart';
 import 'combat_model.dart';
 import 'engine.dart';
 import 'deck_status.dart';
+import 'advanced_skill_catalog.dart';
 
 extension _CanvasVec on Vec {
   Offset get offset => Offset(dx, dy);
@@ -178,6 +179,7 @@ class BattlePainter extends CustomPainter {
 
   void _advancedEffects(Canvas canvas) {
     final g = game, a = g.advanced;
+    if (!advancedSkillSpecs.containsKey(g.skill)) return;
     final p = Paint()..style = PaintingStyle.stroke;
     if (a.phase == SkillStage.charging) {
       final at = g.player.offset - const Offset(0, 35);
@@ -190,7 +192,71 @@ class BattlePainter extends CustomPainter {
     }
     if (a.phase != SkillStage.active) return;
     final center = a.anchor.offset;
-    if (g.skill == 'beam') {
+    if (g.skill == 'petal_orbit') {
+      p
+        ..color = const Color(0x55F7BCD8)
+        ..strokeWidth = 1;
+      canvas.drawCircle(g.player.offset, 44, p);
+      for (var i = 0; i < 3; i++) {
+        final at = PetalOrbitStrategy.drone(g, i).offset;
+        canvas.drawOval(
+          Rect.fromCenter(center: at, width: 18, height: 12),
+          Paint()..color = const Color(0xFF2C263C),
+        );
+        canvas.drawOval(
+          Rect.fromCenter(center: at, width: 18, height: 12),
+          p
+            ..color = const Color(0xFFF7BCD8)
+            ..strokeWidth = 1.5,
+        );
+        canvas.drawCircle(at, 2, Paint()..color = Colors.white);
+      }
+    } else if (g.skill == 'aurora_sweep') {
+      for (final side in [-1, 1]) {
+        final start = g.player.offset - const Offset(0, 24),
+            end = AuroraSweepStrategy.end(g, side).offset;
+        canvas.drawLine(
+          start,
+          end,
+          p
+            ..color = const Color(0x992B586F)
+            ..strokeWidth = reduceEffects ? 8 : 12,
+        );
+        canvas.drawLine(
+          start,
+          end,
+          p
+            ..color = const Color(0xFFB9EDFF)
+            ..strokeWidth = 4,
+        );
+      }
+    } else if (g.skill == 'landing_beacon') {
+      canvas.drawCircle(center, 55, Paint()..color = const Color(0x224EC5A0));
+      canvas.drawCircle(
+        center,
+        55,
+        p
+          ..color = const Color(0xFFBFE7A5)
+          ..strokeWidth = 1.5,
+      );
+      canvas.drawLine(
+        center - const Offset(6, 0),
+        center + const Offset(6, 0),
+        p,
+      );
+      canvas.drawLine(
+        center - const Offset(0, 6),
+        center + const Offset(0, 6),
+        p,
+      );
+      for (var i = 0; i < a.blocks; i++) {
+        canvas.drawCircle(
+          center + Offset((i - 1) * 9.0, 18),
+          2,
+          Paint()..color = const Color(0xFFBFE7A5),
+        );
+      }
+    } else if (g.skill == 'beam') {
       final start = g.player.offset - const Offset(0, 24);
       p
         ..color = const Color(0x991F5376)
@@ -945,6 +1011,7 @@ class BattlePainter extends CustomPainter {
         );
       }
     }
+    _equipmentAttachment(canvas, g);
     if (g.protected) {
       p
         ..style = PaintingStyle.fill
@@ -997,6 +1064,73 @@ class BattlePainter extends CustomPainter {
       canvas.drawLine(const Offset(31, -25), const Offset(31, -19), p);
     }
     canvas.restore();
+  }
+
+  void _equipmentAttachment(Canvas canvas, BattleEngine g) {
+    final p = Paint()
+      ..strokeWidth = 1.2
+      ..style = PaintingStyle.stroke
+      ..color = Palette.teal;
+    switch (g.equipment) {
+      case 'echo':
+        for (final side in [-1, 1]) {
+          canvas.drawRRect(
+            RRect.fromRectAndRadius(
+              Rect.fromLTWH(side * 31.0 - 3, 10, 6, 13),
+              const Radius.circular(3),
+            ),
+            p,
+          );
+        }
+      case 'prism':
+        canvas.drawArc(
+          const Rect.fromLTWH(-38, -38, 76, 76),
+          -.2,
+          1.2,
+          false,
+          p..color = const Color(0xFF95CBFF),
+        );
+      case 'tuner':
+        for (var i = 0; i < 3; i++) {
+          canvas.drawLine(
+            Offset(29, 8 + i * 5.0),
+            Offset(35, 8 + i * 5.0),
+            p..color = const Color(0xFFFFCE88),
+          );
+        }
+      case 'gyro':
+        canvas.drawOval(
+          const Rect.fromLTWH(-12, 28, 24, 9),
+          p..color = const Color(0xFFB9C5FF),
+        );
+        canvas.drawCircle(const Offset(0, 32), 7, p);
+      case 'capacitor':
+        canvas.drawRRect(
+          RRect.fromRectAndRadius(
+            const Rect.fromLTWH(28, 8, 9, 20),
+            const Radius.circular(3),
+          ),
+          p..color = const Color(0xFFFFCE88),
+        );
+        for (var i = 0; i < 4; i++) {
+          final lit = g.itemState.volleyReady || g.itemState.hits >= i * 2 + 2;
+          canvas.drawLine(
+            Offset(30, 24 - i * 4.0),
+            Offset(35, 24 - i * 4.0),
+            p..color = lit ? const Color(0xFFFFE3AD) : const Color(0xFF4E4D4A),
+          );
+        }
+      case 'safety_cell':
+        canvas.drawOval(
+          const Rect.fromLTWH(-37, 10, 9, 16),
+          p
+            ..color = g.itemState.emergencyCooldown > 0
+                ? const Color(0xFF657975)
+                : const Color(0xFFBAE6A4),
+        );
+      default:
+        break;
+    }
   }
 
   void _hitCenter(Canvas canvas, Vec at) {
