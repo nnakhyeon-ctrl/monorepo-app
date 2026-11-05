@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-05",
+  "app": "TAILWING",
+  "version": "0.1.0+1",
+  "baseCommit": "1247f5ce799df35f50c80de4e6ad8903a0d41afb",
+  "scope": "LOCAL_SYNTHETIC_NOT_NATIVE_SIGNED_OR_LIVE",
+  "regressions": {
+    "file": "test/survivor_collision_test.dart",
+    "reproducedBeforeFix": 3,
+    "passedAfterFix": 3,
+    "positiveControl": "Living partner collision preserves HP loss, charger removal, score100 and defeated count1; warned target remains locked"
+  },
+  "checks": [
+    {
+      "target": "Focused engine and loopback cooperative regression",
+      "method": "flutter test --no-pub test/survivor_collision_test.dart test/regression_audit_test.dart test/coop_test.dart",
+      "result": "PASS",
+      "passed": 9,
+      "failed": 0
+    },
+    {
+      "target": "Full Flutter widgets, engine, data and permissions",
+      "method": "node tool/check_combat_pass.mjs survivor",
+      "result": "PASS",
+      "passed": 243,
+      "failed": 0
+    },
+    {
+      "target": "Dart formatting/static analysis",
+      "method": "dart format changed Dart files; flutter analyze --no-pub",
+      "result": "PASS",
+      "analysisIssues": 0
+    },
+    {
+      "target": "Monorepo static/document/tool regressions",
+      "method": "node scripts/ci.mjs",
+      "result": "PASS",
+      "markdown": 117,
+      "javascript": 77,
+      "bash": 16,
+      "safetyTests": 9,
+      "localToolTests": 1,
+      "releaseToolTests": 3
+    }
+  ],
+  "environmentNote": "Collector could not start under isolated SDK ownership; rerun succeeded in existing owner context without safe.directory/security changes",
+  "sourceSha256": [
+    {
+      "path": "lib/game/engine.dart",
+      "sha256": "fe67aba18caff4a39f1193e7fb9b5f52ff5536a29ff41f43ee19f64e8e59eccb"
+    },
+    {
+      "path": "lib/game/enemy_behaviors.dart",
+      "sha256": "71b84064ad2321e8824905f295951fd761c0568f69a7ae8de6f88a54df1afe8e"
+    },
+    {
+      "path": "test/survivor_collision_test.dart",
+      "sha256": "2dd8dddfda40fc5ddc987e7a81e1fd6b1f3b664f434a9b96e046985fdfb24fb4"
+    },
+    {
+      "path": "tool/check_combat_pass.mjs",
+      "sha256": "416d792adb0f736de16e25d7551e400644d6b0659679dbef8bebdbf01fd60c74"
+    },
+    {
+      "path": "pubspec.yaml",
+      "sha256": "2ff9279ca1ff023e015c68162712a38da662b3faafee757f65596ce3c56f60c8"
+    },
+    {
+      "path": "pubspec.lock",
+      "sha256": "f709bdd18c606314bc196fa5cd2684246cb27a5a6bd0e8a73321e0dafd7a21cd"
+    },
+    {
+      "path": "server/firebase/package-lock.json",
+      "sha256": "b5ed88e40a8b3ab44e37f0781eb4b0a44ccb4e0995376410b894c5b00df59148"
+    }
+  ],
+  "resultSha256": [
+    {
+      "path": "docs/local-verification/SURVIVOR-2026-11-05.json",
+      "sha256": "f75dd37f3bdf77d614d34986723051e29a5d441f64ac34b10e94a99a4499d3a0"
+    }
+  ],
+  "notRun": [
+    {
+      "target": "Android/iOS physical GPU FPS/GC/heat and two-device co-op",
+      "reason": "No physical-device run; public cooperative entry remains disabled"
+    },
+    {
+      "target": "Signed build startup, live account callbacks/payments and operational Node22",
+      "reason": "Not performed; no store/deployment actions authorized"
+    },
+    {
+      "target": "TypeScript/Firebase 21/44 tests",
+      "reason": "Sources/dependencies unchanged; prior audit evidence retained, not rerun in this pass"
+    },
+    {
+      "target": "npm registry dependency audit",
+      "reason": "Package/lock unchanged; previous moderate14/production6 warnings remain unresolved, not requeried"
+    }
+  ],
+  "preserved": [
+    "save schema/records/accounts",
+    "app IDs and storage namespaces",
+    "12 pilots/free3 and subscription checks",
+    "damage/radius/speed/shield values",
+    "owner editor settings and untracked note"
+  ],
+  "deploymentsPerformed": false
+}

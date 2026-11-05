@@ -611,7 +611,8 @@ class BattleEngine {
       }
     }
     for (final enemy in enemies) {
-      if (enemy.health > 0 &&
+      if (health > 0 &&
+          enemy.health > 0 &&
           (enemy.position - player).distance < enemy.radius + 5) {
         _damagePlayer();
         if (enemy.kind == EnemyKind.charger) enemy.health = 0;
@@ -664,6 +665,7 @@ class BattleEngine {
   }
 
   void _damagePlayer() {
+    if (health <= 0) return;
     if (protected) {
       _effect(player, EffectKind.shieldHit, size: 35);
       return;

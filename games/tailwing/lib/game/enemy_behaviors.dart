@@ -40,7 +40,11 @@ class ChargerBehavior extends EnemyBehavior {
       e.position += Vec(0, 55 * dt * movementFactor);
     } else if (e.fireClock < 2.1) {
       e.telegraph = true;
-      e.lockedTarget ??= g.player;
+      final survivor = g.partner;
+      e.lockedTarget ??=
+          g.health <= 0 && survivor != null && survivor.health > 0
+          ? survivor.player
+          : g.player;
       final d = e.lockedTarget! - e.position;
       e.aim = math.atan2(d.dx, d.dy);
     } else {
