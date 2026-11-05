@@ -20,11 +20,16 @@ class BattleHud extends StatelessWidget {
       key: const Key('battleHud'),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       decoration: BoxDecoration(
-        color: Palette.panel,
+        gradient: const LinearGradient(
+          colors: [Color(0xFF142B3B), Color(0xFF101827)],
+        ),
         borderRadius: BorderRadius.circular(14),
         border: Border.all(color: Palette.teal.withValues(alpha: .3)),
+        boxShadow: [
+          BoxShadow(color: Palette.teal.withValues(alpha: .06), blurRadius: 14),
+        ],
       ),
-      child: DefaultTextStyle(
+      child: DefaultTextStyle.merge(
         style: const TextStyle(
           color: Color(0xFFF1F6F9),
           fontSize: 15,
@@ -68,16 +73,12 @@ class BattleHud extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(
-                      Icons.shield_outlined,
-                      size: 19,
-                      color: Palette.teal,
-                    ),
-                    const SizedBox(width: 6),
-                    Text(
-                      '장갑 ${g.health}/${g.maxHealth}',
-                      key: const Key('battleHealth'),
-                      style: const TextStyle(fontWeight: FontWeight.w700),
+                    Flexible(
+                      child: Text(
+                        '장갑 ${g.health}/${g.maxHealth}',
+                        key: const Key('battleHealth'),
+                        style: const TextStyle(fontWeight: FontWeight.w700),
+                      ),
                     ),
                   ],
                 ),
@@ -86,12 +87,32 @@ class BattleHud extends StatelessWidget {
                   style: const TextStyle(fontWeight: FontWeight.w700),
                 ),
                 Text(
+                  '격추 ${g.defeated}',
+                  style: const TextStyle(color: Palette.muted),
+                ),
+                Text(
                   '${g.elapsed ~/ 60}:${(g.elapsed.toInt() % 60).toString().padLeft(2, '0')}',
                   style: const TextStyle(color: Palette.muted),
                 ),
               ],
             ),
             const SizedBox(height: 8),
+            Semantics(
+              label: '남은 장갑 ${g.health}, 최대 ${g.maxHealth}',
+              child: Wrap(
+                key: const Key('healthIcons'),
+                spacing: 4,
+                children: [
+                  for (var i = 0; i < g.maxHealth; i++)
+                    Icon(
+                      i < g.health ? Icons.favorite : Icons.favorite_border,
+                      size: 14,
+                      color: i < g.health ? Palette.teal : Palette.muted,
+                    ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 5),
             ClipRRect(
               borderRadius: BorderRadius.circular(3),
               child: LinearProgressIndicator(
@@ -115,7 +136,9 @@ class BattleHud extends StatelessWidget {
                 ),
                 if (deck == null)
                   Text(
-                    g.skillRemaining > 0
+                    g.advanced.phase == SkillStage.charging
+                        ? '${catalogEntry(g.skill).name} 차지 ${g.advanced.chargeRemaining.toStringAsFixed(1)}초'
+                        : g.skillRemaining > 0
                         ? '${g.skill == 'signature' ? g.pilot.technique : catalogEntry(g.skill).name} ${g.skillRemaining.toStringAsFixed(1)}초'
                         : g.cooldown > 0
                         ? '스킬 ${g.cooldown.ceil()}초 후 준비'
@@ -123,6 +146,12 @@ class BattleHud extends StatelessWidget {
                     style: TextStyle(
                       color: g.cooldown > 0 ? Palette.muted : Palette.teal,
                     ),
+                  ),
+                if (g.skill == 'absorb' &&
+                    g.advanced.phase == SkillStage.active)
+                  Text(
+                    '흡수 에너지 ${g.advanced.energy.toInt()}/60',
+                    key: const Key('absorbEnergy'),
                   ),
                 if (g.repairNotice > 0)
                   const Text(
@@ -177,6 +206,10 @@ class BattleHud extends StatelessWidget {
                   color: Color(0xFFFFB88D),
                   fontWeight: FontWeight.w700,
                 ),
+              ),
+              Text(
+                'PHASE ${boss.bossPhase(g.stage.bossHealth)} · 날개 모듈 ${boss.parts.where((hp) => hp > 0).length}/2',
+                style: const TextStyle(fontSize: 12, color: Palette.muted),
               ),
               const SizedBox(height: 4),
               LinearProgressIndicator(

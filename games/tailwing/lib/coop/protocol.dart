@@ -2,7 +2,7 @@ import '../game/combat_model.dart';
 import '../game/engine.dart';
 import '../game/stages.dart';
 
-const protocolVersion = 1;
+const protocolVersion = 2;
 const maxFrameBytes = 65536;
 
 Map<String, Object> battleSnapshot(BattleEngine g, int tick) => {
@@ -14,7 +14,14 @@ Map<String, Object> battleSnapshot(BattleEngine g, int tick) => {
   'score': g.score,
   'players': [
     for (final p in [g, ?g.partner])
-      [p.player.dx, p.player.dy, p.health, p.shieldRemaining, p.cooldown],
+      [
+        p.player.dx,
+        p.player.dy,
+        p.health,
+        p.shieldRemaining,
+        p.cooldown,
+        p.playerAircraft.tilt,
+      ],
   ],
   'enemies': [
     for (final e in g.enemies)
@@ -25,11 +32,23 @@ Map<String, Object> battleSnapshot(BattleEngine g, int tick) => {
         e.health,
         e.telegraph,
         e.aim,
+        e.age,
+        e.shield,
+        e.laserAngle,
+        e.parts[0],
+        e.parts[1],
       ],
   ],
   'bullets': [
     for (final b in g.bullets)
-      [b.position.dx, b.position.dy, b.velocity.dx, b.velocity.dy, b.friendly],
+      [
+        b.position.dx,
+        b.position.dy,
+        b.velocity.dx,
+        b.velocity.dy,
+        b.friendly,
+        b.homing,
+      ],
   ],
 };
 
@@ -66,7 +85,7 @@ BattleEngine readSnapshot(Map<String, dynamic> data) {
   }
   for (var i = 0; i < 2; i++) {
     final values = players[i] as List;
-    if (values.length != 5) {
+    if (values.length != 6) {
       throw const FormatException('player');
     }
     final p = i == 0 ? g : g.partner!;
@@ -74,6 +93,7 @@ BattleEngine readSnapshot(Map<String, dynamic> data) {
     p.health = _integer(values[2], 0, 3);
     p.shieldRemaining = _number(values[3], 0, 2);
     p.cooldown = _number(values[4], 0, 10);
+    p.playerAircraft.tilt = _number(values[5], -.16, .16);
   }
   final enemies = data['enemies'] as List, bullets = data['bullets'] as List;
   if (enemies.length > 100 || bullets.length > 512) {
@@ -81,7 +101,7 @@ BattleEngine readSnapshot(Map<String, dynamic> data) {
   }
   for (final raw in enemies) {
     final e = raw as List;
-    if (e.length != 6 || e[4] is! bool) {
+    if (e.length != 11 || e[4] is! bool) {
       throw const FormatException('enemy');
     }
     g.enemies.add(
@@ -91,12 +111,17 @@ BattleEngine readSnapshot(Map<String, dynamic> data) {
         )
         ..health = _number(e[3], 0, 2000)
         ..telegraph = e[4]
-        ..aim = _number(e[5], -4, 4),
+        ..aim = _number(e[5], -4, 4)
+        ..age = _number(e[6], 0, 301)
+        ..shield = _number(e[7], 0, 30)
+        ..laserAngle = _number(e[8], 0, 200)
+        ..parts[0] = _number(e[9], 0, 55)
+        ..parts[1] = _number(e[10], 0, 55),
     );
   }
   for (final raw in bullets) {
     final b = raw as List;
-    if (b.length != 5 || b[4] is! bool) {
+    if (b.length != 6 || b[4] is! bool || b[5] is! bool) {
       throw const FormatException('bullet');
     }
     g.bullets.add(
@@ -104,7 +129,7 @@ BattleEngine readSnapshot(Map<String, dynamic> data) {
         Vec(_number(b[0], -100, 460), _number(b[1], -100, 700)),
         Vec(_number(b[2], -600, 600), _number(b[3], -600, 600)),
         friendly: b[4],
-      ),
+      )..homing = b[5],
     );
   }
   return g;

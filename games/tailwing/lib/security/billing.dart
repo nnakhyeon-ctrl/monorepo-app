@@ -245,6 +245,9 @@ class BillingController extends ChangeNotifier {
         validUntil: DateTime.fromMillisecondsSinceEpoch(end),
         autoRenew: r['autoRenew'] == true,
         inGrace: state == 'grace',
+        subscriptionType: r['period'] == 'annual'
+            ? SubscriptionType.yearly
+            : SubscriptionType.monthly,
         periodLabel: r['period'] == 'annual' ? '연간' : '월간',
         storeLabel: r['store'] == 'play' ? 'Google Play' : 'App Store',
       );

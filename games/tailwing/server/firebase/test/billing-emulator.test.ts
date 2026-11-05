@@ -97,6 +97,23 @@ test('failed acknowledgement stays unverified and retry recovers without consumi
   const r = await f.call(a, 'verify', { productId: 'fixture_premium', reference: ref });
   assert.equal((r.entitlement as any).status, 'active');
 });
+test('monthly and annual verified subscriptions include every advanced skill; pending and revoked replies keep them locked', async () => {
+  const advanced = ['missile_storm', 'beam', 'absorb', 'blackhole', 'emp', 'chain'];
+  for (const period of ['monthly', 'annual'] as const) {
+    const f = await fixture(), a = await f.actor(), ref = f.purchase(a, period, 'pending');
+    const value = f.verifier.values.get(ref)!; value.period = period;
+    let response = await f.call(a, 'verify', { productId: 'fixture_premium', reference: ref });
+    assert.deepEqual((response.entitlement as any).owned, []);
+    value.state = 'active';
+    response = await f.call(a, 'verify', { productId: 'fixture_premium', reference: ref });
+    const entitlement = response.entitlement as { period: string; owned: string[] };
+    assert.equal(entitlement.period, period);
+    for (const id of advanced) assert.ok(entitlement.owned.includes(id));
+    value.state = 'revoked';
+    await f.service.background('play', { reference: ref });
+    assert.deepEqual((await f.call(a, 'status')).owned, []);
+  }
+});
 test('authentic duplicate/reversed notifications requery canonical state; cancellation, grace, hold, expiry/refund preserve game data', async () => {
   const f = await fixture(), a = await f.actor(), ref = f.purchase(a);
   await f.call(a, 'verify', { productId: 'fixture_premium', reference: ref });

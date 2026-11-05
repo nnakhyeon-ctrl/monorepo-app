@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import 'combat_model.dart';
 import 'progress.dart';
 import 'animal_roster.dart';
+import 'advanced_skill_catalog.dart';
 export 'combat_model.dart' show CatalogCategory;
 
 class CatalogEntry {
@@ -18,11 +21,12 @@ class CatalogEntry {
   final String id, name, detail;
   final CatalogCategory category;
   final bool premium;
+  bool get isPremiumOnly => premium;
   final int variant;
   final IconData icon;
 }
 
-const catalogEntries = [
+final catalogEntries = <CatalogEntry>[
   CatalogEntry(
     'aurora',
     '오로라-01',
@@ -73,6 +77,21 @@ const catalogEntries = [
     CatalogCategory.skill,
     icon: Icons.auto_awesome,
   ),
+  for (final spec in advancedSkillSpecs.values)
+    CatalogEntry(
+      spec.id,
+      spec.name,
+      spec.detail,
+      CatalogCategory.skill,
+      icon: switch (spec.id) {
+        'missile_storm' => Icons.rocket_launch_outlined,
+        'beam' => Icons.vertical_align_top,
+        'absorb' => Icons.shield_moon_outlined,
+        'blackhole' => Icons.blur_circular,
+        'emp' => Icons.radar,
+        _ => Icons.hub_outlined,
+      },
+    ),
   CatalogEntry(
     'pilot',
     '루미 · 토끼',
@@ -194,6 +213,35 @@ CatalogEntry catalogEntry(String id) =>
 
 enum AccessStatus { unverified, inactive, active }
 
+enum SubscriptionType { none, monthly, yearly }
+
+/// Read-only projection of verified access. A local boolean cannot grant access.
+class AccountStatus {
+  const AccountStatus({
+    required this.isSubscribed,
+    required this.subscriptionType,
+    this.expirationDate,
+  });
+  final bool isSubscribed;
+  final SubscriptionType subscriptionType;
+  final DateTime? expirationDate;
+}
+
+class PermissionManager {
+  const PermissionManager(this.access, this.clock);
+  final SubscriptionAccess access;
+  final DateTime Function() clock;
+  bool get isSubscribed => access.allows(clock());
+  bool canUse(CatalogEntry entry) => !entry.isPremiumOnly || isSubscribed;
+  AccountStatus get accountStatus => AccountStatus(
+    isSubscribed: isSubscribed,
+    subscriptionType: isSubscribed
+        ? access.subscriptionType
+        : SubscriptionType.none,
+    expirationDate: access.validUntil,
+  );
+}
+
 /// The future store/server adapter must supply verified official expiry/grace.
 /// Local UI never creates this state or treats a purchase callback as proof.
 class SubscriptionAccess {
@@ -204,12 +252,14 @@ class SubscriptionAccess {
     this.periodLabel,
     this.storeLabel,
     this.inGrace = false,
+    this.subscriptionType = SubscriptionType.none,
   });
   final AccessStatus status;
   final DateTime? validUntil;
   final bool? autoRenew;
   final String? periodLabel, storeLabel;
   final bool inGrace;
+  final SubscriptionType subscriptionType;
   bool allows(DateTime now) =>
       status == AccessStatus.active &&
       validUntil != null &&
@@ -241,6 +291,7 @@ class LoadoutController extends ChangeNotifier implements CombatLoadout {
   final CampaignController? campaign;
   late Future<void> ready;
   int _scopeEpoch = 0;
+  Timer? _expiry;
   bool selectionsLoaded = false;
   Future<void> _restoreSelections() async {
     final epoch = _scopeEpoch;
@@ -255,6 +306,7 @@ class LoadoutController extends ChangeNotifier implements CombatLoadout {
   }
 
   void accountChanged() {
+    _expiry?.cancel();
     _scopeEpoch++;
     _access = const SubscriptionAccess(AccessStatus.unverified);
     _busy = false;
@@ -291,7 +343,9 @@ class LoadoutController extends ChangeNotifier implements CombatLoadout {
 
   bool get busy => _busy;
   SubscriptionAccess get access => _access;
-  bool get premiumActive => _access.allows(_clock());
+  PermissionManager get permissions => PermissionManager(_access, _clock);
+  AccountStatus get accountStatus => permissions.accountStatus;
+  bool get premiumActive => permissions.isSubscribed;
   static const defaults = {
     CatalogCategory.aircraft: 'aurora',
     CatalogCategory.skill: 'barrier',
@@ -301,7 +355,7 @@ class LoadoutController extends ChangeNotifier implements CombatLoadout {
   final Map<CatalogCategory, String> _selected = Map.of(defaults);
   @override
   String selected(CatalogCategory category) => _selected[category]!;
-  bool canUse(CatalogEntry entry) => !entry.premium || premiumActive;
+  bool canUse(CatalogEntry entry) => permissions.canUse(entry);
   AnimalPilot get pilot =>
       animalPilot(effectiveSelected(CatalogCategory.character)) ??
       animalPilots.first;
@@ -358,6 +412,16 @@ class LoadoutController extends ChangeNotifier implements CombatLoadout {
           .timeout(const Duration(seconds: 8));
       if (_disposed || epoch != _scopeEpoch) return false;
       _access = result;
+      _expiry?.cancel();
+      if (premiumActive) {
+        final delay = _access.validUntil!.difference(_clock());
+        _expiry = Timer(delay, () {
+          if (!_disposed) {
+            sanitize();
+            _notify();
+          }
+        });
+      }
     } catch (_) {
       if (_disposed || epoch != _scopeEpoch) return false;
       lastCheckFailed = true;
@@ -377,6 +441,7 @@ class LoadoutController extends ChangeNotifier implements CombatLoadout {
 
   @override
   void dispose() {
+    _expiry?.cancel();
     _disposed = true;
     super.dispose();
   }

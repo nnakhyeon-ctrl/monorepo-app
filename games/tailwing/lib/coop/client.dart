@@ -159,7 +159,7 @@ class CoopClient extends ChangeNotifier {
 
   void _send(String type, [Map<String, Object> values = const {}]) {
     if (connected && _socket?.readyState == WebSocket.open) {
-      _socket!.add(jsonEncode({'v': 1, 'type': type, ...values}));
+      _socket!.add(jsonEncode({'v': protocolVersion, 'type': type, ...values}));
     }
   }
 

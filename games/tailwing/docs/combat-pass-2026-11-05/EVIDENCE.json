@@ -1,0 +1,453 @@
+{
+  "date": "2026-11-05",
+  "version": "0.1.0+1",
+  "baselineCommit": "8f48d8a3bcd9767d8659cfeb0a6d6f062abf405e",
+  "scope": "LOCAL_FLUTTER_WIDGET_CAPTURE_SYNTHETIC_NOT_NATIVE_RELEASE",
+  "beforeTypographyNormalization": "Explicit Roboto alias in baseline HUD only; local Windows font not redistributed",
+  "images": [
+    {
+      "path": "after.png",
+      "bytes": 1454512,
+      "width": 792,
+      "height": 1720,
+      "sha256": "755c44bf5ce7ab24da9faa02002b5080ad58eeadba3b662289fc882c37874fbc",
+      "source": "current source, fictional test entitlement/combat"
+    },
+    {
+      "path": "before.png",
+      "bytes": 1482434,
+      "width": 792,
+      "height": 1720,
+      "sha256": "e562f76a7282f1e1268ba243bfedd589f60f64a3949f9424808a8c15784303e3",
+      "source": "8f48d8a with test-only explicit HUD font"
+    },
+    {
+      "path": "charge-beam.png",
+      "bytes": 1444757,
+      "width": 792,
+      "height": 1720,
+      "sha256": "9f6096484a95671904ff114cd7f48c7cd1c30eadd820bfff99556982073f4cb9",
+      "source": "current source, fictional test entitlement/combat"
+    },
+    {
+      "path": "skill-absorb.png",
+      "bytes": 1348394,
+      "width": 792,
+      "height": 1720,
+      "sha256": "040cfde0c64aeb3f96f1a6c6beb4ffe0ec2d261d54b122862d1daa1a53dd1e0e",
+      "source": "current source, fictional test entitlement/combat"
+    },
+    {
+      "path": "skill-beam.png",
+      "bytes": 1417013,
+      "width": 792,
+      "height": 1720,
+      "sha256": "24c4b7ec4ec359d84a8b86d7b0dcf26941fca8c27baa62cfd0890caee3c76174",
+      "source": "current source, fictional test entitlement/combat"
+    },
+    {
+      "path": "skill-blackhole.png",
+      "bytes": 1443729,
+      "width": 792,
+      "height": 1720,
+      "sha256": "5c2502e032fccc4b75824776e8d0539780513a7d31713399d4cb3f9cb1f0977a",
+      "source": "current source, fictional test entitlement/combat"
+    },
+    {
+      "path": "skill-chain.png",
+      "bytes": 1434707,
+      "width": 792,
+      "height": 1720,
+      "sha256": "cf17f71d94996b097428ab8db7326ace18323001e5975c040ac1decd63bfbaed",
+      "source": "current source, fictional test entitlement/combat"
+    },
+    {
+      "path": "skill-emp.png",
+      "bytes": 1434770,
+      "width": 792,
+      "height": 1720,
+      "sha256": "3e937b0958ce2d3b5a1965424e35190110bb9aa0a7164f22e2b158f83e0c5429",
+      "source": "current source, fictional test entitlement/combat"
+    },
+    {
+      "path": "skill-missile_storm.png",
+      "bytes": 1444296,
+      "width": 792,
+      "height": 1720,
+      "sha256": "a280ea5329d9f1b5620e97fc636b71daa09600b189db15ffbb13bbada399d4fe",
+      "source": "current source, fictional test entitlement/combat"
+    }
+  ],
+  "sources": [
+    {
+      "path": "lib/game/engine.dart",
+      "rawSha256": "da041b07a22d04ca26f0ed6a9a8b38193909ddbf0503d73e999564b77cb29f9b",
+      "lfSha256": "da041b07a22d04ca26f0ed6a9a8b38193909ddbf0503d73e999564b77cb29f9b"
+    },
+    {
+      "path": "lib/game/combat_model.dart",
+      "rawSha256": "60028ba66fbc4add3719abd0c5f48452c46eab5aaafd522d33b4d887664d9f43",
+      "lfSha256": "60028ba66fbc4add3719abd0c5f48452c46eab5aaafd522d33b4d887664d9f43"
+    },
+    {
+      "path": "lib/game/player_aircraft.dart",
+      "rawSha256": "5697fb8b165108ce8ecbd9d08991a7ca9e1963b25256215b844229d858d53cd3",
+      "lfSha256": "5697fb8b165108ce8ecbd9d08991a7ca9e1963b25256215b844229d858d53cd3"
+    },
+    {
+      "path": "lib/game/advanced_skill_catalog.dart",
+      "rawSha256": "e2e766453f477f1a771e69482555a9261d839b5d0ed3d9a72fb51786ef157dca",
+      "lfSha256": "e2e766453f477f1a771e69482555a9261d839b5d0ed3d9a72fb51786ef157dca"
+    },
+    {
+      "path": "lib/game/advanced_skills.dart",
+      "rawSha256": "49fb7f2f88e4be9b3630d931c0ef0e39554df46d93cc4505e81b2eecce1bd6fe",
+      "lfSha256": "49fb7f2f88e4be9b3630d931c0ef0e39554df46d93cc4505e81b2eecce1bd6fe"
+    },
+    {
+      "path": "lib/game/enemy_behaviors.dart",
+      "rawSha256": "85856d64431930092b113249f9a57ca723194835718654164a6a0bde64a3a990",
+      "lfSha256": "85856d64431930092b113249f9a57ca723194835718654164a6a0bde64a3a990"
+    },
+    {
+      "path": "lib/game/projectile_pool.dart",
+      "rawSha256": "8a82395c63916f78114ab1476ab3cb60353e7c29fd621bac46657526fdd1e9a7",
+      "lfSha256": "8a82395c63916f78114ab1476ab3cb60353e7c29fd621bac46657526fdd1e9a7"
+    },
+    {
+      "path": "lib/game/animal_combat.dart",
+      "rawSha256": "aaf70e36410d5fc9dec052f484c75cee0b6a59febdbb57678a40a70395054236",
+      "lfSha256": "aaf70e36410d5fc9dec052f484c75cee0b6a59febdbb57678a40a70395054236"
+    },
+    {
+      "path": "lib/game/rendering.dart",
+      "rawSha256": "21a5854a4f195290e7298ae3fc489d6a6a4eb7b03febe829321f42ed820a2e8e",
+      "lfSha256": "21a5854a4f195290e7298ae3fc489d6a6a4eb7b03febe829321f42ed820a2e8e"
+    },
+    {
+      "path": "lib/game/catalog.dart",
+      "rawSha256": "93f6fce6f0a8dafbc41709fe2ffa648b9b4da6545825e32e967a6802cfc24326",
+      "lfSha256": "93f6fce6f0a8dafbc41709fe2ffa648b9b4da6545825e32e967a6802cfc24326"
+    },
+    {
+      "path": "lib/game/saved_loadout.dart",
+      "rawSha256": "af919ea990cee9e6aadea257a8b46b259960545a93653af05f1e1327217f4689",
+      "lfSha256": "af919ea990cee9e6aadea257a8b46b259960545a93653af05f1e1327217f4689"
+    },
+    {
+      "path": "lib/features/battle.dart",
+      "rawSha256": "59a9556fd27de47727d66f3eb5de58960195a59181dbd4a7a6ffa29b3c6a6fa0",
+      "lfSha256": "59a9556fd27de47727d66f3eb5de58960195a59181dbd4a7a6ffa29b3c6a6fa0"
+    },
+    {
+      "path": "lib/features/battle_hud.dart",
+      "rawSha256": "298c72f1a7a87940daa4bd770ad639259f5706c63429a31f5af46f6172447235",
+      "lfSha256": "298c72f1a7a87940daa4bd770ad639259f5706c63429a31f5af46f6172447235"
+    },
+    {
+      "path": "lib/features/battle_skill_dock.dart",
+      "rawSha256": "151d3d876e6fae5a12825ed0851d7337b1876678940068e41644798038c002fc",
+      "lfSha256": "151d3d876e6fae5a12825ed0851d7337b1876678940068e41644798038c002fc"
+    },
+    {
+      "path": "lib/features/hangar.dart",
+      "rawSha256": "9d88600e7f713f294a8563edbd04433f85e14d4c69fd55e9be3d94002b9e8a9e",
+      "lfSha256": "9d88600e7f713f294a8563edbd04433f85e14d4c69fd55e9be3d94002b9e8a9e"
+    },
+    {
+      "path": "lib/features/loadout_art.dart",
+      "rawSha256": "87c68d4cdf5c4baa72c993b3d05961d0b621e837b73600ddee9f294d35c72297",
+      "lfSha256": "87c68d4cdf5c4baa72c993b3d05961d0b621e837b73600ddee9f294d35c72297"
+    },
+    {
+      "path": "lib/security/billing.dart",
+      "rawSha256": "011e5e6baf789c2d5c3c3d802eb0819e45fe60b80b8cb4999560c454517cd3e7",
+      "lfSha256": "011e5e6baf789c2d5c3c3d802eb0819e45fe60b80b8cb4999560c454517cd3e7"
+    },
+    {
+      "path": "lib/coop/protocol.dart",
+      "rawSha256": "df2ad4df215619505bc162f75ff54a8599946ab64150e4f28e1f656d8ce36096",
+      "lfSha256": "df2ad4df215619505bc162f75ff54a8599946ab64150e4f28e1f656d8ce36096"
+    },
+    {
+      "path": "lib/coop/client.dart",
+      "rawSha256": "4487a129f6c8477ae20ee71ccb5647c9ba5a12ea2bb07d410fa935eacdca9918",
+      "lfSha256": "4487a129f6c8477ae20ee71ccb5647c9ba5a12ea2bb07d410fa935eacdca9918"
+    },
+    {
+      "path": "test/expanded_combat_test.dart",
+      "rawSha256": "5d4de08406f623eb2f41643efb39f0c55617da9d4ffaabac6f72f616100cc8bf",
+      "lfSha256": "5d4de08406f623eb2f41643efb39f0c55617da9d4ffaabac6f72f616100cc8bf"
+    },
+    {
+      "path": "test/combat_reference_capture_test.dart",
+      "rawSha256": "1b06ab5ee7115ea93a81dd8c217298acbc9c05c405a7cb2d25fa2149016ff22a",
+      "lfSha256": "1b06ab5ee7115ea93a81dd8c217298acbc9c05c405a7cb2d25fa2149016ff22a"
+    },
+    {
+      "path": "tool/campaign_probe.dart",
+      "rawSha256": "f2d485d51e6a4821e0bed1c2324cb6f19366cb66dffffebe84b176d0d2b171e0",
+      "lfSha256": "f2d485d51e6a4821e0bed1c2324cb6f19366cb66dffffebe84b176d0d2b171e0"
+    },
+    {
+      "path": "tool/check_combat_pass.mjs",
+      "rawSha256": "e6e1be1e4d666c152344e424746f71ff3ed7f8be1f5fa7424a9f9a72c217f0f5",
+      "lfSha256": "e6e1be1e4d666c152344e424746f71ff3ed7f8be1f5fa7424a9f9a72c217f0f5"
+    },
+    {
+      "path": "server/firebase/src/content-catalog.ts",
+      "rawSha256": "45abb730904d3b87573c76315f9e58b76cb3fb1c6eb51de7c64f5370ad6c2260",
+      "lfSha256": "45abb730904d3b87573c76315f9e58b76cb3fb1c6eb51de7c64f5370ad6c2260"
+    },
+    {
+      "path": "server/firebase/test/billing-emulator.test.ts",
+      "rawSha256": "246aafb65ec41d8c99d627f0a3c52a4a65c0f8dbcea63e793856b842f3e6411c",
+      "lfSha256": "246aafb65ec41d8c99d627f0a3c52a4a65c0f8dbcea63e793856b842f3e6411c"
+    }
+  ],
+  "probe": [
+    {
+      "stage": 1,
+      "result": "won",
+      "seconds": 171,
+      "health": 3,
+      "score": 8700,
+      "peakProjectiles": 29,
+      "damageEvents": [],
+      "peakEffects": 5,
+      "projectileAllocations": 30,
+      "projectileReuses": 1428,
+      "retainedProjectiles": 6
+    },
+    {
+      "stage": 2,
+      "result": "won",
+      "seconds": 223,
+      "health": 1,
+      "score": 7100,
+      "peakProjectiles": 46,
+      "damageEvents": [
+        {
+          "time": 97,
+          "x": 251,
+          "near": ""
+        },
+        {
+          "time": 114,
+          "x": 215,
+          "near": ""
+        },
+        {
+          "time": 145,
+          "x": 189,
+          "near": ""
+        }
+      ],
+      "peakEffects": 5,
+      "projectileAllocations": 46,
+      "projectileReuses": 2148,
+      "retainedProjectiles": 12
+    },
+    {
+      "stage": 3,
+      "result": "won",
+      "seconds": 173,
+      "health": 3,
+      "score": 7600,
+      "peakProjectiles": 41,
+      "damageEvents": [],
+      "peakEffects": 6,
+      "projectileAllocations": 41,
+      "projectileReuses": 1454,
+      "retainedProjectiles": 4
+    },
+    {
+      "stage": 4,
+      "result": "won",
+      "seconds": 178,
+      "health": 3,
+      "score": 8000,
+      "peakProjectiles": 49,
+      "damageEvents": [],
+      "peakEffects": 5,
+      "projectileAllocations": 49,
+      "projectileReuses": 1499,
+      "retainedProjectiles": 5
+    },
+    {
+      "stage": 5,
+      "result": "won",
+      "seconds": 189,
+      "health": 3,
+      "score": 8500,
+      "peakProjectiles": 39,
+      "damageEvents": [],
+      "peakEffects": 6,
+      "projectileAllocations": 39,
+      "projectileReuses": 1645,
+      "retainedProjectiles": 12
+    },
+    {
+      "stage": 6,
+      "result": "won",
+      "seconds": 190,
+      "health": 2,
+      "score": 6600,
+      "peakProjectiles": 42,
+      "damageEvents": [
+        {
+          "time": 176,
+          "x": 249,
+          "near": ""
+        }
+      ],
+      "peakEffects": 5,
+      "projectileAllocations": 42,
+      "projectileReuses": 1671,
+      "retainedProjectiles": 11
+    },
+    {
+      "stage": 7,
+      "result": "won",
+      "seconds": 178,
+      "health": 3,
+      "score": 8600,
+      "peakProjectiles": 38,
+      "damageEvents": [],
+      "peakEffects": 5,
+      "projectileAllocations": 39,
+      "projectileReuses": 1504,
+      "retainedProjectiles": 12
+    },
+    {
+      "stage": 8,
+      "result": "won",
+      "seconds": 202,
+      "health": 3,
+      "score": 8100,
+      "peakProjectiles": 38,
+      "damageEvents": [],
+      "peakEffects": 7,
+      "projectileAllocations": 38,
+      "projectileReuses": 1808,
+      "retainedProjectiles": 7
+    },
+    {
+      "stage": 9,
+      "result": "won",
+      "seconds": 202,
+      "health": 3,
+      "score": 7600,
+      "peakProjectiles": 46,
+      "damageEvents": [],
+      "peakEffects": 6,
+      "projectileAllocations": 47,
+      "projectileReuses": 1882,
+      "retainedProjectiles": 10
+    },
+    {
+      "stage": 10,
+      "result": "won",
+      "seconds": 178,
+      "health": 3,
+      "score": 8600,
+      "peakProjectiles": 37,
+      "damageEvents": [],
+      "peakEffects": 6,
+      "projectileAllocations": 37,
+      "projectileReuses": 1497,
+      "retainedProjectiles": 8
+    },
+    {
+      "stage": 11,
+      "result": "won",
+      "seconds": 184,
+      "health": 3,
+      "score": 8300,
+      "peakProjectiles": 43,
+      "damageEvents": [],
+      "peakEffects": 7,
+      "projectileAllocations": 43,
+      "projectileReuses": 1577,
+      "retainedProjectiles": 5
+    },
+    {
+      "stage": 12,
+      "result": "won",
+      "seconds": 178,
+      "health": 3,
+      "score": 6600,
+      "peakProjectiles": 40,
+      "damageEvents": [],
+      "peakEffects": 5,
+      "projectileAllocations": 41,
+      "projectileReuses": 1517,
+      "retainedProjectiles": 13
+    },
+    {
+      "stage": 13,
+      "result": "won",
+      "seconds": 204,
+      "health": 3,
+      "score": 8200,
+      "peakProjectiles": 42,
+      "damageEvents": [],
+      "peakEffects": 6,
+      "projectileAllocations": 43,
+      "projectileReuses": 1879,
+      "retainedProjectiles": 8
+    },
+    {
+      "stage": 14,
+      "result": "won",
+      "seconds": 184,
+      "health": 3,
+      "score": 8200,
+      "peakProjectiles": 37,
+      "damageEvents": [],
+      "peakEffects": 6,
+      "projectileAllocations": 37,
+      "projectileReuses": 1576,
+      "retainedProjectiles": 6
+    },
+    {
+      "stage": 15,
+      "result": "won",
+      "seconds": 194,
+      "health": 3,
+      "score": 7200,
+      "peakProjectiles": 37,
+      "damageEvents": [],
+      "peakEffects": 5,
+      "projectileAllocations": 37,
+      "projectileReuses": 1705,
+      "retainedProjectiles": 10
+    }
+  ],
+  "android": {
+    "available": false,
+    "reason": "Android SDK unavailable: install SDK via Android Studio or set ANDROID_HOME",
+    "execution": "NOT_RUN"
+  },
+  "iOS": {
+    "execution": "NOT_RUN",
+    "reason": "Mac/Xcode/signing unavailable"
+  },
+  "submittedPackages": [],
+  "legalClearance": "NOT_A_LEGAL_CLEARANCE",
+  "backendVerification": {
+    "scope": "LOCAL_DEMO_ONLY",
+    "typescript": "PASS",
+    "unit": {
+      "passed": 21,
+      "failed": 0
+    },
+    "emulator": {
+      "passed": 44,
+      "failed": 0
+    },
+    "runtime": "Node24 host; requested Functions Node22 not verified",
+    "productionCalls": false
+  },
+  "performance": "Projectile allocation/reuse and bounded effects measured in simulation; device GPU/FPS/GC unverified"
+}

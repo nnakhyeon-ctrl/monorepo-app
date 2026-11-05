@@ -41,7 +41,7 @@ class _HangarScreenState extends State<HangarScreen> {
 
   Future<void> _details(CatalogEntry entry) async {
     final s = AppServices.of(context), c = s.loadout;
-    final settings = await showDialog<bool>(
+    final destination = await showDialog<String>(
       context: context,
       builder: (dialogContext) => ListenableBuilder(
         listenable: Listenable.merge([c, s.campaign]),
@@ -83,6 +83,15 @@ class _HangarScreenState extends State<HangarScreen> {
               ],
               const SizedBox(height: 14),
               Text(c.accessLabel(entry)),
+              if (!c.canUse(entry)) ...[
+                const SizedBox(height: 10),
+                const Text(
+                  '월/년 구독 시 모든 기체와 스킬이 해금됩니다',
+                  key: Key('subscriptionUnlockMessage'),
+                  style: TextStyle(fontWeight: FontWeight.w800),
+                ),
+                const Text('월간·연간 혜택은 같으며 전투 쿨타임은 적용됩니다.'),
+              ],
               const SizedBox(height: 12),
               Text(
                 entry.premium
@@ -95,7 +104,7 @@ class _HangarScreenState extends State<HangarScreen> {
           ),
           actions: [
             TextButton(
-              onPressed: () => Navigator.pop(dialogContext, false),
+              onPressed: () => Navigator.pop(dialogContext),
               child: const Text('닫기'),
             ),
             if (c.canUse(entry))
@@ -108,22 +117,30 @@ class _HangarScreenState extends State<HangarScreen> {
                     ? null
                     : () {
                         if (c.select(entry)) {
-                          Navigator.pop(dialogContext, false);
+                          Navigator.pop(dialogContext);
                         }
                       },
                 child: Text(c.isSelected(entry) ? '선택됨' : '이 구성 선택'),
               )
             else
               FilledButton(
-                onPressed: () => Navigator.pop(dialogContext, true),
+                onPressed: () =>
+                    Navigator.pop(dialogContext, AppRoutes.settings),
                 child: const Text('환경설정에서 구독 보기'),
+              ),
+            if (!c.canUse(entry))
+              TextButton(
+                key: const Key('openSubscriptionUnlock'),
+                onPressed: () =>
+                    Navigator.pop(dialogContext, AppRoutes.entitlement),
+                child: const Text('월/년 구독 페이지로'),
               ),
           ],
         ),
       ),
     );
-    if (settings == true && mounted) {
-      await Navigator.pushNamed(context, AppRoutes.settings);
+    if (destination != null && mounted) {
+      await Navigator.pushNamed(context, destination);
     }
   }
 
@@ -160,11 +177,21 @@ class _HangarScreenState extends State<HangarScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    CatalogArt(
-                      entry,
-                      height: entry.category == CatalogCategory.aircraft
-                          ? 170
-                          : 115,
+                    Stack(
+                      children: [
+                        CatalogArt(
+                          entry,
+                          height: entry.category == CatalogCategory.aircraft
+                              ? 170
+                              : 115,
+                        ),
+                        if (!usable)
+                          const Positioned(
+                            top: 6,
+                            right: 6,
+                            child: Icon(Icons.lock, color: Palette.muted),
+                          ),
+                      ],
                     ),
                     const SizedBox(height: 14),
                     Text(
@@ -291,12 +318,27 @@ class _HangarScreenState extends State<HangarScreen> {
               padding: const EdgeInsets.all(8),
               child: Column(
                 children: [
-                  Image.asset(
-                    p.portrait,
-                    height: 80,
-                    cacheWidth: 256,
-                    fit: BoxFit.contain,
-                    excludeFromSemantics: true,
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Image.asset(
+                        p.portrait,
+                        height: 80,
+                        cacheWidth: 256,
+                        fit: BoxFit.contain,
+                        excludeFromSemantics: true,
+                      ),
+                      if (!usable)
+                        const Positioned(
+                          top: 0,
+                          right: 0,
+                          child: Icon(
+                            Icons.lock,
+                            size: 19,
+                            color: Palette.muted,
+                          ),
+                        ),
+                    ],
                   ),
                   Text(
                     entry.name,
@@ -326,7 +368,9 @@ class _HangarScreenState extends State<HangarScreen> {
                         selected
                             ? '선택됨'
                             : usable
-                            ? '무료'
+                            ? entry.isPremiumOnly
+                                  ? '구독 · 해금'
+                                  : '무료'
                             : '구독 · 잠김',
                         style: const TextStyle(fontSize: 12),
                       ),

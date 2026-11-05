@@ -14,6 +14,12 @@ Color catalogAccent(String id) => animalPilot(id) != null
         'vector' || 'mecha' || 'rion' => const Color(0xFFB6A1FF),
         'focus' || 'echo' || 'tuner' => const Color(0xFFFFCA85),
         'pulse' => const Color(0xFFFF92B7),
+        'missile_storm' => const Color(0xFFFFC78C),
+        'beam' => const Color(0xFF99F7EE),
+        'absorb' => const Color(0xFFB5C6FF),
+        'blackhole' => const Color(0xFFC7AEFF),
+        'emp' => const Color(0xFF9BE7B7),
+        'chain' => const Color(0xFFF6E4A4),
         'safeguard' || 'eden' || 'prism' => const Color(0xFF81CFFF),
         _ => Palette.teal,
       };
@@ -28,6 +34,12 @@ String catalogRole(String id) =>
       'focus' => '연사 · 짧고 강한 화력',
       'mecha' => '변신 · 넓은 범위 공격',
       'pulse' => '위기 탈출 · 적탄 제거',
+      'missile_storm' => '공격 · 차지·전술 정지·유도 폭격',
+      'beam' => '공격 · 전방 지속 레이저',
+      'absorb' => '방어 · 적탄 흡수·반격',
+      'blackhole' => '제어 · 중력 견인',
+      'emp' => '제어 · 범위 이동 감속',
+      'chain' => '공격 · 근접 적 연결',
       'signature' => '캐릭터별 전용 기술 · 구독',
       'pilot' => '균형 · 기본 구성',
       'rion' => '공격 · 집중 사격',
@@ -208,7 +220,85 @@ class SkillArt extends CustomPainter {
       ..color = color
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2.2;
-    if (id == 'barrier') {
+    if (id == 'missile_storm') {
+      for (final x in [-27.0, 0.0, 27.0]) {
+        final y = x == 0 ? -10.0 : 10.0;
+        canvas.drawPath(
+          Path()
+            ..moveTo(x, y - 30)
+            ..lineTo(x - 7, y - 9)
+            ..lineTo(x - 5, y + 14)
+            ..lineTo(x + 5, y + 14)
+            ..lineTo(x + 7, y - 9)
+            ..close(),
+          p,
+        );
+        canvas.drawLine(Offset(x, y + 20), Offset(x - 9, y + 43), p);
+      }
+    } else if (id == 'beam') {
+      canvas.drawLine(
+        const Offset(0, 45),
+        const Offset(0, -50),
+        p
+          ..strokeWidth = 16
+          ..color = color.withValues(alpha: .18),
+      );
+      canvas.drawLine(
+        const Offset(0, 45),
+        const Offset(0, -50),
+        p
+          ..strokeWidth = 5
+          ..color = color,
+      );
+      canvas.drawOval(const Rect.fromLTWH(-24, 25, 48, 20), p..strokeWidth = 2);
+    } else if (id == 'absorb') {
+      canvas.drawCircle(Offset.zero, 38, p);
+      for (var i = 0; i < 6; i++) {
+        final a = i * math.pi / 3;
+        canvas.drawLine(
+          Offset(math.cos(a) * 56, math.sin(a) * 56),
+          Offset(math.cos(a) * 28, math.sin(a) * 28),
+          p,
+        );
+        canvas.drawCircle(Offset(math.cos(a) * 28, math.sin(a) * 28), 3, p);
+      }
+      canvas.drawCircle(Offset.zero, 10, p..style = PaintingStyle.fill);
+    } else if (id == 'blackhole') {
+      for (var i = 0; i < 4; i++) {
+        canvas.drawArc(
+          Rect.fromCircle(center: Offset.zero, radius: 18.0 + i * 10),
+          i * .9,
+          math.pi * 1.5,
+          false,
+          p,
+        );
+      }
+      canvas.drawCircle(Offset.zero, 8, p..style = PaintingStyle.fill);
+    } else if (id == 'emp') {
+      canvas.drawOval(const Rect.fromLTWH(-50, 4, 100, 40), p);
+      canvas.drawOval(const Rect.fromLTWH(-34, 12, 68, 24), p);
+      canvas.drawLine(const Offset(0, 24), const Offset(0, -32), p);
+      for (final r in [18.0, 32.0, 45.0]) {
+        canvas.drawArc(
+          Rect.fromCircle(center: const Offset(0, -26), radius: r),
+          math.pi * 1.15,
+          math.pi * .7,
+          false,
+          p,
+        );
+      }
+    } else if (id == 'chain') {
+      const points = [
+        Offset(-42, 27),
+        Offset(-18, -23),
+        Offset(20, 19),
+        Offset(42, -31),
+      ];
+      for (var i = 0; i < points.length; i++) {
+        canvas.drawCircle(points[i], 9, p);
+        if (i > 0) canvas.drawLine(points[i - 1], points[i], p);
+      }
+    } else if (id == 'barrier') {
       canvas.drawCircle(
         Offset.zero,
         44,

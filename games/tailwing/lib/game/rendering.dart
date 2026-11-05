@@ -158,6 +158,7 @@ class BattlePainter extends CustomPainter {
     ).paint(canvas, world);
     _effects(canvas);
     _animalEffects(canvas);
+    _advancedEffects(canvas);
     for (final enemy in game.enemies) {
       _enemy(canvas, enemy);
     }
@@ -173,6 +174,80 @@ class BattlePainter extends CustomPainter {
     if (game.health > 0) _hitCenter(canvas, game.player);
     if (second != null && second.health > 0) _hitCenter(canvas, second.player);
     canvas.restore();
+  }
+
+  void _advancedEffects(Canvas canvas) {
+    final g = game, a = g.advanced;
+    final p = Paint()..style = PaintingStyle.stroke;
+    if (a.phase == SkillStage.charging) {
+      final at = g.player.offset - const Offset(0, 35);
+      p
+        ..color = const Color(0xFFB9B1FF)
+        ..strokeWidth = 2;
+      canvas.drawCircle(at, 10 + a.chargeRemaining * 12, p);
+      canvas.drawLine(at - const Offset(0, 12), at - const Offset(0, 40), p);
+      return;
+    }
+    if (a.phase != SkillStage.active) return;
+    final center = a.anchor.offset;
+    if (g.skill == 'beam') {
+      final start = g.player.offset - const Offset(0, 24);
+      p
+        ..color = const Color(0x991F5376)
+        ..strokeWidth = reduceEffects ? 18 : 24;
+      canvas.drawLine(start, Offset(start.dx, 0), p);
+      p
+        ..color = const Color(0xFF9FFFF2)
+        ..strokeWidth = 10;
+      canvas.drawLine(start, Offset(start.dx, 0), p);
+      p
+        ..color = const Color(0xFFE6FFFC)
+        ..strokeWidth = 3;
+      canvas.drawLine(start, Offset(start.dx, 0), p);
+    } else if (g.skill == 'blackhole' || g.skill == 'emp') {
+      final radius = g.skill == 'emp' ? 120.0 : 100.0;
+      p
+        ..color = (g.skill == 'emp' ? Palette.teal : const Color(0xFFB9B1FF))
+            .withValues(alpha: .10)
+        ..style = PaintingStyle.fill;
+      canvas.drawCircle(center, radius, p);
+      p
+        ..style = PaintingStyle.stroke
+        ..color = g.skill == 'emp' ? Palette.teal : const Color(0xFFC9B7FF)
+        ..strokeWidth = 1.3;
+      canvas.drawCircle(center, radius, p);
+      if (!reduceEffects) {
+        for (var i = 0; i < 3; i++) {
+          final spin = g.elapsed * .7 + i * math.pi * 2 / 3;
+          canvas.drawArc(
+            Rect.fromCircle(center: center, radius: radius * (.35 + i * .2)),
+            spin,
+            math.pi,
+            false,
+            p,
+          );
+        }
+      }
+    } else if (g.skill == 'absorb') {
+      p
+        ..color = const Color(0xFFAFBCFF)
+        ..strokeWidth = 2;
+      canvas.drawCircle(g.player.offset, 50, p);
+      p
+        ..color = const Color(0x33AFBCFF)
+        ..strokeWidth = 5;
+      canvas.drawCircle(g.player.offset, 46, p);
+    }
+    for (final link in a.links) {
+      p
+        ..color = const Color(0xFF112332)
+        ..strokeWidth = 6;
+      canvas.drawLine(link.$1.offset, link.$2.offset, p);
+      p
+        ..color = const Color(0xFFBEF7E4)
+        ..strokeWidth = 2;
+      canvas.drawLine(link.$1.offset, link.$2.offset, p);
+    }
   }
 
   void _animalEffects(Canvas canvas) {
@@ -369,7 +444,7 @@ class BattlePainter extends CustomPainter {
   void _enemy(Canvas canvas, Enemy e) {
     final p = Paint()..filterQuality = FilterQuality.medium;
     final image = assets?.enemies;
-    if (image != null) {
+    if (image != null && e.kind.index < 4) {
       final cell = Size(image.width / 2, image.height / 2);
       final source = Rect.fromLTWH(
         e.kind.index % 2 * cell.width,
@@ -394,6 +469,153 @@ class BattlePainter extends CustomPainter {
           ..color = Colors.white
           ..colorFilter = null,
       );
+    }
+    if (e.kind.index >= 4) {
+      canvas.save();
+      canvas.translate(e.position.dx, e.position.dy);
+      final color = e.kind == EnemyKind.interceptor
+          ? const Color(0xFFFFBC8D)
+          : e.kind == EnemyKind.charger
+          ? const Color(0xFFFF859B)
+          : const Color(0xFFC6B5FF);
+      final shape = Path();
+      if (e.kind == EnemyKind.sentinel) {
+        shape
+          ..moveTo(0, -25)
+          ..lineTo(30, -9)
+          ..lineTo(24, 19)
+          ..lineTo(0, 28)
+          ..lineTo(-24, 19)
+          ..lineTo(-30, -9)
+          ..close();
+      } else if (e.kind == EnemyKind.interceptor) {
+        shape
+          ..moveTo(0, 26)
+          ..quadraticBezierTo(-11, 12, -10, -12)
+          ..lineTo(-23, -18)
+          ..lineTo(-18, -26)
+          ..lineTo(-5, -18)
+          ..quadraticBezierTo(0, -27, 5, -18)
+          ..lineTo(18, -26)
+          ..lineTo(23, -18)
+          ..lineTo(10, -12)
+          ..quadraticBezierTo(11, 12, 0, 26)
+          ..close();
+      } else {
+        shape
+          ..moveTo(0, 23)
+          ..lineTo(-20, -17)
+          ..lineTo(-6, -10)
+          ..lineTo(0, -24)
+          ..lineTo(6, -10)
+          ..lineTo(20, -17)
+          ..close();
+      }
+      canvas.drawPath(
+        shape,
+        p
+          ..style = PaintingStyle.fill
+          ..shader = LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [color, Color.lerp(color, const Color(0xFF203049), .82)!],
+          ).createShader(const Rect.fromLTWH(-30, -28, 60, 56)),
+      );
+      p.shader = null;
+      canvas.drawPath(
+        shape,
+        p
+          ..color = const Color(0xFF0C1A26)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 4,
+      );
+      canvas.drawPath(
+        shape,
+        p
+          ..color = color
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 2,
+      );
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(
+          const Rect.fromLTWH(-10, -8, 20, 13),
+          const Radius.circular(6),
+        ),
+        p
+          ..style = PaintingStyle.fill
+          ..color = const Color(0xFF142234),
+      );
+      for (final side in [-1, 1]) {
+        canvas.drawOval(
+          Rect.fromCenter(center: Offset(side * 4.0, -2), width: 3, height: 4),
+          p..color = const Color(0xFFE2FAFF),
+        );
+        if (e.kind == EnemyKind.interceptor) {
+          canvas.drawRRect(
+            RRect.fromRectAndRadius(
+              Rect.fromLTWH(side * 16.0 - 3, 1, 6, 15),
+              const Radius.circular(3),
+            ),
+            p..color = const Color(0xFF283D51),
+          );
+          canvas.drawCircle(
+            Offset(side * 16.0, 11),
+            2,
+            p..color = const Color(0xFFFFD4A3),
+          );
+        }
+      }
+      canvas.drawCircle(
+        const Offset(0, 12),
+        e.kind == EnemyKind.sentinel ? 7 : 3,
+        p..color = color,
+      );
+      canvas.drawCircle(
+        const Offset(-1, 10),
+        e.kind == EnemyKind.sentinel ? 3 : 1.5,
+        p..color = const Color(0xFFFFF4D8),
+      );
+      canvas.restore();
+      if (e.shield > 0) {
+        canvas.drawCircle(
+          e.position.offset,
+          e.radius + 6,
+          p
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 2
+            ..color = const Color(0xFFBDACFF),
+        );
+      }
+      if (e.laserWarning || e.laserActive) {
+        final direction = Offset(
+          math.sin(e.laserAngle),
+          math.cos(e.laserAngle),
+        );
+        p
+          ..style = PaintingStyle.stroke
+          ..color = e.laserActive
+              ? const Color(0xFFFF8D70)
+              : const Color(0xFFB9B1FF)
+          ..strokeWidth = e.laserActive ? 7 : 1.5;
+        if (e.laserActive) {
+          canvas.drawLine(
+            e.position.offset,
+            e.position.offset + direction * 700,
+            p,
+          );
+        } else {
+          for (var d = 35.0; d < 700; d += 20) {
+            canvas.drawLine(
+              e.position.offset + direction * d,
+              e.position.offset + direction * (d + 10),
+              p,
+            );
+          }
+        }
+      }
+      p
+        ..style = PaintingStyle.fill
+        ..strokeWidth = 1;
     }
     final max = e.kind == EnemyKind.boss ? game.stage.bossHealth : e.maxHealth;
     final r = e.radius;
@@ -430,6 +652,22 @@ class BattlePainter extends CustomPainter {
       p..color = const Color(0xFFFFA380),
     );
     if (e.kind == EnemyKind.boss) {
+      for (var side = 0; side < 2; side++) {
+        final at = e.position.offset + Offset(side == 0 ? -28 : 28, 12);
+        canvas.drawRRect(
+          RRect.fromRectAndRadius(
+            Rect.fromCenter(center: at, width: 15, height: 22),
+            const Radius.circular(4),
+          ),
+          p
+            ..color = e.parts[side] > 0
+                ? const Color(0xFFFEA57D)
+                : const Color(0xFF2B3540),
+        );
+        if (e.parts[side] > 0) {
+          canvas.drawCircle(at, 3, p..color = const Color(0xFFFFF0C8));
+        }
+      }
       for (
         var i = -game.stage.bossPattern - 1;
         i <= game.stage.bossPattern + 1;
@@ -468,6 +706,30 @@ class BattlePainter extends CustomPainter {
   void _projectile(Canvas canvas, Projectile b) {
     final p = Paint();
     final at = b.position.offset;
+    if (b.homing) {
+      canvas.save();
+      canvas.translate(at.dx, at.dy);
+      canvas.rotate(-math.atan2(b.velocity.dx, b.velocity.dy));
+      final shape = Path()
+        ..moveTo(0, 8)
+        ..lineTo(-4, -3)
+        ..lineTo(0, -7)
+        ..lineTo(4, -3)
+        ..close();
+      canvas.drawPath(shape, p..color = const Color(0xFF111A29));
+      canvas.drawPath(
+        shape,
+        p
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.7
+          ..color = b.friendly
+              ? const Color(0xFFA8FFF1)
+              : const Color(0xFFFFAF7B),
+      );
+      canvas.drawLine(const Offset(0, -8), const Offset(0, -15), p);
+      canvas.restore();
+      return;
+    }
     if (b.friendly) {
       canvas.drawRRect(
         RRect.fromRectAndRadius(
@@ -541,11 +803,24 @@ class BattlePainter extends CustomPainter {
   void _player(Canvas canvas, BattleEngine g, {bool partner = false}) {
     canvas.save();
     canvas.translate(g.player.dx, g.player.dy);
+    if (!reduceEffects) canvas.rotate(g.playerAircraft.tilt);
     if (g.hitReaction) canvas.rotate(math.sin(g.elapsed * 35) * .05);
     if (g.animalActive && !reduceEffects) {
       canvas.scale(1 + math.sin(g.elapsed * 9) * .015);
     }
     final p = Paint()..filterQuality = FilterQuality.medium;
+    // Fixed analytical particles: no per-frame particle objects or random draws.
+    if (!reduceEffects) {
+      for (var i = 0; i < 16; i++) {
+        final age = (g.elapsed * 2.4 + i * .137) % 1;
+        final side = i.isEven ? -1 : 1;
+        canvas.drawCircle(
+          Offset(side * (8 + age * 4), 24 + age * 35),
+          2 * (1 - age),
+          p..color = Palette.teal.withValues(alpha: (1 - age) * .45),
+        );
+      }
+    }
     final image =
         assets?.pilotImageFor(g.character) ??
         assets?.imageFor(g.aircraft) ??
@@ -618,6 +893,31 @@ class BattlePainter extends CustomPainter {
           );
         }
       }
+    } else {
+      final hull = Path()
+        ..moveTo(0, -31)
+        ..lineTo(11, -5)
+        ..lineTo(31, 20)
+        ..lineTo(10, 16)
+        ..lineTo(0, 26)
+        ..lineTo(-10, 16)
+        ..lineTo(-31, 20)
+        ..lineTo(-11, -5)
+        ..close();
+      canvas.drawPath(hull, p..color = const Color(0xFF163C48));
+      canvas.drawPath(
+        hull,
+        p
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.5
+          ..color = Palette.teal,
+      );
+      canvas.drawOval(
+        const Rect.fromLTWH(-4, -12, 8, 18),
+        p
+          ..style = PaintingStyle.fill
+          ..color = const Color(0xFFB6F6ED),
+      );
     }
     if (g.aircraft == 'vector') {
       for (final side in [-1, 1]) {

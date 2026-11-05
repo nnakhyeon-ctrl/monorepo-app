@@ -9,12 +9,15 @@ import '../tool/campaign_probe.dart';
 import 'fixtures.dart';
 
 void main() {
-  test('all 15 stages clear with unmodified free kit in 3–5 minutes', () {
+  test('all 15 stages clear with unmodified free kit after scheduled boss and within time limit', () {
     expect(stages.length, 15);
     for (final stage in stages) {
       final result = probe(stage);
       expect(result['result'], 'won', reason: '$result');
-      expect(result['seconds'], inInclusiveRange(180, 300));
+      expect(
+        result['seconds'],
+        inInclusiveRange(stage.bossAt, stage.timeLimit),
+      );
       expect(result['peakProjectiles'], lessThan(100));
     }
   });

@@ -29,6 +29,9 @@ class AnimalCombatState {
     stitch.clear();
     beacons.clear();
     links.clear();
+    for (final bullet in captured) {
+      bullet._owner?.release(bullet);
+    }
     captured.clear();
     disrupted.clear();
     anchor = null;
@@ -60,6 +63,9 @@ extension AnimalTechniques on BattleEngine {
     animal.tick = 0;
     animal.spent = 0;
     animal.anchor = player;
+    for (final bullet in animal.captured) {
+      bullet._owner?.release(bullet);
+    }
     animal.captured.clear();
     animal.links.clear();
     animal.disrupted.clear();
@@ -124,7 +130,7 @@ extension AnimalTechniques on BattleEngine {
         final count = animal.captured.length;
         for (var i = 0; i < count; i++) {
           bullets.add(
-            Projectile(
+            projectilePool.acquire(
               player + Vec((i - (count - 1) / 2) * 8, -24),
               const Vec(0, -390),
               damage: pilot.balance.damage,
@@ -135,6 +141,9 @@ extension AnimalTechniques on BattleEngine {
         }
       }
       animal.active = false;
+      for (final bullet in animal.captured) {
+        bullet._owner?.release(bullet);
+      }
       animal.captured.clear();
       animal.target = null;
       animal.stitch.clear();
@@ -176,7 +185,7 @@ extension AnimalTechniques on BattleEngine {
       final origin = animal.anchor ?? player;
       for (var i = 0; i < b.count; i++) {
         bullets.add(
-          Projectile(
+          projectilePool.acquire(
             origin + Vec((i - (b.count - 1) / 2) * b.width / b.count, -28),
             const Vec(0, -460),
             damage: b.damage,
@@ -196,7 +205,7 @@ extension AnimalTechniques on BattleEngine {
           elapsed >= animal.nextPrecision) {
         final d = target.position - player, length = math.max(1, d.distance);
         bullets.add(
-          Projectile(
+          projectilePool.acquire(
             player + const Vec(0, -24),
             d * (480 / length),
             damage: b.damage,

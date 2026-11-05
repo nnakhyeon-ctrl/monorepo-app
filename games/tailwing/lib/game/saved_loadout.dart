@@ -6,7 +6,19 @@ class SavedLoadout {
   final Map<CatalogCategory, String> _values;
   static const allowed = {
     CatalogCategory.aircraft: ['aurora', 'vector', 'safeguard'],
-    CatalogCategory.skill: ['barrier', 'focus', 'mecha', 'pulse', 'signature'],
+    CatalogCategory.skill: [
+      'barrier',
+      'focus',
+      'mecha',
+      'pulse',
+      'signature',
+      'missile_storm',
+      'beam',
+      'absorb',
+      'blackhole',
+      'emp',
+      'chain',
+    ],
     CatalogCategory.character: [
       'pilot',
       'rion',

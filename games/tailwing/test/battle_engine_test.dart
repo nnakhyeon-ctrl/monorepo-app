@@ -223,7 +223,7 @@ void main() {
           ..fireClock = 2,
       );
       g.step(.01);
-      expect(g.bullets.where((b) => !b.friendly), hasLength(5));
+      expect(g.bullets.where((b) => !b.friendly), hasLength(7));
     },
   );
 

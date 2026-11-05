@@ -3,11 +3,16 @@ import 'dart:math' as math;
 import 'combat_model.dart';
 import 'stages.dart';
 import 'animal_roster.dart';
+import 'player_aircraft.dart';
+import 'advanced_skill_catalog.dart';
 part 'animal_combat.dart';
+part 'projectile_pool.dart';
+part 'enemy_behaviors.dart';
+part 'advanced_skills.dart';
 
 enum BattlePhase { playing, paused, won, lost }
 
-enum EnemyKind { scout, sweeper, armored, boss }
+enum EnemyKind { scout, sweeper, armored, boss, interceptor, charger, sentinel }
 
 /// Transient visual events only: no random draws, collision or saved state.
 enum EffectKind { muzzle, hit, explosion, shieldHit, damage, pulse, skill }
@@ -38,10 +43,14 @@ class Projectile {
     this.precision = false,
   });
   Vec position;
-  final Vec velocity;
-  final double damage;
-  final bool friendly;
-  final bool collectible, precision;
+  Vec velocity;
+  double damage;
+  bool friendly;
+  bool collectible, precision;
+  bool homing = false;
+  double steeringRemaining = 1.2;
+  ProjectilePool? _owner;
+  bool _leased = false;
 }
 
 class Enemy {
@@ -51,6 +60,9 @@ class Enemy {
         EnemyKind.sweeper => 35,
         EnemyKind.armored => 70,
         EnemyKind.boss => 400,
+        EnemyKind.interceptor => 32,
+        EnemyKind.charger => 24,
+        EnemyKind.sentinel => 110,
       };
   Vec position;
   final EnemyKind kind;
@@ -60,14 +72,32 @@ class Enemy {
     EnemyKind.sweeper => 35,
     EnemyKind.armored => 70,
     EnemyKind.boss => 400,
+    EnemyKind.interceptor => 32,
+    EnemyKind.charger => 24,
+    EnemyKind.sentinel => 110,
   };
   double fireClock = 0;
   double age = 0;
+  double motionAge = 0;
   double aim = 0;
   bool telegraph = false;
   double slowRemaining = 0, slowImmunity = 0;
+  double shield = 0, laserAngle = 0;
+  Vec? lockedTarget;
+  final parts = <double>[55, 55];
+  int bossPhase(double maximum) => health > maximum * 2 / 3
+      ? 1
+      : health > maximum / 3
+      ? 2
+      : 3;
+  bool get laserWarning =>
+      kind == EnemyKind.sentinel && age % 6 >= 2 && age % 6 < 3.2;
+  bool get laserActive =>
+      kind == EnemyKind.sentinel && age % 6 >= 3.2 && age % 6 < 4.4;
   double get radius => kind == EnemyKind.boss
       ? 42
+      : kind == EnemyKind.sentinel
+      ? 28
       : kind == EnemyKind.armored
       ? 22
       : 15;
@@ -102,8 +132,12 @@ class BattleEngine {
   final bool playerOnly;
   BattleEngine? partner;
   BattlePhase phase = BattlePhase.playing;
-  Vec player = const Vec(180, 510);
+  final playerAircraft = PlayerAircraft();
+  Vec get player => playerAircraft.position;
+  set player(Vec value) => playerAircraft.position = value;
   final List<Projectile> bullets = [];
+  final projectilePool = ProjectilePool();
+  final advanced = AdvancedSkillState();
   final List<Enemy> enemies = [];
   final animal = AnimalCombatState();
   AnimalPilot get pilot => animalPilot(character) ?? animalPilots.first;
@@ -122,7 +156,8 @@ class BattleEngine {
     effects.add(CombatEffect(at, kind, size: size));
   }
 
-  late int health;
+  int get health => playerAircraft.hp;
+  set health(int value) => playerAircraft.hp = value;
   int score = 0;
   int shotsFired = 0;
   int _defeated = 0;
@@ -131,7 +166,25 @@ class BattleEngine {
   double repairNotice = 0;
   double elapsed = 0, shieldRemaining = 0, skillRemaining = 0, cooldown = 0;
   double _shotClock = 0, _spawnClock = 0, _invulnerable = 0, _prismClock = 0;
+  double _basicShieldCooldown = 0;
+  double get basicShieldCooldown =>
+      skill == 'barrier' ? cooldown : _basicShieldCooldown;
+  bool activateBasicShield() {
+    _validate();
+    if (skill == 'barrier') return activateSkill();
+    if (health <= 0 ||
+        phase != BattlePhase.playing ||
+        _basicShieldCooldown > 0) {
+      return false;
+    }
+    _basicShieldCooldown = 10 * (equipment == 'tuner' ? .9 : 1);
+    shieldRemaining = shieldDuration;
+    _effect(player, EffectKind.skill, size: 42);
+    return true;
+  }
+
   bool _bossSpawned = false;
+  bool _sentinelSpawned = false;
   late String _configuration;
   String get _fingerprint =>
       CatalogCategory.values.map(loadout.selected).join('/');
@@ -154,14 +207,15 @@ class BattleEngine {
   bool get robotMode => skill == 'mecha' && skillRemaining > 0;
   double get shieldDuration => 2 + (character == 'eden' ? .5 : 0);
   double get skillRechargeDuration =>
-      (skill == 'signature'
-          ? pilot.balance.cooldown
-          : switch (skill) {
-              'focus' => 12.0,
-              'mecha' => 16.0,
-              'pulse' => 14.0,
-              _ => 10.0,
-            }) *
+      (advancedSkillSpecs[skill]?.cooldown ??
+          (skill == 'signature'
+              ? pilot.balance.cooldown
+              : switch (skill) {
+                  'focus' => 12.0,
+                  'mecha' => 16.0,
+                  'pulse' => 14.0,
+                  _ => 10.0,
+                })) *
       (equipment == 'tuner' ? .9 : 1);
   double get moveSpeed => aircraft == 'vector' ? 1.15 : 1;
   double get shotInterval =>
@@ -178,7 +232,10 @@ class BattleEngine {
       _configuration = _fingerprint;
       _clearTransientAbilities();
       cooldown = math.min(cooldown, 10);
-      bullets.removeWhere((b) => b.friendly);
+      if (skill == 'barrier') {
+        cooldown = math.max(cooldown, _basicShieldCooldown);
+      }
+      _discardBullets((b) => b.friendly);
       health = math.min(health, maxHealth);
     }
   }
@@ -187,6 +244,7 @@ class BattleEngine {
     shieldRemaining = 0;
     skillRemaining = 0;
     animal.clear();
+    advanced.clear();
     _prismClock = 0;
     for (final enemy in enemies) {
       enemy.slowRemaining = 0;
@@ -214,10 +272,7 @@ class BattleEngine {
         !delta.dy.isFinite) {
       return;
     }
-    player = Vec(
-      (player.dx + delta.dx * moveSpeed).clamp(22, width - 22).toDouble(),
-      (player.dy + delta.dy * moveSpeed).clamp(30, height - 24).toDouble(),
-    );
+    playerAircraft.moveBy(delta, multiplier: moveSpeed);
   }
 
   bool activateSkill() {
@@ -226,6 +281,11 @@ class BattleEngine {
       return false;
     }
     cooldown = skillRechargeDuration;
+    final strategy = advancedSkillStrategies[skill];
+    if (strategy != null) {
+      strategy.activate(this);
+      return true;
+    }
     _effect(
       player,
       skill == 'pulse' ? EffectKind.pulse : EffectKind.skill,
@@ -236,14 +296,15 @@ class BattleEngine {
         _activateAnimal();
       case 'barrier':
         shieldRemaining = shieldDuration;
+        _basicShieldCooldown = cooldown;
       case 'focus':
         skillRemaining = 4;
       case 'mecha':
         skillRemaining = 5;
       case 'pulse':
-        bullets.removeWhere((b) => !b.friendly);
+        _discardBullets((b) => !b.friendly);
         for (final enemy in enemies) {
-          enemy.health -= 40;
+          damageEnemy(enemy, 40);
         }
         _collectDefeated();
     }
@@ -266,7 +327,7 @@ class BattleEngine {
         : [-.04, .04];
     for (final angle in spread) {
       bullets.add(
-        Projectile(
+        projectilePool.acquire(
           player + const Vec(0, -24),
           Vec(math.sin(angle) * 420, -math.cos(angle) * 420),
           damage: shotDamage * (refracting ? pilot.balance.damage : 1),
@@ -277,7 +338,7 @@ class BattleEngine {
     if (equipment == 'echo') {
       for (final side in [-1, 1]) {
         bullets.add(
-          Projectile(
+          projectilePool.acquire(
             player + Vec(side * 25, 0),
             Vec(side * 35, -390),
             damage: shotDamage * .5,
@@ -296,6 +357,7 @@ class BattleEngine {
       .05,
     ); // Never fast-forward after a stalled frame/background.
     elapsed += dt;
+    playerAircraft.stepPresentation(dt);
     for (final effect in effects) {
       effect.age += dt;
     }
@@ -310,9 +372,11 @@ class BattleEngine {
       repairNotice = 2;
     }
     cooldown = math.max(0, cooldown - dt);
+    _basicShieldCooldown = math.max(0, _basicShieldCooldown - dt);
     shieldRemaining = math.max(0, shieldRemaining - dt);
     skillRemaining = math.max(0, skillRemaining - dt);
     _invulnerable = math.max(0, _invulnerable - dt);
+    advancedSkillStrategies[skill]?.tick(this, dt);
     _tickAnimal(dt);
     _shotClock -= dt;
     if (_shotClock <= 0 && health > 0) {
@@ -338,15 +402,29 @@ class BattleEngine {
     _spawnClock -= dt;
     if (elapsed > 4 && elapsed < stage.bossAt - 8 && _spawnClock <= 0) {
       final segment = (elapsed / 55).floor().clamp(0, 2);
-      final kind = EnemyKind.values[(_wave + stage.formation + segment) % 3];
+      final kind = elapsed > 20 && _wave % 5 == 3
+          ? EnemyKind.interceptor
+          : elapsed > 30 && _wave % 5 == 4
+          ? EnemyKind.charger
+          : EnemyKind.values[(_wave + stage.formation + segment) % 3];
       final lane = stage.formation == 0
           ? (_wave % 5) * 58 + 64.0
           : stage.formation == 1
           ? (_wave.isEven ? 65.0 : 295.0)
           : 110.0 + (_wave % 3) * 70;
       enemies.add(Enemy(Vec(lane + _random.nextDouble() * 8, -30), kind));
+      if (kind == EnemyKind.charger) {
+        enemies.addAll([
+          Enemy(Vec((lane - 32).clamp(30, 330), -55), kind),
+          Enemy(Vec((lane + 32).clamp(30, 330), -55), kind),
+        ]);
+      }
       _wave++;
       _spawnClock = stage.spawnInterval - segment * .2;
+    }
+    if (!_sentinelSpawned && elapsed >= 80 && elapsed < stage.bossAt) {
+      _sentinelSpawned = true;
+      enemies.add(Enemy(const Vec(180, -40), EnemyKind.sentinel));
     }
     if (!_bossSpawned && elapsed >= stage.bossAt) {
       _bossSpawned = true;
@@ -356,7 +434,8 @@ class BattleEngine {
     }
     for (final enemy in enemies) {
       if (enemy.health <= 0) continue;
-      enemy.age += dt;
+      final enemyDt = advanced.freeze > 0 ? 0.0 : dt;
+      enemy.age += enemyDt;
       final wasSlowed = enemy.slowRemaining > 0;
       enemy.slowRemaining = math.max(0, enemy.slowRemaining - dt);
       enemy.slowImmunity = math.max(0, enemy.slowImmunity - dt);
@@ -378,26 +457,35 @@ class BattleEngine {
                 ? pilot.balance.armoredSlowFactor
                 : pilot.balance.slowFactor)
           : 1.0;
+      final fieldSlow =
+          advancedSkillStrategies[skill]?.movementFactor(this, enemy) ?? 1.0;
+      enemy.motionAge += enemyDt * slow * fieldSlow;
+      final behavior = enemyBehaviors[enemy.kind];
+      if (behavior != null) {
+        behavior.tick(this, enemy, enemyDt, movementFactor: slow * fieldSlow);
+        continue;
+      }
       final speed = switch (enemy.kind) {
         EnemyKind.scout => 64.0,
         EnemyKind.sweeper => 42.0,
         EnemyKind.armored => 27.0,
         EnemyKind.boss => 38.0,
+        _ => 0.0,
       };
       if (enemy.kind != EnemyKind.boss || enemy.position.dy < 85) {
         enemy.position += Vec(
           enemy.kind == EnemyKind.scout
-              ? math.sin(enemy.age * 3) * 38 * dt * slow
+              ? math.sin(enemy.motionAge * 3) * 38 * enemyDt * slow * fieldSlow
               : 0,
-          speed * dt * slow,
+          speed * enemyDt * slow * fieldSlow,
         );
       } else {
         enemy.position = Vec(
-          180 + math.sin(enemy.age * (1 + stage.biome * .06)) * 78,
+          180 + math.sin(enemy.motionAge * (1 + stage.biome * .06)) * 78,
           85,
         );
       }
-      enemy.fireClock += dt;
+      enemy.fireClock += enemyDt;
       final period = enemy.kind == EnemyKind.boss ? 1.5 : 2.6;
       if (!enemy.telegraph &&
           enemy.position.dy < 350 &&
@@ -438,14 +526,21 @@ class BattleEngine {
                 : enemy.health < stage.bossHealth / 2
                 ? [-.8, -.4, .4, .8]
                 : [-.5, 0.0, .5],
+          _ => <double>[],
         };
+        if (enemy.kind == EnemyKind.boss) {
+          final phase = enemy.bossPhase(stage.bossHealth);
+          if (phase >= 2 && enemy.parts[0] > 0) angles.add(-.92);
+          if (phase >= 2 && enemy.parts[1] > 0) angles.add(.92);
+          if (phase == 3) angles.addAll([-.16, .16]);
+        }
         final rotation = stage.biome == 0
             ? 0.0
             : math.sin(enemy.age * .5) * stage.biome * .025;
         final aim = enemy.aim;
         for (final angle in angles) {
           bullets.add(
-            Projectile(
+            projectilePool.acquire(
               enemy.position,
               Vec(
                 math.sin(angle + aim + rotation) * stage.bulletSpeed,
@@ -458,7 +553,15 @@ class BattleEngine {
       }
     }
     for (final bullet in bullets) {
-      bullet.position += bullet.velocity * dt;
+      if (bullet.homing &&
+          bullet.steeringRemaining > 0 &&
+          (bullet.friendly || advanced.freeze <= 0)) {
+        _steerProjectile(bullet, math.min(dt, bullet.steeringRemaining));
+        bullet.steeringRemaining = math.max(0, bullet.steeringRemaining - dt);
+      }
+      if (bullet.friendly || advanced.freeze <= 0) {
+        bullet.position += bullet.velocity * dt;
+      }
     }
     final consumed = <Projectile>{};
     _interceptAnimal(consumed);
@@ -468,14 +571,17 @@ class BattleEngine {
         for (final enemy in enemies) {
           if (enemy.health > 0 &&
               (bullet.position - enemy.position).distance < enemy.radius + 4) {
-            enemy.health -= bullet.damage;
+            damageEnemy(enemy, bullet.damage, impact: bullet.position);
             _relayAnimal(enemy, bullet);
             _effect(bullet.position, EffectKind.hit);
             consumed.add(bullet);
             break;
           }
         }
-      } else if (health > 0 && (bullet.position - player).distance < 10) {
+      } else if (_absorbProjectile(bullet)) {
+        consumed.add(bullet);
+      } else if (health > 0 &&
+          playerAircraft.hitbox.contains(player, bullet.position)) {
         consumed.add(bullet);
         _damagePlayer();
       } else if (second != null &&
@@ -489,15 +595,17 @@ class BattleEngine {
       if (enemy.health > 0 &&
           (enemy.position - player).distance < enemy.radius + 5) {
         _damagePlayer();
+        if (enemy.kind == EnemyKind.charger) enemy.health = 0;
       }
       if (second != null &&
           second.health > 0 &&
           enemy.health > 0 &&
           (enemy.position - second.player).distance < enemy.radius + 5) {
         second._damagePlayer();
+        if (enemy.kind == EnemyKind.charger) enemy.health = 0;
       }
     }
-    bullets.removeWhere(
+    _discardBullets(
       (b) =>
           consumed.contains(b) ||
           b.position.dy < -50 ||
@@ -543,5 +651,52 @@ class BattleEngine {
       }
     }
     enemies.removeWhere((e) => e.health <= 0);
+  }
+
+  void _discardBullets(bool Function(Projectile) predicate) {
+    bullets.removeWhere((b) {
+      if (!predicate(b)) return false;
+      if (!animal.captured.contains(b)) b._owner?.release(b);
+      return true;
+    });
+  }
+
+  void damageEnemy(
+    Enemy enemy,
+    double damage, {
+    Vec? impact,
+    bool allowSharing = true,
+  }) {
+    if (enemy.shield > 0) {
+      final blocked = math.min(enemy.shield, damage);
+      enemy.shield -= blocked;
+      damage -= blocked;
+    }
+    if (enemy.kind == EnemyKind.boss && impact != null) {
+      for (var i = 0; i < 2; i++) {
+        final part = enemy.position + Vec(i == 0 ? -28 : 28, 12);
+        if (enemy.parts[i] > 0 && (impact - part).distance < 16) {
+          enemy.parts[i] = math.max(0, enemy.parts[i] - damage);
+          if (enemy.parts[i] == 0) {
+            _effect(part, EffectKind.explosion, size: 32);
+          }
+          break;
+        }
+      }
+    }
+    enemy.health -= damage;
+    if (allowSharing &&
+        damage > 0 &&
+        skill == 'chain' &&
+        advanced.phase == SkillStage.active &&
+        advanced.tethered.contains(enemy)) {
+      for (final linked in advanced.tethered) {
+        if (!identical(enemy, linked) &&
+            linked.health > 0 &&
+            enemies.contains(linked)) {
+          damageEnemy(linked, damage * .3, allowSharing: false);
+        }
+      }
+    }
   }
 }

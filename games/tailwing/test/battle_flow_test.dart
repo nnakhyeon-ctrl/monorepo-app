@@ -253,9 +253,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 20));
       expect(g.protected, isTrue);
       expect(
-        tester
-            .widget<FilledButton>(find.byKey(const Key('useSkill')))
-            .onPressed,
+        tester.widget<InkWell>(find.byKey(const Key('useSkill'))).onTap,
         isNull,
       );
       g.bullets.add(Projectile(g.player, Vec.zero));
@@ -297,7 +295,10 @@ void main() {
       await tester.pumpAndSettle();
       await open(tester, AppRoutes.hangar);
       await press(tester, find.byKey(const Key('category-character')));
-      await tester.scrollUntilVisible(find.byKey(const Key('select-tw_owl')), 240);
+      await tester.scrollUntilVisible(
+        find.byKey(const Key('select-tw_owl')),
+        240,
+      );
       await tester.ensureVisible(find.byKey(const Key('select-tw_owl')));
       expect(
         tester

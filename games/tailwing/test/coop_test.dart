@@ -17,7 +17,7 @@ class Peer {
   final WebSocket socket;
   final List<Map<String, dynamic>> messages = [];
   void send(String type, [Map<String, Object> data = const {}]) =>
-      socket.add(jsonEncode({'v': 1, 'type': type, ...data}));
+      socket.add(jsonEncode({'v': protocolVersion, 'type': type, ...data}));
   Future<Map<String, dynamic>> wait(String type, {int after = 0}) async {
     final end = DateTime.now().add(const Duration(seconds: 4));
     while (DateTime.now().isBefore(end)) {

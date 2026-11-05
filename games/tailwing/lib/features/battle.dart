@@ -13,6 +13,7 @@ import '../game/progress.dart';
 import '../core/game_feedback.dart';
 import 'battle_hud.dart';
 import 'pilot_pose.dart';
+import 'battle_skill_dock.dart';
 
 class BattleScreen extends StatefulWidget {
   const BattleScreen({super.key});
@@ -211,6 +212,16 @@ class _BattleScreenState extends State<BattleScreen>
     _finish();
   }
 
+  void _shield(BattleEngine g) {
+    if (g.skill == 'barrier') {
+      _skill(g);
+      return;
+    }
+    setState(() {
+      if (g.activateBasicShield()) _feedback?.cue(FeedbackCue.skill);
+    });
+  }
+
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state != AppLifecycleState.resumed && _game != null && mounted) {
@@ -400,39 +411,45 @@ class _BattleScreenState extends State<BattleScreen>
                         )
                       : const CircularProgressIndicator(),
                 )
-              : LayoutBuilder(
-                  builder: (context, viewport) {
-                    final largeText =
-                        MediaQuery.textScalerOf(context).scale(15) > 24;
-                    final short = viewport.maxHeight < 430 || largeText;
-                    final field = _field(g);
-                    final status = BattleHud(g);
-                    final controls = _controls(g);
-                    if (short) {
-                      return SingleChildScrollView(
-                        padding: const EdgeInsets.all(12),
-                        child: Column(
-                          children: [
-                            status,
-                            const SizedBox(height: 10),
-                            SizedBox(height: 340, child: field),
-                            controls,
-                          ],
-                        ),
-                      );
-                    }
-                    return Padding(
-                      padding: const EdgeInsets.fromLTRB(14, 6, 14, 12),
-                      child: Column(
-                        children: [
-                          status,
-                          const SizedBox(height: 10),
-                          Expanded(child: field),
-                          controls,
-                        ],
-                      ),
-                    );
-                  },
+              : Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, viewport) {
+                        final largeText =
+                            MediaQuery.textScalerOf(context).scale(15) > 24;
+                        final short = viewport.maxHeight < 430 || largeText;
+                        final field = _field(g);
+                        final status = BattleHud(g);
+                        final controls = _controls(g);
+                        if (short) {
+                          return SingleChildScrollView(
+                            padding: const EdgeInsets.all(12),
+                            child: Column(
+                              children: [
+                                status,
+                                const SizedBox(height: 10),
+                                SizedBox(height: 340, child: field),
+                                controls,
+                              ],
+                            ),
+                          );
+                        }
+                        return Padding(
+                          padding: const EdgeInsets.fromLTRB(14, 6, 14, 12),
+                          child: Column(
+                            children: [
+                              status,
+                              const SizedBox(height: 10),
+                              Expanded(child: field),
+                              controls,
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                    if (g.phase != BattlePhase.playing) _resultOverlay(g),
+                  ],
                 ),
         ),
       ),
@@ -465,6 +482,10 @@ class _BattleScreenState extends State<BattleScreen>
                   }
                   if (event.logicalKey == LogicalKeyboardKey.space) {
                     _skill(g);
+                    return KeyEventResult.handled;
+                  }
+                  if (event.logicalKey == LogicalKeyboardKey.keyZ) {
+                    _shield(g);
                     return KeyEventResult.handled;
                   }
                   return KeyEventResult.ignored;
@@ -509,113 +530,30 @@ class _BattleScreenState extends State<BattleScreen>
                   top: 8,
                   left: 8,
                   right: 8,
-                  child: Material(
-                    color: Palette.panel,
-                    borderRadius: BorderRadius.circular(12),
-                    child: Padding(
-                      padding: const EdgeInsets.all(12),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(switch (_tutorial) {
-                            1 =>
-                              '1/3 · 화면 아래 빈 곳을 드래그하세요. 손가락 위치로 기체가 튀지 않습니다.',
-                            2 => '2/3 · 기본 사격은 자동입니다. 청록색 긴 탄은 아군탄, 주황색 둥근 탄은 적탄입니다.',
-                            _ => '3/3 · 아래 보호막 버튼을 누르세요. 2초 방어 후 10초 뒤 다시 사용할 수 있습니다.',
-                          }, style: const TextStyle(fontSize: 14)),
-                          if (_tutorial == 2)
-                            TextButton(
-                              key: const Key('tutorialFire'),
-                              onPressed: () => setState(() => _tutorial = 3),
-                              child: const Text('사격 확인'),
-                            ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              if (g.phase != BattlePhase.playing)
-                ColoredBox(
-                  color: Palette.navy.withValues(alpha: .88),
-                  child: Center(
-                    child: SingleChildScrollView(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            switch (g.phase) {
-                              BattlePhase.paused => '일시정지',
-                              BattlePhase.won => '작전 완료',
-                              _ => '다시 도전하세요',
-                            },
-                            style: const TextStyle(
-                              fontSize: 26,
-                              fontWeight: FontWeight.w800,
-                            ),
-                          ),
-                          const SizedBox(height: 14),
-                          Text(
-                            '점수 ${g.score} · 격추 ${g.defeated}',
-                            textAlign: TextAlign.center,
-                          ),
-                          const SizedBox(height: 14),
-                          if (g.phase != BattlePhase.paused)
-                            ListenableBuilder(
-                              listenable: AppServices.of(context).campaign,
-                              builder: (context, _) {
-                                final campaign = AppServices.of(context)
-                                    .campaign;
-                                return Text(
-                                  _settling
-                                      ? '기록 저장 중…'
-                                      : campaign.saveFailed ||
-                                            campaign.writeBlocked
-                                      ? '기기 기록 저장 실패 · 기존 파일은 보존됩니다. 설정에서 상태를 확인하세요.'
-                                      : '기기 기록 저장 완료 · 최고 ${campaign.progress.records[_stage]?.best ?? 0}점',
-                                  textAlign: TextAlign.center,
-                                );
-                              },
-                            ),
-                          if (g.phase == BattlePhase.won &&
-                              _stage < stages.length)
-                            FilledButton(
-                              key: const Key('nextStage'),
-                              onPressed: _settled && !_settling
-                                  ? () => _retry(next: true)
-                                  : null,
-                              child: const Text('다음 작전'),
-                            ),
-                          if (g.phase == BattlePhase.paused)
-                            FilledButton(
-                              onPressed: _pauseToggle,
-                              child: const Text('계속하기'),
-                            )
-                          else
-                            FilledButton(
-                              key: const Key('retryBattle'),
-                              onPressed: _settling ? null : _retry,
-                              child: const Text('다시 도전'),
-                            ),
-                          if (g.phase == BattlePhase.paused)
-                            OutlinedButton(
-                              key: const Key('retryPausedBattle'),
-                              onPressed: _retryPaused,
-                              child: const Text('처음부터 재도전'),
-                            ),
-                          TextButton(
-                            onPressed: _settling ? null : _requestExit,
-                            child: const Text('첫 화면으로'),
-                          ),
-                          const Text(
-                            '서버 기록 저장은 연결 준비 중입니다.',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Palette.muted,
-                            ),
-                          ),
-                        ],
+                  child: IgnorePointer(
+                    ignoring: _tutorial != 2,
+                    child: Material(
+                      color: Palette.panel,
+                      borderRadius: BorderRadius.circular(12),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(switch (_tutorial) {
+                              1 =>
+                                '1/3 · 화면 아래 빈 곳을 드래그하세요. 손가락 위치로 기체가 튀지 않습니다.',
+                              2 => '2/3 · 기본 사격은 자동입니다. 청록색 긴 탄은 아군탄, 주황색 둥근 탄은 적탄입니다.',
+                              _ => '3/3 · 아래 보호막 버튼을 누르세요. 2초 방어 후 10초 뒤 다시 사용할 수 있습니다.',
+                            }, style: const TextStyle(fontSize: 14)),
+                            if (_tutorial == 2)
+                              TextButton(
+                                key: const Key('tutorialFire'),
+                                onPressed: () => setState(() => _tutorial = 3),
+                                child: const Text('사격 확인'),
+                              ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -627,42 +565,82 @@ class _BattleScreenState extends State<BattleScreen>
     ),
   );
 
-  Widget _controls(BattleEngine g) => Padding(
-    padding: const EdgeInsets.only(top: 10),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(3),
-          child: LinearProgressIndicator(
-            value: (1 - g.cooldown / g.skillRechargeDuration).clamp(0, 1),
-            minHeight: 3,
-            color: Palette.teal,
-            backgroundColor: Palette.panel,
-          ),
+  Widget _resultOverlay(BattleEngine g) => ColoredBox(
+    color: Palette.navy.withValues(alpha: .88),
+    child: Center(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              switch (g.phase) {
+                BattlePhase.paused => '일시정지',
+                BattlePhase.won => '작전 완료',
+                _ => '다시 도전하세요',
+              },
+              style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w800),
+            ),
+            const SizedBox(height: 14),
+            Text(
+              '점수 ${g.score} · 격추 ${g.defeated}',
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 14),
+            if (g.phase != BattlePhase.paused)
+              ListenableBuilder(
+                listenable: AppServices.of(context).campaign,
+                builder: (context, _) {
+                  final campaign = AppServices.of(context).campaign;
+                  return Text(
+                    _settling
+                        ? '기록 저장 중…'
+                        : campaign.saveFailed || campaign.writeBlocked
+                        ? '기기 기록 저장 실패 · 기존 파일은 보존됩니다. 설정에서 상태를 확인하세요.'
+                        : '기기 기록 저장 완료 · 최고 ${campaign.progress.records[_stage]?.best ?? 0}점',
+                    textAlign: TextAlign.center,
+                  );
+                },
+              ),
+            if (g.phase == BattlePhase.won && _stage < stages.length)
+              FilledButton(
+                key: const Key('nextStage'),
+                onPressed: _settled && !_settling
+                    ? () => _retry(next: true)
+                    : null,
+                child: const Text('다음 작전'),
+              ),
+            if (g.phase == BattlePhase.paused)
+              FilledButton(onPressed: _pauseToggle, child: const Text('계속하기'))
+            else
+              FilledButton(
+                key: const Key('retryBattle'),
+                onPressed: _settling ? null : _retry,
+                child: const Text('다시 도전'),
+              ),
+            if (g.phase == BattlePhase.paused)
+              OutlinedButton(
+                key: const Key('retryPausedBattle'),
+                onPressed: _retryPaused,
+                child: const Text('처음부터 재도전'),
+              ),
+            TextButton(
+              onPressed: _settling ? null : _requestExit,
+              child: const Text('첫 화면으로'),
+            ),
+            const Text(
+              '서버 기록 저장은 연결 준비 중입니다.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 14, color: Palette.muted),
+            ),
+          ],
         ),
-        const SizedBox(height: 7),
-        FilledButton.icon(
-          key: const Key('useSkill'),
-          onPressed: g.cooldown > 0 || g.phase != BattlePhase.playing
-              ? null
-              : () => _skill(g),
-          icon: Icon(catalogEntry(g.skill).icon),
-          label: Text(
-            g.cooldown > 0
-                ? '${g.skill == 'signature' ? g.pilot.technique : catalogEntry(g.skill).name} · ${g.cooldown.ceil()}초 후'
-                : '${g.skill == 'signature' ? g.pilot.technique : catalogEntry(g.skill).name} 사용',
-          ),
-        ),
-        const SizedBox(height: 6),
-        const Text(
-          '드래그 이동 · 자동 사격 · 중앙 점이 피격 위치',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 14, color: Palette.muted),
-        ),
-      ],
+      ),
     ),
   );
+
+  Widget _controls(BattleEngine g) =>
+      BattleSkillDock(g, onSkill: () => _skill(g), onShield: () => _shield(g));
 }
 
 class ControlsScreen extends StatelessWidget {
